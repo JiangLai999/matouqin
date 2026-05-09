@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1400" viewBox="0 0 900 1400" fill="none">
+  <rect width="900" height="1400" fill="#F8F3E8"/>
+  <rect x="38" y="38" width="824" height="1324" rx="0" fill="#FBF9F2" stroke="#D6C39C" stroke-width="2"/>
+  <rect x="38" y="38" width="824" height="16" fill="#9a6a1c" fill-opacity="0.75"/>
+  <text x="74" y="114" font-family="Noto Sans SC, sans-serif" font-size="56" font-weight="700" fill="#1F2937">第二把位</text>
+  <text x="74" y="162" font-family="Cormorant Garamond, serif" font-size="32" font-style="italic" fill="#7C6A55">Second Position / G调</text>
+  <text x="790" y="110" text-anchor="end" font-family="Cormorant Garamond, serif" font-size="42" fill="#C8B28D">EXHIBIT 02</text>
+  <line x1="74" y1="204" x2="826" y2="204" stroke="#D9CCB1" stroke-width="2"/>
+  <rect x="272" y="274" width="356" height="884" rx="28" fill="#2E3138" stroke="#54493A" stroke-width="12"/>
+  <rect x="314" y="1120" width="272" height="162" rx="18" fill="#C79D58" stroke="#7A5A34" stroke-width="10"/>
+  <rect x="334" y="1140" width="232" height="122" rx="10" fill="#F1D6A0" fill-opacity="0.78"/>
+  <path d="M450 236 C396 210 392 140 450 122 C508 140 504 210 450 236Z" fill="#A06B3B" stroke="#5B3A1F" stroke-width="8"/>
+  <line x1="402" y1="252" x2="402" y2="1162" stroke="#D7DDE5" stroke-width="6"/>
+  <line x1="498" y1="252" x2="498" y2="1162" stroke="#D7DDE5" stroke-width="6"/>
+  <line x1="340" y1="386" x2="560" y2="386" stroke="#8A7A63" stroke-width="2" stroke-dasharray="8 8"/>
+  <line x1="340" y1="566" x2="560" y2="566" stroke="#8A7A63" stroke-width="2" stroke-dasharray="8 8"/>
+  <line x1="340" y1="746" x2="560" y2="746" stroke="#8A7A63" stroke-width="2" stroke-dasharray="8 8"/>
+  <line x1="340" y1="926" x2="560" y2="926" stroke="#8A7A63" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="338" y="260" font-family="Noto Sans SC, sans-serif" font-size="26" fill="#7C6A55">D弦</text>
+  <text x="520" y="260" font-family="Noto Sans SC, sans-serif" font-size="26" fill="#7C6A55">A弦</text>
+
+<circle cx="492.7" cy="945.8" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="492.7" y="952.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">1指</text>
+<circle cx="492.7" cy="839.8" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="492.7" y="846.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">2指</text>
+<circle cx="492.7" cy="733.7" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="492.7" y="740.7" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">3指</text>
+<circle cx="492.7" cy="627.6" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="492.7" y="634.6" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">4指</text>
+<circle cx="492.7" cy="521.5" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="492.7" y="528.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">0</text>
+<circle cx="407.3" cy="945.8" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="407.3" y="952.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">1指</text>
+<circle cx="407.3" cy="839.8" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="407.3" y="846.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">2指</text>
+<circle cx="407.3" cy="733.7" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="407.3" y="740.7" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">3指</text>
+<circle cx="407.3" cy="627.6" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="407.3" y="634.6" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">4指</text>
+<circle cx="407.3" cy="521.5" r="20" fill="#9a6a1c" fill-opacity="0.96" stroke="#FFF8EA" stroke-width="6"/>
+<text x="407.3" y="528.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#fff">0</text>
+<text x="74" y="338" font-family="Noto Sans SC, sans-serif" font-size="30" font-weight="700" fill="#3A3128">A弦 音位</text>
+<rect x="74" y="360" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="102" cy="392" r="11" fill="#9a6a1c"/>
+<text x="126" y="400" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">1指 G</text>
+<rect x="74" y="452" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="102" cy="484" r="11" fill="#9a6a1c"/>
+<text x="126" y="492" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">2指 A</text>
+<rect x="74" y="544" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="102" cy="576" r="11" fill="#9a6a1c"/>
+<text x="126" y="584" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">3指 B</text>
+<rect x="74" y="636" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="102" cy="668" r="11" fill="#9a6a1c"/>
+<text x="126" y="676" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">4指 C</text>
+<rect x="74" y="728" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="102" cy="760" r="11" fill="#9a6a1c"/>
+<text x="126" y="768" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">空弦 D</text>
+<text x="590" y="338" font-family="Noto Sans SC, sans-serif" font-size="30" font-weight="700" fill="#3A3128">D弦 音位</text>
+<rect x="590" y="360" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="618" cy="392" r="11" fill="#9a6a1c"/>
+<text x="642" y="400" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">1指 C</text>
+<rect x="590" y="452" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="618" cy="484" r="11" fill="#9a6a1c"/>
+<text x="642" y="492" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">2指 D</text>
+<rect x="590" y="544" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="618" cy="576" r="11" fill="#9a6a1c"/>
+<text x="642" y="584" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">3指 E</text>
+<rect x="590" y="636" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="618" cy="668" r="11" fill="#9a6a1c"/>
+<text x="642" y="676" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">4指 F#</text>
+<rect x="590" y="728" width="226" height="64" rx="10" fill="#FFFDF8" stroke="#D6C39C"/>
+<circle cx="618" cy="760" r="11" fill="#9a6a1c"/>
+<text x="642" y="768" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#3A3128">空弦 G</text>
+  <text x="74" y="1320" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#6B7280">点击网页中的音位按钮可播放对应音高示意。</text>
+</svg>

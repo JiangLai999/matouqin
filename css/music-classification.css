@@ -1,0 +1,517 @@
+/* ==================== 音乐分类 Section ==================== */
+
+#music-classification {
+    min-height: auto !important;
+    padding-bottom: 4rem;
+}
+
+.music-class-layout {
+    display: flex;
+    gap: 4.5rem;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.music-class-left {
+    width: 31%;
+    flex-shrink: 0;
+    position: sticky;
+    top: 8rem;
+}
+
+.music-class-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.music-class-left .section-title-zh {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #111827;
+    margin: 0 0 0.25rem;
+}
+
+.music-class-left .section-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #6B7280;
+    font-style: italic;
+    letter-spacing: normal;
+    margin: 0 0 2rem;
+}
+
+.music-class-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: fit-content;
+    margin-top: -0.3rem;
+    padding: 0.38rem 0.85rem;
+    border: 1px solid rgba(196, 142, 60, 0.24);
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.69rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8B6A34;
+    background: rgba(255, 250, 242, 0.68);
+}
+
+.music-class-copy {
+    margin-top: 1.9rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(196, 142, 60, 0.24);
+}
+
+.music-class-left .bilingual-block .zh {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+}
+
+.music-class-left .bilingual-block .en {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #6B7280;
+    font-weight: 300;
+    font-style: normal;
+    text-align: justify;
+}
+
+.music-class-basis {
+    margin-top: 2.1rem;
+    padding: 1.2rem 1.35rem 1.25rem;
+    background: linear-gradient(180deg, rgba(255, 252, 246, 0.84) 0%, rgba(250, 247, 241, 0.76) 100%);
+    border: 1px solid rgba(17, 24, 39, 0.07);
+    border-radius: 2px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.music-class-basis-label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8B6A34;
+    margin-bottom: 0.8rem;
+}
+
+.music-class-basis-text {
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.96rem;
+    line-height: 1.95;
+    color: #374151;
+}
+
+.music-class-right {
+    width: 69%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.8rem 2.55rem;
+    align-items: stretch;
+}
+
+.music-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 1.6rem 1.6rem 1.7rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(248,244,238,0.9) 100%);
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 2px;
+    box-shadow: 0 18px 44px rgba(17, 24, 39, 0.045);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+    overflow: hidden;
+}
+
+.music-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(196, 142, 60, 0.28);
+    box-shadow: 0 24px 52px rgba(17, 24, 39, 0.075);
+    background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(249,246,241,0.97) 100%);
+}
+
+.music-card-topline {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(196, 142, 60, 0.95) 0%, rgba(196, 142, 60, 0.15) 75%, transparent 100%);
+    margin-bottom: 1.1rem;
+}
+
+.music-card-head {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    align-items: stretch;
+    gap: 1rem;
+    margin-bottom: 1.15rem;
+    padding: 0.35rem 0 1rem;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+    background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0) 100%);
+}
+
+.music-card-catalog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 82px;
+    padding: 0.55rem 0.7rem 0.6rem;
+    border: 1px solid rgba(17, 24, 39, 0.14);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(243,238,229,0.82) 100%),
+        repeating-linear-gradient(0deg, rgba(17,24,39,0.03) 0, rgba(17,24,39,0.03) 1px, transparent 1px, transparent 18px);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.68);
+}
+
+.music-card-catalog::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px dashed rgba(17, 24, 39, 0.1);
+    pointer-events: none;
+}
+
+.music-card-catalog-label {
+    position: relative;
+    z-index: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6B7280;
+}
+
+.music-card-index {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.15rem;
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    color: rgba(118, 79, 19, 0.98);
+}
+
+.music-card-heading-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.28rem;
+    min-width: 0;
+    padding: 0.18rem 0 0.1rem 1rem;
+}
+
+.music-card-heading-group::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    bottom: 0.1rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(196, 142, 60, 0.42) 0%, rgba(17,24,39,0.06) 100%);
+}
+
+.music-card-header-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8B7355;
+    margin-bottom: 0.08rem;
+}
+
+.music-card-record {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.55rem 1rem;
+    flex-wrap: wrap;
+    padding-bottom: 0.45rem;
+    margin-bottom: 0.2rem;
+    border-bottom: 1px dashed rgba(17, 24, 39, 0.16);
+}
+
+.music-card-record-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9CA3AF;
+}
+
+.music-card-record-code {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.music-card-title {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.28rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.music-card-en {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6B7280;
+}
+
+.music-card-illust {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 2px;
+    background: linear-gradient(135deg, rgba(245,244,239,0.72) 0%, rgba(233,227,216,0.48) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(209, 213, 219, 0.45);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    flex-shrink: 0;
+}
+
+.music-card:hover .music-card-illust {
+    border-color: rgba(196, 142, 60, 0.25);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.38);
+    background: linear-gradient(135deg, rgba(248,247,242,0.82) 0%, rgba(236,230,218,0.58) 100%);
+}
+
+.music-card-illust img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.94;
+    transition: transform 0.45s ease, opacity 0.35s ease;
+    filter: brightness(1.03) contrast(1.04);
+}
+
+.music-card:hover .music-card-illust img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.music-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1rem;
+}
+
+.music-card-position {
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.75;
+    color: #8B6A34;
+    letter-spacing: 0.04em;
+}
+
+.music-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.music-card-meta span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.38rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.045);
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.76rem;
+    line-height: 1;
+    color: #4B5563;
+}
+
+.music-card-desc {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.92;
+    color: #374151;
+    margin: 0;
+    font-weight: 400;
+}
+
+.music-card--court .music-card-topline {
+    background: linear-gradient(90deg, #C48E3C 0%, rgba(196, 142, 60, 0.18) 75%, transparent 100%);
+}
+
+.music-card--rap .music-card-topline {
+    background: linear-gradient(90deg, #A9624A 0%, rgba(169, 98, 74, 0.18) 75%, transparent 100%);
+}
+
+.music-card--narrative .music-card-topline {
+    background: linear-gradient(90deg, #5F6F73 0%, rgba(95, 111, 115, 0.18) 75%, transparent 100%);
+}
+
+.music-card--folk .music-card-topline {
+    background: linear-gradient(90deg, #7A8062 0%, rgba(122, 128, 98, 0.18) 75%, transparent 100%);
+}
+
+@media (max-width: 1280px) {
+    .music-class-layout {
+        gap: 3.2rem;
+    }
+
+    .music-class-left {
+        width: 33%;
+    }
+
+    .music-class-right {
+        width: 67%;
+        gap: 2.1rem 1.9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .music-class-layout {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .music-class-left,
+    .music-class-right {
+        width: 100%;
+    }
+
+    .music-class-left {
+        position: static;
+    }
+
+    .music-class-right {
+        gap: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #music-classification {
+        padding-bottom: 2.5rem;
+    }
+
+    .music-class-left .section-title-zh {
+        font-size: 1.5rem;
+    }
+
+    .music-class-left .section-title-en {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .music-class-kicker {
+        margin-top: -0.15rem;
+    }
+
+    .music-class-copy {
+        padding-left: 0.8rem;
+    }
+
+    .music-class-right {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
+
+    .music-card {
+        padding: 1.2rem 1.15rem 1.3rem;
+    }
+
+    .music-card-head {
+        grid-template-columns: 84px minmax(0, 1fr);
+        gap: 0.85rem;
+    }
+
+    .music-card-heading-group {
+        padding-left: 0.85rem;
+    }
+
+    .music-card-catalog {
+        min-height: 76px;
+        padding: 0.5rem 0.62rem 0.58rem;
+    }
+
+    .music-card-index {
+        font-size: 1.92rem;
+    }
+
+    .music-card-record {
+        gap: 0.55rem;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .music-card-record-code {
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .music-card-illust {
+        height: 190px;
+    }
+
+    .music-card-illust img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .music-card-head {
+        grid-template-columns: 1fr;
+    }
+
+    .music-card-catalog {
+        min-height: auto;
+        gap: 0.35rem;
+    }
+
+    .music-card-record {
+        padding-bottom: 0.35rem;
+    }
+}
+
+/* ==================== 分组标签 ==================== */
+.music-class-group-label {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0 0.4rem 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #C48E3C;
+}
+
+.music-class-group-label:first-child {
+    margin-top: 0;
+}
+
+.group-label-text {
+    font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #C48E3C;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}

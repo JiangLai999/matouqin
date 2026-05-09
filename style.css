@@ -1,0 +1,2923 @@
+/* ===================================
+   Gene Atlas: Morin Khuur
+   1:1 Variant Design Reproduction
+   =================================== */
+
+/* ==================== Reset & Base ==================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    line-height: 1.5;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+    background-color: #F5F4EF;
+    color: #111827;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F5F4EF; }
+::-webkit-scrollbar-thumb { background: #D1D5DB; }
+::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+
+/* ==================== Grid Background ==================== */
+.grid-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image:
+        linear-gradient(to right, #E5E0D8 1px, transparent 1px),
+        linear-gradient(to bottom, #E5E0D8 1px, transparent 1px);
+    background-size: 80px 80px;
+    z-index: -1;
+}
+
+/* ==================== Navigation ==================== */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 50;
+    transition: all 0.4s ease;
+}
+
+.main-nav.scrolled {
+    padding: 1rem 3rem;
+    background: rgba(245, 244, 239, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #E5E0D8;
+}
+
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    color: #111827;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #111827;
+    font-weight: 500;
+    margin-top: 0.25rem;
+}
+
+.nav-links a {
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links a:hover { opacity: 0.6; }
+
+.nav-zh {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 10px;
+    letter-spacing: normal;
+}
+
+/* ==================== Typography ==================== */
+.section-title-zh {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.section-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem;
+    color: #6B7280;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.bilingual-block .zh {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+}
+
+.bilingual-block .en {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #6B7280;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #D1D5DB;
+    margin: 1.5rem 0;
+}
+
+/* ==================== Hero Section (from v1) ==================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Bottom gradient for smooth transition */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(to bottom, transparent, #F5F4EF);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    width: 45vw;
+    height: 60vh;
+    background-image: url('assets/images/matouqin.png');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+    animation: float-plane 25s ease-in-out infinite alternate;
+    border-radius: 4px;
+}
+
+@keyframes float-plane {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    100% { transform: translate(-48%, -49%) rotate(2deg) scale(1.05); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 8vw, 9rem);
+    font-weight: 500;
+    line-height: 0.85;
+    letter-spacing: -0.01em;
+    color: #1E3A5F;
+    position: relative;
+    z-index: 20;
+}
+
+.hero-title span {
+    display: block;
+    color: #111827;
+    margin-left: 1vw;
+}
+
+.hero-subtitle {
+    margin-top: 3rem;
+    padding-left: 24px;
+    margin-left: 1.5vw;
+    position: relative;
+}
+
+.hero-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 1.5px;
+    background-color: #C48E3C;
+}
+
+.hero-subtitle p {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.85rem, 1vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.7;
+    color: #6B7280;
+    max-width: 380px;
+    letter-spacing: 0.02em;
+}
+
+.hero-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6B7280;
+}
+
+.hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hero-meta strong {
+    color: #9E4527;
+    font-weight: 600;
+}
+
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.scroll-text {
+    color: #111827;
+    font-weight: 500;
+}
+
+.scroll-line {
+    width: 50px;
+    height: 1px;
+    background-color: rgba(70, 94, 71, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #465E47;
+    transform: translateX(-100%);
+    animation: scroll-progress 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scroll-progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ==================== Content Sections ==================== */
+.content-section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 6rem;
+    border-top: 1px solid #D1D5DB;
+    position: relative;
+    scroll-margin-top: 5rem;
+}
+
+.section-icon {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
+
+.section-body {
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.section-left {
+    width: 25%;
+    flex-shrink: 0;
+}
+
+.section-left.narrow {
+    width: 25%;
+}
+
+.section-right {
+    width: 75%;
+}
+
+.section-right.wide {
+    width: 75%;
+}
+
+.section-right.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==================== History Section ==================== */
+.history-map {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #D1D5DB;
+    border-radius: 2px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.map-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    background-color: #9CA3AF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 0;
+    align-items: center;
+    color: white;
+    font-size: 0.95rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.highlight-zone {
+    background-color: #EC4899;
+    padding: 0.25rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.map-content {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    margin-left: 3rem;
+}
+
+.map-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.instrument-tag {
+    position: absolute;
+    background-color: #9CA3AF;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.95rem;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.instrument-tag.dark {
+    background-color: #6B7280;
+}
+
+.instrument-tag.final {
+    background-color: #D1D5DB;
+    color: #374151;
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+    border-left: 4px solid #EC4899;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-timeline {
+    width: calc(100% - 3rem);
+    margin-left: 3rem;
+    height: 3rem;
+    background-color: #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #374151;
+    margin-top: 1rem;
+}
+
+.map-content .dashed-line {
+    position: absolute;
+    left: 3rem;
+    right: 0;
+    border-top: 1px dashed #9CA3AF;
+}
+
+/* ==================== Culture Section ==================== */
+.bar-chart-section {
+    margin-top: 2rem;
+}
+
+.subsection-title {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.subsection-title .en-italic {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: normal;
+    color: #6B7280;
+    font-style: italic;
+    margin-left: 0.5rem;
+}
+
+.subsection-desc {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.bar-chart {
+    height: 12rem;
+    width: 100%;
+    border-bottom: 1px solid #D1D5DB;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 0.5rem 0.5rem;
+}
+
+.bar {
+    width: 0.75rem;
+    background-color: #9CA3AF;
+    position: relative;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.bar:hover {
+    background-color: #4B5563;
+}
+
+.bar span {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    writing-mode: vertical-rl;
+    color: #6B7280;
+    white-space: nowrap;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.culture-circle {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #E8E5DF;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+/* 渐显进场动画 */
+.culture-circle--fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.culture-circle--fade.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 图片样式 */
+.culture-chart-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+.culture-chart-img:hover {
+    transform: scale(1.02);
+}
+
+/* 图注 */
+.figure-caption {
+    text-align: center;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.78rem;
+    color: #9CA3AF;
+    letter-spacing: 0.08em;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.circle-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* 弧形色环 */
+.arc {
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.arc:hover {
+    stroke-width: 26;
+    filter: url(#soft-glow);
+}
+
+/* 贝塞尔曲线 */
+.curve {
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+.curve:hover {
+    stroke-opacity: 0.9;
+    stroke-width: 8;
+}
+
+/* 节点圆点 */
+.dot {
+    transition: all 0.3s ease;
+}
+.dot:hover {
+    r: 9;
+    filter: url(#soft-glow);
+}
+.dot.cross {
+    animation: pulse-center 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-center {
+    0%, 100% { r: 8; opacity: 0.8; }
+    50% { r: 11; opacity: 1; }
+}
+
+/* 中心焦点 */
+.center-hub {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.hub-outer {
+    animation: breathe 3s ease-in-out infinite;
+}
+@keyframes breathe {
+    0%, 100% { r: 40; opacity: 0.4; }
+    50% { r: 44; opacity: 0.6; }
+}
+
+/* 高亮状态 - 同组联动 */
+.arc.highlighted,
+.curve.highlighted {
+    stroke-opacity: 0.95 !important;
+    stroke-width: 28 !important;
+    filter: url(#soft-glow);
+}
+.dot.highlighted {
+    r: 10;
+    filter: url(#soft-glow);
+}
+
+/* 暗化状态 - 非选中组 */
+.arc.dimmed,
+.curve.dimmed {
+    stroke-opacity: 0.15 !important;
+}
+.dot.dimmed {
+    opacity: 0.15;
+}
+.circle-labels span.dimmed {
+    opacity: 0.15;
+}
+
+/* 标签 */
+.circle-labels {
+    position: absolute;
+    inset: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #4B5563;
+}
+.circle-labels span {
+    position: absolute;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+.circle-labels span.highlighted {
+    color: #111827;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(196, 142, 60, 0.4);
+}
+
+/* 详情面板 */
+.detail-panel {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    z-index: 30;
+    min-width: 240px;
+    max-width: 320px;
+    text-align: center;
+    animation: fadeUp 0.3s ease;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.detail-panel .detail-close {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #9CA3AF;
+    line-height: 1;
+}
+.detail-panel .detail-close:hover { color: #111827; }
+.detail-panel .detail-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.3rem;
+}
+.detail-panel .detail-desc {
+    font-size: 0.78rem;
+    color: #6B7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 悬浮提示 */
+.tooltip {
+    position: absolute;
+    background: rgba(17, 24, 39, 0.9);
+    color: #fff;
+    font-size: 0.72rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 40;
+    white-space: nowrap;
+    font-family: 'Noto Sans SC', sans-serif;
+    transition: opacity 0.15s ease;
+}
+
+/* 交互图例 */
+.chart-legend {
+    position: absolute;
+    bottom: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    white-space: nowrap;
+}
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+.legend-item:hover {
+    color: #111827;
+    background: rgba(0,0,0,0.04);
+}
+.legend-item.active {
+    color: #111827;
+    font-weight: 600;
+    background: rgba(0,0,0,0.06);
+}
+.legend-item i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .culture-circle {
+        max-width: 95%;
+        padding: 8px;
+    }
+    .circle-labels span {
+        font-size: 0.6rem;
+    }
+}
+
+/* 替换旧的culture-circle样式 */
+
+/* ==================== Anatomy Section ==================== */
+.types-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.type-item {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 0;
+    min-height: 130px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%),
+        linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(250,247,241,0.95) 100%);
+    border: 1px solid rgba(17, 24, 39, 0.09);
+    border-radius: 3px;
+    box-shadow:
+        0 2px 8px rgba(17, 24, 39, 0.05),
+        0 8px 24px rgba(17, 24, 39, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+.type-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #C48E3C 0%, rgba(196, 142, 60, 0.2) 100%);
+    border-radius: 3px 0 0 3px;
+}
+
+.type-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(196, 142, 60, 0.3);
+    box-shadow:
+        0 6px 20px rgba(17, 24, 39, 0.08),
+        0 16px 40px rgba(196, 142, 60, 0.1);
+}
+
+.type-badge {
+    display: none;
+}
+
+.type-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.2rem 1.4rem;
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-start;
+}
+
+.type-name {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(196, 142, 60, 0.3);
+}
+
+.type-name-en {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-style: italic;
+    color: #8B6A34;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-top: 0.1rem;
+}
+
+.type-desc {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #4B5563;
+}
+
+.type-shape {
+    width: 160px;
+    flex-shrink: 0;
+    align-self: stretch;
+    background:
+        linear-gradient(135deg, rgba(245,244,239,0.6) 0%, rgba(233,227,216,0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(17, 24, 39, 0.07);
+    position: relative;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.type-shape img.type-shape-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.anatomy-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.4);
+    border: 1px solid #D1D5DB;
+    padding: 1.5rem;
+    position: relative;
+    border-radius: 8px;
+}
+
+.model-container {
+    width: 100%;
+    height: 550px;
+    min-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(145deg, #2c3e50 0%, #1a252f 50%, #0d1117 100%);
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.3);
+}
+
+.model-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #6B7280;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.model-controls {
+    margin-top: 0.75rem;
+    font-size: 12px;
+    color: #9CA3AF;
+    text-align: center;
+}
+
+.anatomy-labels-left,
+.anatomy-labels-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 12rem;
+}
+
+.label-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+}
+
+.label-item.right {
+    justify-content: flex-start;
+}
+
+.label-line {
+    width: 3rem;
+    height: 1px;
+    background-color: #9CA3AF;
+}
+
+.label-line.short { width: 2rem; }
+.label-line.shorter { width: 1rem; }
+.label-line.long { width: 4rem; }
+
+.anatomy-placeholder {
+    width: 18.75rem;
+    height: 43.75rem;
+    position: relative;
+    background-image: radial-gradient(#D1D5DB 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: #EFEEDF;
+    border: 1px solid #D1D5DB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.placeholder-head {
+    width: 3rem;
+    height: 6rem;
+    background-color: #D1D5DB;
+    margin-top: 1rem;
+    border: 1px solid #9CA3AF;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.placeholder-neck {
+    width: 1rem;
+    height: 25rem;
+    background-color: #D1D5DB;
+    border-left: 1px solid #9CA3AF;
+    border-right: 1px solid #9CA3AF;
+}
+
+.placeholder-body {
+    width: 12rem;
+    height: 10rem;
+    background-color: #D1D5DB;
+    border: 1px solid #9CA3AF;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+/* ==================== Craftsmanship Section ==================== */
+/* ==================== Craft Tab System (Materials & Tools) ==================== */
+.craft-tab-bar {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+    padding-bottom: 0;
+}
+
+.craft-tab {
+    padding: 0.45rem 0.9rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.8rem;
+    color: #6B7280;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    margin-bottom: -1px;
+    letter-spacing: 0.04em;
+}
+
+.craft-tab:hover {
+    color: #8B6A34;
+}
+
+.craft-tab.active {
+    color: #8B6A34;
+    border-bottom-color: #C48E3C;
+    font-weight: 500;
+}
+
+.craft-tab-content {
+    display: none;
+}
+
+.craft-tab-content.active {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    animation: craftFadeIn 0.25s ease;
+}
+
+@keyframes craftFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== Craft Item Card (Materials & Tools) ==================== */
+.craft-item-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(250,247,241,0.92) 100%);
+    border: 1px solid rgba(17, 24, 39, 0.1);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(17, 24, 39, 0.05);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: default;
+    position: relative;
+}
+
+.craft-item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.09), 0 0 0 1px rgba(196, 142, 60, 0.2);
+    border-color: rgba(196, 142, 60, 0.25);
+}
+
+.craft-item-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #C48E3C 0%, rgba(196, 142, 60, 0.15) 100%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.craft-item-card:hover::before {
+    opacity: 1;
+}
+
+/* Highlighted state (triggered by tool hover on craft-card) */
+.craft-item-card[data-highlighted="true"] {
+    box-shadow: 0 0 0 2px #C48E3C, 0 4px 16px rgba(196, 142, 60, 0.2);
+    border-color: rgba(196, 142, 60, 0.5);
+}
+
+.craft-item-img {
+    width: 90px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(245,244,239,0.6) 0%, rgba(233,227,216,0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(17, 24, 39, 0.07);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    overflow: hidden;
+}
+
+.craft-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.craft-item-card:hover .craft-item-img img {
+    transform: scale(1.05);
+}
+
+.craft-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.craft-item-info h5 {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.craft-item-use {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #8B6A34;
+    margin: 0;
+    letter-spacing: 0.04em;
+}
+
+.craft-item-detail {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: #6B7280;
+    margin: 0.15rem 0 0;
+}
+
+.craft-item-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+.step-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.18rem 0.5rem;
+    background: rgba(196, 142, 60, 0.08);
+    border: 1px solid rgba(196, 142, 60, 0.2);
+    border-radius: 999px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.68rem;
+    color: #7A5C28;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.craft-item-card:hover .step-tag {
+    background: rgba(196, 142, 60, 0.15);
+    color: #5A3E15;
+}
+
+/* ==================== Craft Grid (12 Steps) ==================== */
+.craft-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem 1.5rem;
+}
+
+.craft-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.craft-card-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.craft-card:hover .craft-card-inner {
+    transform: rotateY(180deg);
+}
+
+.craft-card-front,
+.craft-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.craft-card-front {
+    background: white;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.craft-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.craft-card-front .craft-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.9);
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #374151;
+    font-weight: 500;
+}
+
+.craft-card-back {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
+}
+
+.craft-card-back h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #C48E3C;
+}
+
+.craft-card-back p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.craft-card-back .craft-step {
+    font-size: 0.65rem;
+    opacity: 0.7;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 0.5rem;
+}
+
+/* Craft-card highlighted state (triggered by tool hover) */
+.craft-card.highlighted .craft-card-inner {
+    transform: rotateY(180deg);
+}
+
+.craft-card.highlighted .craft-card-front,
+.craft-card.highlighted .craft-card-back {
+    border-color: #C48E3C;
+    box-shadow: 0 0 0 2px #C48E3C, 0 4px 16px rgba(196, 142, 60, 0.25);
+}
+
+.craft-card.dimmed {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.craft-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: white;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.craft-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.craft-placeholder span {
+    color: #9CA3AF;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+}
+
+.craft-label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    color: #1F2937;
+}
+
+/* ==================== Performance Section ==================== */
+.performance-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.performance-text-left {
+    padding-right: 1rem;
+}
+
+.performance-text-left .divider {
+    margin: 1rem 0;
+}
+
+.performance-text-left p.zh {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.performance-text-left p.en {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: #6B7280;
+    text-align: justify;
+}
+
+.performance-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+}
+
+/* 中上：演奏姿势区域 */
+.performance-posture-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.posture-image {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.posture-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.posture-text {
+    padding: 0.5rem 0;
+}
+
+.posture-text h4 {
+    font-size: 1rem;
+    color: #1E3A5F;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.posture-text p {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+}
+
+/* 下方：指法和手法并列 */
+.performance-bottom {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+}
+
+/* 左侧：指法区域 */
+.performance-fingering-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.fingering-image {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.fingering-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.fingering-text {
+    padding: 0.5rem 0;
+}
+
+.fingering-text h4 {
+    font-size: 0.9rem;
+    color: #1E3A5F;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.fingering-text p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 0.4rem;
+}
+
+.fingering-text p.notation {
+    font-size: 0.75rem;
+    color: #6B7280;
+    padding-left: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.fingering-text strong {
+    color: #1E3A5F;
+}
+
+/* 右侧：手法区域 */
+.performance-technique-area {
+    padding: 0.5rem 0;
+}
+
+.performance-technique-area h4 {
+    font-size: 0.9rem;
+    color: #1E3A5F;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.technique-desc {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.technique-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.technique-img {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.technique-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.technique-img span {
+    font-size: 0.75rem;
+    color: #1E3A5F;
+    font-weight: 500;
+}
+
+/* ==================== 性能板块优化 ==================== */
+
+/* 1. 卡片悬浮效果 */
+.posture-image,
+.fingering-image,
+.technique-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.posture-image:hover,
+.fingering-image:hover,
+.technique-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* 2. 标题装饰线 */
+.fingering-text h4,
+.performance-technique-area h4 {
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.fingering-text h4::after,
+.performance-technique-area h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #C48E3C;
+}
+
+/* 3. 滚动动画 */
+.performance-posture-area,
+.performance-fingering-area,
+.performance-technique-area {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.performance-posture-area.animate-in,
+.performance-fingering-area.animate-in,
+.performance-technique-area.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. 图片点击效果 */
+.posture-image img,
+.fingering-image img,
+.technique-img img {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.posture-image img:hover,
+.fingering-image img:hover,
+.technique-img img:hover {
+    filter: brightness(1.05);
+}
+
+/* 5. 移动端适配 */
+@media (max-width: 1024px) {
+    .performance-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .performance-text-left {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .performance-posture-area {
+        grid-template-columns: 1fr;
+    }
+    
+    .performance-bottom {
+        grid-template-columns: 1fr;
+    }
+    
+    .performance-fingering-area {
+        grid-template-columns: 1fr;
+    }
+    
+    .posture-image,
+    .fingering-image {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ==================== 图片预览模态框 ==================== */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.image-modal .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-modal .close-btn:hover {
+    transform: scale(1.2);
+}
+
+.fingering-title {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.fingering-placeholder {
+    background: white;
+    border: 1px solid #D1D5DB;
+    padding: 1rem;
+    aspect-ratio: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: radial-gradient(#D1D5DB 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: #EFEEDF;
+}
+
+.fingering-placeholder span {
+    color: #9CA3AF;
+    font-size: 0.75rem;
+    z-index: 10;
+    background: #EFEEDF;
+    padding: 0 0.5rem;
+}
+
+.fingering-text {
+    width: 66.666%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.fingering-text strong {
+    font-weight: bold;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1200px) {
+    .hero-title { font-size: 5rem; }
+    .culture-circle { width: 400px; height: 400px; }
+}
+
+@media (max-width: 1024px) {
+    .section-body { flex-direction: column; }
+    .section-left,
+    .section-right,
+    .section-left.narrow,
+    .section-right.wide { width: 100%; }
+    .content-section { padding: 4rem 2rem; }
+    .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+    .heritage-branch { flex-direction: column; align-items: center; }
+    .repertoire-cards { grid-template-columns: 1fr; }
+    .bar span { display: none; }
+    .culture-circle { width: 350px; height: 350px; }
+    .circle-labels span { font-size: 0.6rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-title { font-size: 3.5rem; }
+    .craft-grid { grid-template-columns: repeat(2, 1fr); }
+    .performance-grid { grid-template-columns: 1fr; }
+    .fingering-section { flex-direction: column; }
+    .fingering-chart { width: 100%; }
+    .fingering-text { width: 100%; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .dashboard-section { padding: 3rem 1.5rem; }
+    .footer-content { flex-direction: column; gap: 2rem; }
+    .footer-right { align-items: flex-start; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; }
+    .culture-circle { width: 280px; height: 280px; }
+    .circle-labels { display: none; }
+    .bar { width: 0.5rem; }
+    .bar-chart { overflow-x: auto; min-width: 100%; }
+    .content-section { padding: 3rem 1.5rem; }
+    .dashboard-section { scroll-margin-top: 4rem; }
+    .content-section { scroll-margin-top: 4rem; }
+}
+
+/* ==================== Dashboard Section ==================== */
+.dashboard-section {
+    padding: 5rem 3rem;
+    border-bottom: 1px solid #D1D5DB;
+    scroll-margin-top: 5rem;
+}
+
+.dashboard-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.dashboard-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border-color: #D1D5DB;
+}
+
+.dash-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #111827;
+    line-height: 1;
+}
+
+.dash-unit {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.25rem;
+    color: #6B7280;
+    margin-left: 0.25rem;
+}
+
+.dash-label {
+    display: block;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #111827;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.dash-desc {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    line-height: 1.5;
+}
+
+/* ==================== Heritage Section ==================== */
+.heritage-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.heritage-gen {
+    width: 100%;
+    text-align: center;
+}
+
+.gen-label {
+    display: inline-block;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C48E3C;
+    margin-bottom: 1rem;
+}
+
+.heritage-branch {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.heritage-person {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #F0EFEB;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.heritage-person:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    border-color: #D1D5DB;
+}
+
+.heritage-person.founder {
+    background: white;
+    border-color: #C48E3C;
+    min-width: 280px;
+}
+
+.heritage-person.highlight {
+    background: white;
+    border-color: #C48E3C;
+}
+
+.heritage-person.young {
+    background: rgba(196, 142, 60, 0.04);
+    border-color: rgba(196, 142, 60, 0.15);
+}
+
+.person-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.heritage-person {
+    cursor: pointer;
+}
+
+.heritage-person:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #C48E3C;
+}
+
+/* 滚动动画 */
+.animate-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 详情模态框 */
+.heritage-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.heritage-modal.active {
+    display: flex;
+}
+
+.heritage-modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    cursor: default;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.heritage-modal-content .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 24px;
+    color: #6B7280;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.heritage-modal-content .close-btn:hover {
+    color: #1E3A5F;
+}
+
+.heritage-modal-content .modal-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 auto 1rem;
+}
+
+.heritage-modal-content h5 {
+    font-size: 1.25rem;
+    color: #1E3A5F;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.heritage-modal-content .person-years {
+    text-align: center;
+    color: #6B7280;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.heritage-modal-content .person-role {
+    text-align: center;
+    color: #C48E3C;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.heritage-modal-content .divider {
+    width: 40px;
+    height: 2px;
+    background: #C48E3C;
+    margin: 1rem auto;
+}
+
+.heritage-modal-content .person-bio {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #374151;
+}
+
+.heritage-modal-content .person-bio p {
+    margin-bottom: 0.75rem;
+}
+
+.heritage-modal-content .person-bio ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.heritage-modal-content .person-bio li {
+    margin-bottom: 0.25rem;
+}
+
+.heritage-modal-content .person-bio strong {
+    color: #1E3A5F;
+}
+
+.person-info h4 {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.1rem;
+}
+
+.person-info p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    margin-bottom: 0.2rem;
+}
+
+.person-title {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.65rem;
+    color: #C48E3C;
+    letter-spacing: 0.03em;
+}
+
+.heritage-connector {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+/* ==================== Regional Styles Tags (in History Map) ==================== */
+.region-tag {
+    position: absolute;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.region-tag.korqin { background: #C48E3C; color: white; }
+.region-tag.xilingol { background: #1E3A5F; color: white; }
+.region-tag.ordos { background: #9E4527; color: white; }
+.region-tag.hulunbuir { background: #465E47; color: white; }
+
+/* ==================== Repertoire Cards (upgrade for bar chart) ==================== */
+.repertoire-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.repertoire-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.repertoire-card:hover {
+    border-color: #C48E3C;
+    box-shadow: 0 2px 8px rgba(196, 142, 60, 0.1);
+}
+
+.rep-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #C48E3C;
+    width: 1.5rem;
+    flex-shrink: 0;
+}
+
+.rep-info {
+    flex: 1;
+}
+
+.rep-name {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.rep-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    margin-top: 0.15rem;
+}
+
+/* ==================== Footer ==================== */
+.site-footer {
+    background-color: #111827;
+    color: #F5F4EF;
+    padding: 4rem 3rem;
+    border-top: 1px solid #D1D5DB;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.footer-desc {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: rgba(245, 244, 239, 0.6);
+    max-width: 400px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(245, 244, 239, 0.7);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #F5F4EF;
+}
+
+.footer-copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(245, 244, 239, 0.4);
+    letter-spacing: 0.05em;
+}
+
+/* ==================== Side Navigation ==================== */
+.side-nav {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.side-nav-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.side-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #6B7280;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.side-link:hover,
+.side-link.active {
+    color: #111827;
+}
+
+.side-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #D1D5DB;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.side-link:hover .side-dot,
+.side-link.active .side-dot {
+    background-color: #111827;
+    transform: scale(1.3);
+}
+
+.side-label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.side-link:hover .side-label,
+.side-link.active .side-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==================== Back to Top Button ==================== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background-color: #111827;
+    color: #F5F4EF;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: #374151;
+    transform: translateY(-2px);
+}
+
+.back-to-top svg {
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+/* ==================== Bar Chart Tooltip ==================== */
+.bar-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111827;
+    color: #F5F4EF;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+    min-width: 180px;
+    text-align: left;
+}
+
+.bar-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #111827;
+}
+
+.bar-tooltip strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.bar-tooltip .tooltip-desc {
+    font-size: 0.75rem;
+    color: rgba(245, 244, 239, 0.7);
+    margin-top: 0.25rem;
+    white-space: normal;
+    max-width: 200px;
+}
+
+.bar:hover .bar-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==================== Craft Card Expanded ==================== */
+.craft-expanded {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+    padding: 0 1rem;
+    margin-top: 1rem;
+    border-radius: 0 0 4px 4px;
+}
+
+.craft-card.expanded .craft-expanded {
+    padding: 1rem;
+}
+
+.craft-expanded h4 {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.craft-expanded p {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.craft-step-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    font-style: italic;
+}
+
+/* ==================== Culture Info Panel ==================== */
+.culture-info-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    width: 300px;
+    opacity: 0;
+}
+
+.culture-info-panel h4 {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.culture-info-panel p {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.8rem;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.culture-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #F9FAFB;
+    border-radius: 4px;
+}
+
+.culture-stats div {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    text-align: center;
+}
+
+.culture-stats strong {
+    display: block;
+    font-size: 1.25rem;
+    color: #111827;
+    font-weight: 600;
+}
+
+.culture-info-panel .close-panel {
+    background-color: #111827;
+    color: #F5F4EF;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.culture-info-panel .close-panel:hover {
+    background-color: #374151;
+}
+
+/* ==================== Label Tooltip ==================== */
+.label-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111827;
+    color: #F5F4EF;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    z-index: 10;
+    margin-top: 0.5rem;
+}
+
+.label-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-bottom-color: #111827;
+}
+
+/* ==================== Performance Detail Panel ==================== */
+.performance-detail-panel {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+    margin-top: 1rem;
+    border-radius: 0 0 4px 4px;
+}
+
+.performance-detail-panel h4 {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.performance-detail-panel p {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.performance-detail-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.performance-detail-panel li {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #6B7280;
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.performance-detail-panel li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #C48E3C;
+}
+
+/* ==================== Section Hover Effects ==================== */
+.content-section {
+    transition: background-color 0.3s ease;
+}
+
+/* ==================== Craft Card Hover Effect ==================== */
+.craft-card {
+    position: relative;
+    overflow: visible;
+}
+
+.craft-placeholder {
+    transition: box-shadow 0.3s ease;
+}
+
+/* ==================== Culture Circle Interactive ==================== */
+.culture-circle {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.culture-circle:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== Performance Section Interactive ==================== */
+.performance-posture,
+.performance-detail,
+.fingering-section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.performance-posture:hover,
+.performance-detail:hover,
+.fingering-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 25, 0.1);
+}
+
+/* ==================== Section Highlight on Hover ==================== */
+.content-section {
+    position: relative;
+}
+
+.content-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #C48E3C;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.content-section:hover::before {
+    opacity: 1;
+}
+
+/* ==================== Heritage Tree ==================== */
+.heritage-tree-wrap {
+    position: relative;
+    width: 800px;
+    height: 520px;
+    margin: 0 auto;
+    isolation: isolate;
+}
+
+.heritage-tree-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    overflow: visible;
+}
+
+.heritage-tree-wrap .tree-node {
+    position: absolute;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    white-space: nowrap;
+    background: rgba(245, 244, 239, 0.92);
+    padding: 2px 6px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+}
+
+.heritage-tree-wrap .node-name {
+    display: block;
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2F2A24;
+    line-height: 1.4;
+}
+
+.heritage-tree-wrap .node-label {
+    display: block;
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 10px;
+    color: #7A6F60;
+    font-weight: 400;
+    margin-top: 1px;
+}
+/* ==================== Folding Panels ==================== */
+.folding-section {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+}
+
+.folding-container {
+    position: relative;
+    width: 100%;
+    perspective: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.application-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 32px;
+    padding: 0 0 22px;
+    border-bottom: 1px solid #D8D0C4;
+}
+
+.application-overview-text {
+    max-width: 500px;
+}
+
+.overview-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #8A7D69;
+}
+
+.overview-title {
+    margin: 0 0 12px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.75;
+    color: #1E1A17;
+}
+
+.application-overview-text p {
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.95;
+    color: #4B4338;
+}
+
+.application-overview-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+    max-width: 340px;
+    padding-top: 4px;
+}
+
+.application-overview-tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border: 1px solid #D8D0C4;
+    background: rgba(255, 255, 255, 0.62);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    color: #5A5248;
+}
+
+.application-overview-tags em {
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #8A7D69;
+}
+
+.folding-panel {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    overflow: visible;
+    transform-origin: center center;
+    transform-style: flat;
+    will-change: transform, opacity;
+    filter: grayscale(50%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+    border-left: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+}
+
+.folding-panel::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: -18px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(138, 125, 105, 0), rgba(138, 125, 105, 0.45), rgba(138, 125, 105, 0));
+}
+
+.folding-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.folding-panel:first-child {
+    border-left: none;
+}
+
+.folding-panel:hover {
+    filter: grayscale(30%);
+}
+
+.panel-meta {
+    position: relative;
+    padding: 0 6px 6px;
+    min-height: 150px;
+}
+
+.panel-index {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #8A7D69;
+}
+
+.panel-index::after {
+    content: '';
+    width: 32px;
+    height: 1px;
+    margin-left: 10px;
+    background: #CBBEAB;
+}
+
+.panel-title {
+    margin: 0 0 8px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #1E1A17;
+}
+
+.panel-subtitle {
+    margin: 0 0 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.6;
+    color: #8A7D69;
+}
+
+.panel-description {
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.76rem;
+    line-height: 1.8;
+    color: #5A5248;
+}
+
+@media (max-width: 1200px) {
+    .application-overview {
+        flex-direction: column;
+    }
+
+    .application-overview-tags {
+        justify-content: flex-start;
+        max-width: none;
+    }
+
+    .panel-meta {
+        min-height: 168px;
+    }
+}
+
+/* ===== Lightbox 放大查看 ===== */
+.chart-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(15, 12, 10, 0.88);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    cursor: zoom-out;
+}
+.chart-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.chart-lightbox__viewport {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    overflow: hidden;
+    cursor: grab;
+}
+.chart-lightbox__viewport.is-dragging {
+    cursor: grabbing;
+}
+
+.chart-lightbox__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform-origin: center center;
+    transition: transform 0.15s ease-out;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+.chart-lightbox__close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    z-index: 10;
+}
+.chart-lightbox__close:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.4);
+}
+
+.chart-lightbox__hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.chart-lightbox__zoom-indicator {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    z-index: 10;
+    background: rgba(0,0,0,0.3);
+    padding: 4px 10px;
+    border-radius: 4px;
+}

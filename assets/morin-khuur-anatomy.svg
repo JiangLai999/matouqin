@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" fill="none">
+  <defs>
+    <style>
+      .label-line { stroke: #9CA3AF; stroke-width: 1; }
+      .label-dot { fill: #C48E3C; }
+      .label-text { font-family: 'Noto Sans SC', 'Inter', sans-serif; font-size: 11px; fill: #374151; }
+      .label-text-en { font-family: 'Inter', sans-serif; font-size: 9px; fill: #9CA3AF; }
+      .part-outline { stroke: #1E3A5F; stroke-width: 1.5; fill: none; }
+      .part-fill { fill: #1E3A5F; }
+      .part-light { fill: #F5F4EF; stroke: #1E3A5F; stroke-width: 1; }
+      .bow-line { stroke: #8B7355; stroke-width: 2; fill: none; }
+      .bow-fill { fill: #8B7355; }
+      .string-line { stroke: #C48E3C; stroke-width: 0.8; }
+    </style>
+  </defs>
+
+  <!-- ========== BOW (弓) - left side ========== -->
+  <!-- Bow stick -->
+  <path class="bow-line" d="M 60 120 Q 80 300 100 520 Q 105 560 120 580"/>
+  <!-- Bowhead -->
+  <path class="bow-fill" d="M 55 120 Q 50 100 60 90 Q 70 82 75 95 Q 78 108 70 115 Z" opacity="0.8"/>
+  <!-- Bowhair -->
+  <path d="M 62 105 Q 85 300 110 530" stroke="#D4C5A0" stroke-width="3" fill="none" opacity="0.6"/>
+  <!-- Bow screw -->
+  <rect class="bow-fill" x="115" y="575" width="12" height="6" rx="1" opacity="0.8"/>
+
+  <!-- ========== INSTRUMENT BODY (琴体) ========== -->
+
+  <!-- Horse head (琴头) -->
+  <path class="part-outline" d="M 340 60 Q 330 40 345 25 Q 360 15 370 20 Q 385 10 395 20 Q 405 15 410 30 Q 420 25 420 40 Q 430 35 425 55 Q 420 70 410 80 L 395 95 L 360 95 L 345 80 Z"/>
+  <!-- Horse ear -->
+  <path class="part-outline" d="M 360 40 Q 355 20 365 15 Q 370 25 368 40"/>
+  <path class="part-outline" d="M 395 38 Q 400 18 392 13 Q 387 23 389 38"/>
+  <!-- Horse eye -->
+  <circle cx="375" cy="55" r="3" fill="#1E3A5F"/>
+
+  <!-- Tuning pegs (琴轴) -->
+  <rect class="part-fill" x="335" y="90" width="20" height="6" rx="2" opacity="0.7"/>
+  <rect class="part-fill" x="395" y="90" width="20" height="6" rx="2" opacity="0.7"/>
+  <!-- Peg box (马尾库 / 琴轴盒) -->
+  <rect class="part-light" x="345" y="88" width="60" height="22" rx="3"/>
+
+  <!-- Neck (琴杆) -->
+  <rect class="part-light" x="362" y="108" width="26" height="200" rx="2"/>
+  <!-- Fingerboard (指板) -->
+  <rect class="part-fill" x="365" y="110" width="20" height="196" rx="1" opacity="0.3"/>
+
+  <!-- Body / Sound box (琴箱) -->
+  <!-- Upper bout -->
+  <path class="part-outline" d="M 340 310 Q 310 320 295 360 Q 280 400 285 440"/>
+  <path class="part-outline" d="M 410 310 Q 440 320 455 360 Q 470 400 465 440"/>
+  <!-- Lower bout (wider) -->
+  <path class="part-outline" d="M 285 440 Q 280 480 290 520 Q 305 560 340 575 Q 375 585 410 575 Q 445 560 460 520 Q 470 480 465 440"/>
+  <!-- Body fill -->
+  <path d="M 340 310 Q 310 320 295 360 Q 280 400 285 440 Q 280 480 290 520 Q 305 560 340 575 Q 375 585 410 575 Q 445 560 460 520 Q 470 480 465 440 Q 470 400 455 360 Q 440 320 410 310 Z" fill="#F5F4EF" stroke="#1E3A5F" stroke-width="1.5"/>
+
+  <!-- Side plate (侧板) edge highlight -->
+  <path d="M 340 310 Q 310 320 295 360 Q 280 400 285 440 Q 280 480 290 520 Q 305 560 340 575" fill="none" stroke="#D4C5A0" stroke-width="3" opacity="0.4"/>
+
+  <!-- Sound holes (音孔) - two f-holes -->
+  <path class="part-outline" d="M 340 400 Q 335 415 340 430 Q 343 438 338 445" stroke-width="1.2"/>
+  <path class="part-outline" d="M 410 400 Q 415 415 410 430 Q 407 438 412 445" stroke-width="1.2"/>
+
+  <!-- Upper bridge (上码) -->
+  <rect class="part-fill" x="355" y="308" width="40" height="5" rx="1" opacity="0.8"/>
+  <!-- Lower bridge (下码) -->
+  <rect class="part-fill" x="358" y="480" width="34" height="5" rx="1" opacity="0.8"/>
+
+  <!-- Strings (琴弦) -->
+  <line class="string-line" x1="370" y1="96" x2="368" y2="485"/>
+  <line class="string-line" x1="380" y1="96" x2="382" y2="485"/>
+
+  <!-- Tailpiece / Drawstring (拉弦绳) -->
+  <path class="part-outline" d="M 365 575 Q 375 610 375 640" stroke-width="1.5"/>
+
+  <!-- Decorative pattern (纹样) on body -->
+  <path d="M 345 360 Q 355 350 365 360 Q 375 370 365 375 Q 355 370 345 360" fill="none" stroke="#C48E3C" stroke-width="0.8" opacity="0.5"/>
+  <path d="M 400 360 Q 410 350 420 360 Q 410 370 400 360" fill="none" stroke="#C48E3C" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- ========== ANNOTATION LINES ========== -->
+
+  <!-- LEFT SIDE (Bow parts) -->
+  <!-- 弓头 Bow head -->
+  <circle class="label-dot" cx="62" cy="100" r="3"/>
+  <line class="label-line" x1="62" y1="100" x2="20" y2="80"/>
+  <text class="label-text" x="18" y="74" text-anchor="end">弓头</text>
+  <text class="label-text-en" x="18" y="84" text-anchor="end">Bow head</text>
+
+  <!-- 弓杆 Bow stick -->
+  <circle class="label-dot" cx="75" cy="300" r="3"/>
+  <line class="label-line" x1="75" y1="300" x2="25" y2="280"/>
+  <text class="label-text" x="23" y="274" text-anchor="end">弓杆</text>
+  <text class="label-text-en" x="23" y="284" text-anchor="end">Bow stick</text>
+
+  <!-- 弓毛 Bow hair -->
+  <circle class="label-dot" cx="92" cy="350" r="3"/>
+  <line class="label-line" x1="92" y1="350" x2="30" y2="360"/>
+  <text class="label-text" x="28" y="354" text-anchor="end">弓毛</text>
+  <text class="label-text-en" x="28" y="364" text-anchor="end">Bow hair</text>
+
+  <!-- 弓尾螺丝 Bow screw -->
+  <circle class="label-dot" cx="118" cy="578" r="3"/>
+  <line class="label-line" x1="118" y1="578" x2="40" y2="590"/>
+  <text class="label-text" x="38" y="584" text-anchor="end">弓尾螺丝</text>
+  <text class="label-text-en" x="38" y="594" text-anchor="end">Bow screw</text>
+
+  <!-- 拉弦绳 Tailpiece -->
+  <circle class="label-dot" cx="375" cy="635" r="3"/>
+  <line class="label-line" x1="375" y1="635" x2="200" y2="655"/>
+  <text class="label-text" x="198" y="649" text-anchor="end">拉弦绳</text>
+  <text class="label-text-en" x="198" y="659" text-anchor="end">Tailpiece</text>
+
+
+  <!-- RIGHT SIDE (Instrument parts) -->
+  <!-- 琴头 Horse head -->
+  <circle class="label-dot" cx="420" cy="50" r="3"/>
+  <line class="label-line" x1="420" y1="50" x2="530" y2="45"/>
+  <text class="label-text" x="535" y="42">琴头</text>
+  <text class="label-text-en" x="535" y="52">Horse head</text>
+
+  <!-- 马尾库 Peg box -->
+  <circle class="label-dot" cx="430" cy="98" r="3"/>
+  <line class="label-line" x1="430" y1="98" x2="530" y2="90"/>
+  <text class="label-text" x="535" y="87">马尾库</text>
+  <text class="label-text-en" x="535" y="97">Peg box</text>
+
+  <!-- 琴轴 Tuning pegs -->
+  <circle class="label-dot" cx="440" cy="93" r="3"/>
+  <line class="label-line" x1="440" y1="93" x2="530" y2="135"/>
+  <text class="label-text" x="535" y="132">琴轴</text>
+  <text class="label-text-en" x="535" y="142">Tuning pegs</text>
+
+  <!-- 琴杆 Neck -->
+  <circle class="label-dot" cx="410" cy="180" r="3"/>
+  <line class="label-line" x1="410" y1="180" x2="530" y2="180"/>
+  <text class="label-text" x="535" y="177">琴杆</text>
+  <text class="label-text-en" x="535" y="187">Neck</text>
+
+  <!-- 指板 Fingerboard -->
+  <circle class="label-dot" cx="410" cy="220" r="3"/>
+  <line class="label-line" x1="410" y1="220" x2="530" y2="225"/>
+  <text class="label-text" x="535" y="222">指板</text>
+  <text class="label-text-en" x="535" y="232">Fingerboard</text>
+
+  <!-- 琴弦 Strings -->
+  <circle class="label-dot" cx="395" cy="280" r="3"/>
+  <line class="label-line" x1="395" y1="280" x2="530" y2="270"/>
+  <text class="label-text" x="535" y="267">琴弦</text>
+  <text class="label-text-en" x="535" y="277">Strings</text>
+
+  <!-- 上码 Upper bridge -->
+  <circle class="label-dot" cx="420" cy="311" r="3"/>
+  <line class="label-line" x1="420" y1="311" x2="530" y2="315"/>
+  <text class="label-text" x="535" y="312">上码</text>
+  <text class="label-text-en" x="535" y="322">Upper bridge</text>
+
+  <!-- 面板 Soundboard -->
+  <circle class="label-dot" cx="440" cy="400" r="3"/>
+  <line class="label-line" x1="440" y1="400" x2="530" y2="360"/>
+  <text class="label-text" x="535" y="357">面板</text>
+  <text class="label-text-en" x="535" y="367">Soundboard</text>
+
+  <!-- 音孔 Sound holes -->
+  <circle class="label-dot" cx="435" cy="425" r="3"/>
+  <line class="label-line" x1="435" y1="425" x2="530" y2="405"/>
+  <text class="label-text" x="535" y="402">音孔</text>
+  <text class="label-text-en" x="535" y="412">Sound holes</text>
+
+  <!-- 纹样 Decorative pattern -->
+  <circle class="label-dot" cx="440" cy="365" r="3"/>
+  <line class="label-line" x1="440" y1="365" x2="530" y2="450"/>
+  <text class="label-text" x="535" y="447">纹样</text>
+  <text class="label-text-en" x="535" y="457">Decorative motif</text>
+
+  <!-- 侧板 Side plate -->
+  <circle class="label-dot" cx="470" cy="460" r="3"/>
+  <line class="label-line" x1="470" y1="460" x2="530" y2="495"/>
+  <text class="label-text" x="535" y="492">侧板</text>
+  <text class="label-text-en" x="535" y="502">Side plate</text>
+
+  <!-- 下码 Lower bridge -->
+  <circle class="label-dot" cx="420" cy="483" r="3"/>
+  <line class="label-line" x1="420" y1="483" x2="530" y2="540"/>
+  <text class="label-text" x="535" y="537">下码</text>
+  <text class="label-text-en" x="535" y="547">Lower bridge</text>
+</svg>

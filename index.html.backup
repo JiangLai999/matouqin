@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gene Atlas: Morin Khuur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Grid Background Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Side Navigation -->
+    <aside class="side-nav">
+        <div class="side-nav-inner">
+            <a href="#hero" class="side-link active" data-section="hero">
+                <span class="side-dot"></span>
+                <span class="side-label">首页</span>
+            </a>
+            <a href="#history" class="side-link" data-section="history">
+                <span class="side-dot"></span>
+                <span class="side-label">历史</span>
+            </a>
+            <a href="#culture" class="side-link" data-section="culture">
+                <span class="side-dot"></span>
+                <span class="side-label">文化</span>
+            </a>
+            <a href="#craftsmanship" class="side-link" data-section="craftsmanship">
+                <span class="side-dot"></span>
+                <span class="side-label">工艺</span>
+            </a>
+            <a href="#heritage" class="side-link" data-section="heritage">
+                <span class="side-dot"></span>
+                <span class="side-label">传承</span>
+            </a>
+            <a href="#performance" class="side-link" data-section="performance">
+                <span class="side-dot"></span>
+                <span class="side-label">演奏</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">Gene Atlas.</div>
+        <div class="nav-links">
+            <a href="#hero">首页</a>
+            <a href="#history">历史</a>
+            <a href="#culture">文化</a>
+            <a href="#craftsmanship">工艺</a>
+            <a href="#heritage">传承</a>
+            <a href="#performance">演奏</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section (from v1) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg">
+                <div class="hero-image"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-main">
+                    <div class="hero-text">
+                        <h1 class="hero-title">MORIN<br><span>KHUUR</span></h1>
+                        <div class="hero-subtitle">
+                            <p>A digital archive mapping the cultural DNA, acoustic heritage, and traditional craftsmanship of the Mongolian horsehead fiddle through flowing parametric structures.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer class="hero-footer">
+                    <div class="hero-meta">
+                        <span>Vol. I — <strong>内蒙古非物质文化遗产</strong></span>
+                        <span>Coordinates: 40.8420° N, 111.7500° E (Hohhot)</span>
+                    </div>
+                    <div class="scroll-indicator">
+                        <span class="scroll-text">Discover</span>
+                        <div class="scroll-line"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <span class="dash-number">2000</span>
+                    <span class="dash-unit">年</span>
+                    <span class="dash-label">历史传承</span>
+                    <p class="dash-desc">起源于唐宋时期的拉弦乐器奚琴</p>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dash-number">100</span>
+                    <span class="dash-unit">+</span>
+                    <span class="dash-label">道制作工序</span>
+                    <p class="dash-desc">琴头、琴杆、琴箱三大核心环节</p>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dash-number">2006</span>
+                    <span class="dash-unit">年</span>
+                    <span class="dash-label">国家级非遗</span>
+                    <p class="dash-desc">首批列入国家级非物质文化遗产名录</p>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dash-number">4</span>
+                    <span class="dash-unit">大</span>
+                    <span class="dash-label">演奏流派</span>
+                    <p class="dash-desc">科尔沁、锡林郭勒、鄂尔多斯、呼伦贝尔</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Icon Component -->
+        <!-- History Section -->
+        <section id="history" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="8" cy="6" r="2" fill="#F5F4EF"/><circle cx="16" cy="12" r="2" fill="#F5F4EF"/><circle cx="8" cy="18" r="2" fill="#F5F4EF"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">历史脉络</h2>
+                    <h3 class="section-title-en">Historical Lineage</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">追溯时间的河流，探寻马头琴的前世今生。从神话传说的朦胧起源，到世界舞台的璀璨绽放。</p>
+                        <p class="en">Tracing the river of time to explore the past and present of the Morin Khuur. From the misty origins of myths and legends to its brilliant bloom on the world stage.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴的起源可追溯至唐宋时期，据《元史》和《清史稿》等史书记载，马头琴最初的装饰是龙首，后来逐渐演化成为马头的形象，是由唐宋时期的拉弦乐器奚琴逐渐演变而来。至元代，马头琴的前身"火不思"已然出现。清代时，马头琴被称为"潮尔"，是蒙古族宫廷音乐的重要乐器之一。马头琴的音色柔美深沉，极富感染力，常用于演奏蒙古族传统音乐及民间舞蹈和说唱艺术的伴奏，在蒙古族的文化中占据着举足轻重的地位。</p>
+                        <p class="en">The origin of the morin khuur can be traced back to the Tang and Song dynasties. According to historical records such as the 'History of Yuan' and the 'Draft History of Qing,' the morin khuur was initially decorated with a dragon head, which gradually evolved into a horse head design. It developed from the xiqin, a bowed string instrument of the Tang and Song periods. By the Yuan dynasty, the predecessor of the morin khuur, called 'huobusi,' had already appeared. During the Qing dynasty, the morin khuur was known as 'chaor,' and it became one of the important instruments in Mongolian court music.</p>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="history-map">
+                        <img src="assets/历史脉络图.jpg" alt="马头琴历史脉络演化图" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture Section -->
+        <section id="culture" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">文化与故事</h2>
+                    <h3 class="section-title-en">Culture & Stories</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">拨动岁月的琴弦，解码马头琴的文化基因。从草原神话的悠远回响，到跨界融合的焕新吟唱。</p>
+                        <p class="en">Plucking the strings of time, decoding the cultural genes of the Morin Khuur. From the distant echoes of grassland myths to the renewed singing of cross-boundary integration.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴音乐是蒙古族草原游牧文化发展到一定历史阶段彰显其最高精神文化成就的标志性产物，它那独具特色的音色，悠扬、深沉、宽广、抒情的旋律，蕴含了独特的草原游牧审美文化、人文思想和民族精神。</p>
+                        <p class="en">The music of the Morin Khuur is a hallmark of the Mongolian grassland nomadic culture reaching a certain stage of historical development and reflecting its highest achievements in spiritual and cultural expression.</p>
+                    </div>
+                    <div class="bar-chart-section">
+                        <h4 class="subsection-title">代表曲目</h4>
+                        <p class="subsection-desc">记录了18首经典马头琴曲目名称及对应的重要性评分</p>
+                        <div class="bar-chart">
+                            <div class="bar" style="height:100%"><span>万马奔腾</span></div>
+                            <div class="bar" style="height:90%"><span>鸿雁</span></div>
+                            <div class="bar" style="height:85%"><span>苏和的白马</span></div>
+                            <div class="bar" style="height:80%"><span>诺恩吉雅</span></div>
+                            <div class="bar" style="height:95%"><span>达古拉</span></div>
+                            <div class="bar" style="height:70%"><span>梦中的额吉</span></div>
+                            <div class="bar" style="height:75%"><span>黑骏马</span></div>
+                            <div class="bar" style="height:80%"><span>嘎达梅林</span></div>
+                            <div class="bar" style="height:60%"><span>美丽草原我的家</span></div>
+                            <div class="bar" style="height:85%"><span>回想曲</span></div>
+                            <div class="bar" style="height:65%"><span>鄂尔多斯</span></div>
+                            <div class="bar" style="height:75%"><span>百鸟归巢</span></div>
+                            <div class="bar" style="height:50%"><span>乌兰巴托的夜</span></div>
+                            <div class="bar" style="height:40%"><span>十二生肖</span></div>
+                            <div class="bar" style="height:60%"><span>安代舞曲</span></div>
+                            <div class="bar" style="height:70%"><span>初升的太阳</span></div>
+                            <div class="bar" style="height:45%"><span>成吉思汗的两匹骏马</span></div>
+                            <div class="bar" style="height:30%"><span>白音特拉</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-right center-content">
+                    <div class="culture-circle">
+                        <svg class="circle-svg" viewBox="0 0 600 600">
+                            <defs>
+                                <filter id="soft-glow">
+                                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                            </defs>
+
+                            <!-- 外层弧形色环 -->
+                            <g class="arc-ring outer-ring">
+                                <path class="arc" data-group="spirit" d="M 50 300 A 250 250 0 0 1 150 100" fill="none" stroke="#C4B5FD" stroke-width="20" stroke-linecap="round"/>
+                                <path class="arc" data-group="spirit" d="M 160 90 A 250 250 0 0 1 300 50" fill="none" stroke="#FCA5A5" stroke-width="20" stroke-linecap="round"/>
+                                <path class="arc" data-group="school" d="M 310 50 A 250 250 0 0 1 450 100" fill="none" stroke="#FCD34D" stroke-width="20" stroke-linecap="round"/>
+                                <path class="arc" data-group="school" d="M 460 110 A 250 250 0 0 1 550 300" fill="none" stroke="#86EFAC" stroke-width="20" stroke-linecap="round"/>
+                                <path class="arc" data-group="song" d="M 550 310 A 250 250 0 0 1 450 500" fill="none" stroke="#93C5FD" stroke-width="20" stroke-linecap="round"/>
+                                <path class="arc" data-group="song" d="M 440 510 A 250 250 0 0 1 300 550" fill="none" stroke="#FDE047" stroke-width="20" stroke-linecap="round"/>
+                                <path class="arc" data-group="craft" d="M 290 550 A 250 250 0 0 1 150 500" fill="none" stroke="#FCA5A5" stroke-width="20" stroke-linecap="round"/>
+                                <path class="arc" data-group="craft" d="M 140 490 A 250 250 0 0 1 50 310" fill="none" stroke="#93C5FD" stroke-width="20" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- 内层弧形色环 (第二圈) -->
+                            <g class="arc-ring inner-ring">
+                                <path class="arc" data-group="spirit" d="M 130 300 A 170 170 0 0 1 195 170" fill="none" stroke="#C4B5FD" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                                <path class="arc" data-group="spirit" d="M 205 160 A 170 170 0 0 1 300 130" fill="none" stroke="#FCA5A5" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                                <path class="arc" data-group="school" d="M 310 130 A 170 170 0 0 1 410 170" fill="none" stroke="#FCD34D" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                                <path class="arc" data-group="school" d="M 420 180 A 170 170 0 0 1 470 300" fill="none" stroke="#86EFAC" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                                <path class="arc" data-group="song" d="M 470 310 A 170 170 0 0 1 410 430" fill="none" stroke="#93C5FD" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                                <path class="arc" data-group="song" d="M 400 440 A 170 170 0 0 1 300 470" fill="none" stroke="#FDE047" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                                <path class="arc" data-group="craft" d="M 290 470 A 170 170 0 0 1 195 430" fill="none" stroke="#FCA5A5" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                                <path class="arc" data-group="craft" d="M 185 420 A 170 170 0 0 1 130 310" fill="none" stroke="#93C5FD" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                            </g>
+
+                            <!-- 贝塞尔曲线 (文化基因连线) -->
+                            <g class="curves">
+                                <path class="curve" data-group="spirit" d="M 100 300 Q 300 300 500 150" fill="none" stroke="#FCD34D" stroke-width="4" stroke-opacity="0.5"/>
+                                <path class="curve" data-group="school" d="M 150 150 Q 300 300 450 450" fill="none" stroke="#93C5FD" stroke-width="3" stroke-opacity="0.5"/>
+                                <path class="curve" data-group="song" d="M 300 100 Q 300 300 150 450" fill="none" stroke="#FCA5A5" stroke-width="5" stroke-opacity="0.5"/>
+                                <path class="curve" data-group="craft" d="M 500 300 Q 300 300 200 500" fill="none" stroke="#86EFAC" stroke-width="4" stroke-opacity="0.5"/>
+                                <path class="curve" data-group="spirit" d="M 400 100 Q 300 300 100 250" fill="none" stroke="#C4B5FD" stroke-width="6" stroke-opacity="0.5"/>
+                                <path class="curve" data-group="school" d="M 250 500 Q 300 300 500 400" fill="none" stroke="#FDE047" stroke-width="3" stroke-opacity="0.5"/>
+                                <path class="curve" data-group="song" d="M 100 400 Q 300 300 400 100" fill="none" stroke="#6EE7B7" stroke-width="5" stroke-opacity="0.5"/>
+                                <path class="curve" data-group="craft" d="M 450 500 Q 300 300 150 100" fill="none" stroke="#93C5FD" stroke-width="4" stroke-opacity="0.5"/>
+                            </g>
+
+                            <!-- 节点圆点 -->
+                            <g class="data-points">
+                                <circle class="dot" data-group="spirit" cx="100" cy="300" r="5" fill="#FCD34D"/>
+                                <circle class="dot" data-group="spirit" cx="500" cy="150" r="5" fill="#FCD34D"/>
+                                <circle class="dot" data-group="school" cx="150" cy="150" r="5" fill="#93C5FD"/>
+                                <circle class="dot" data-group="school" cx="450" cy="450" r="5" fill="#93C5FD"/>
+                                <circle class="dot" data-group="song" cx="300" cy="100" r="5" fill="#FCA5A5"/>
+                                <circle class="dot" data-group="song" cx="150" cy="450" r="5" fill="#FCA5A5"/>
+                                <circle class="dot" data-group="craft" cx="500" cy="300" r="5" fill="#86EFAC"/>
+                                <circle class="dot" data-group="craft" cx="200" cy="500" r="5" fill="#86EFAC"/>
+                                <!-- 交叉节点 -->
+                                <circle class="dot cross" cx="300" cy="300" r="8" fill="#C48E3C" opacity="0.8"/>
+                            </g>
+
+                            <!-- 中心焦点 -->
+                            <g class="center-hub">
+                                <circle class="hub-outer" cx="300" cy="300" r="40" fill="none" stroke="#C48E3C" stroke-width="1.5" opacity="0.4"/>
+                                <circle class="hub-inner" cx="300" cy="300" r="24" fill="#F5F4EF" stroke="#C48E3C" stroke-width="2"/>
+                                <text x="300" y="296" text-anchor="middle" font-size="11" fill="#C48E3C" font-family="'Noto Sans SC', sans-serif" font-weight="600">马头琴</text>
+                                <text x="300" y="312" text-anchor="middle" font-size="9" fill="#C48E3C" font-family="'Noto Sans SC', sans-serif">文化基因</text>
+                            </g>
+                        </svg>
+
+                        <!-- 标签层 -->
+                        <div class="circle-labels">
+                            <span class="label" data-group="spirit" style="top:8%;left:18%;transform:rotate(-45deg)">自由与辽阔</span>
+                            <span class="label" data-group="spirit" style="top:3%;left:38%;transform:rotate(-12deg)">悲壮与抗争</span>
+                            <span class="label" data-group="spirit" style="top:3%;left:58%;transform:rotate(12deg)">乡愁与思念</span>
+                            <span class="label" data-group="spirit" style="top:8%;right:16%;transform:rotate(45deg)">忠诚与坚守</span>
+
+                            <span class="label" data-group="school" style="bottom:12%;left:12%;transform:rotate(40deg)">呼伦贝尔流派</span>
+                            <span class="label" data-group="school" style="bottom:22%;left:2%;transform:rotate(12deg)">鄂尔多斯流派</span>
+                            <span class="label" data-group="school" style="top:42%;left:0%;transform:rotate(-12deg)">锡林郭勒流派</span>
+                            <span class="label" data-group="school" style="top:58%;left:6%;transform:rotate(-40deg)">科尔沁流派</span>
+
+                            <span class="label" data-group="song" style="right:3%;top:28%">英雄马</span>
+                            <span class="label" data-group="song" style="right:0%;top:38%">潮尔</span>
+                            <span class="label" data-group="song" style="right:-1%;top:48%">阿斯儒</span>
+                            <span class="label" data-group="song" style="right:0%;top:58%">请恩吉雅</span>
+                            <span class="label" data-group="song" style="right:3%;top:68%">八骏之韵</span>
+
+                            <span class="label" data-group="craft" style="bottom:3%;right:28%;transform:rotate(-40deg)">草原连着北京</span>
+                            <span class="label" data-group="craft" style="bottom:1%;right:42%;transform:rotate(-12deg)">初升的太阳</span>
+                            <span class="label" data-group="craft" style="bottom:3%;right:56%;transform:rotate(12deg)">赞歌</span>
+                            <span class="label" data-group="craft" style="bottom:8%;right:68%;transform:rotate(40deg)">四季</span>
+                        </div>
+
+                        <!-- 悬浮提示 -->
+                        <div class="tooltip" style="display:none;"></div>
+
+                        <!-- 交互图例 -->
+                        <div class="chart-legend">
+                            <span class="legend-item" data-group="spirit"><i style="background:#C4B5FD"></i>精神主题</span>
+                            <span class="legend-item" data-group="school"><i style="background:#FCD34D"></i>演奏流派</span>
+                            <span class="legend-item" data-group="song"><i style="background:#93C5FD"></i>代表曲目</span>
+                            <span class="legend-item" data-group="craft"><i style="background:#86EFAC"></i>制作工艺</span>
+                        </div>
+
+                        <!-- 详情面板 -->
+                        <div class="detail-panel" style="display:none;">
+                            <div class="detail-close">&times;</div>
+                            <h4 class="detail-title"></h4>
+                            <p class="detail-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anatomy Section -->
+        <section id="anatomy" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">马头琴结构</h2>
+                    <h3 class="section-title-en">Structure</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">勾勒琴身的脉络，探寻马头琴的构造密码。从琴箱的蒙皮共鸣，到琴杆的笔直传声。</p>
+                        <p class="en">Outlining the veins of the instrument's body, exploring the structural code of the Morin Khuur.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴作为蒙古族最有代表性的乐器之一，由琴体和琴弓两部分组成，并且琴体与琴弓是可以分开的。琴体是由琴头、琴杆、琴箱、琴轴、琴弦、琴码与低音梁等部分组成。</p>
+                        <p class="en">The Morin Khuur, as one of the most representative instruments of the Mongolian ethnic group, is composed of two parts: the instrument body and the bow, and the body and bow can be separated.</p>
+                    </div>
+                    <div class="types-list">
+                        <h4 class="subsection-title">现代马头琴种类</h4>
+                        <div class="type-item"><div class="dot"></div><span class="type-name">琴身正梯形</span><div class="type-shape"><svg viewBox="0 0 40 40"><polygon points="10,5 30,5 35,35 5,35"/></svg></div></div>
+                        <div class="type-item"><div class="dot"></div><span class="type-name">琴身六方形</span><div class="type-shape"><svg viewBox="0 0 40 40"><polygon points="20,5 35,15 35,30 20,40 5,30 5,15"/></svg></div></div>
+                        <div class="type-item"><div class="dot"></div><span class="type-name">琴身八方形</span><div class="type-shape"><svg viewBox="0 0 40 40"><polygon points="15,5 25,5 35,15 35,25 25,35 15,35 5,25 5,15"/></svg></div></div>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="anatomy-diagram">
+                        <img src="assets/morin-khuur-anatomy.svg" alt="马头琴结构分解图" style="width: 100%; height: auto; max-height: 600px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Craftsmanship Section -->
+        <section id="craftsmanship" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left narrow">
+                    <h2 class="section-title-zh">制作工艺</h2>
+                    <h3 class="section-title-en">Craftsmanship</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">描摹造琴的工序，探寻马头琴的音色密码。从琴头的图腾雕刻，到琴马的承振导音。</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">作为一种传统的蒙古族乐器，马头琴以其独特的造型受到人们的广泛关注与喜爱，在 2010 年的时候，马头琴制作技艺就成为内蒙古呼和浩特市非物质文化遗产。据了解，马头琴制作技艺发展至今，大约要经过一百多道工序。</p>
+                        <p class="en">As a traditional Mongolian musical instrument, the morin khuur has attracted wide attention and admiration due to its unique design. In 2010, the craft of making the morin khuur was recognized as intangible cultural heritage in Hohhot, Inner Mongolia.</p>
+                    </div>
+                    <div class="materials-section">
+                        <h4 class="subsection-title">材料 <span class="en-italic">Materials</span></h4>
+                        <p class="subsection-desc">马头琴的材料有五角枫、泡桐和云杉。五角枫用于马头琴的琴身制作。泡桐和云杉用于制作琴箱面板。</p>
+                        <div class="material-cards">
+                            <div class="material-card"><div class="material-texture maple"></div><span>五角枫</span></div>
+                            <div class="material-card"><div class="material-texture paulownia"></div><span>泡桐</span></div>
+                            <div class="material-card"><div class="material-texture spruce"></div><span>鱼鳞云杉</span></div>
+                        </div>
+                    </div>
+                    <div class="tools-section">
+                        <h4 class="subsection-title">工具 <span class="en-italic">Tools</span></h4>
+                        <p class="subsection-desc">马头琴制作过程离不开不同工具的相互配合，每道制作流程使用的工具也不同。</p>
+                        <div class="tool-grid">
+                            <div class="tool-item">Tool</div><div class="tool-item">Tool</div><div class="tool-item">Tool</div>
+                            <div class="tool-item">Tool</div><div class="tool-item">Tool</div><div class="tool-item">Tool</div>
+                            <div class="tool-item">Tool</div><div class="tool-item">Tool</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-right wide">
+                    <div class="craft-grid">
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 1</span></div><span class="craft-label">1. 选取板材</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 2</span></div><span class="craft-label">2. 绘制形状</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 3</span></div><span class="craft-label">3. 切割板材</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 4</span></div><span class="craft-label">4. 打磨边缘</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 5</span></div><span class="craft-label">5. 固定装饰</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 6</span></div><span class="craft-label">6. 深入雕刻马头</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 7</span></div><span class="craft-label">7. 制作调音背板</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 8</span></div><span class="craft-label">8. 固定背板</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 9</span></div><span class="craft-label">9. 背板上漆</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 10</span></div><span class="craft-label">10. 琴杆找平</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 11</span></div><span class="craft-label">11. 琴身上弦</span></div>
+                        <div class="craft-card"><div class="craft-placeholder"><span>Illustration 12</span></div><span class="craft-label">12. 马头琴调音</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heritage Section -->
+        <section id="heritage" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">传承谱系</h2>
+                    <h3 class="section-title-en">Heritage Lineage</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">口传心授的技法，代代相承的匠心。老一辈艺术家与年轻一代的接力，让古老音韵生生不息。</p>
+                        <p class="en">Techniques passed down from master to student, craftsmanship inherited through generations. The relay between veteran artists and younger talents keeps the ancient melodies alive.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴艺术的传承谱系可追溯至近代，色拉西（1887—1968）被公认为近代马头琴艺术的奠基人。他将民间的演奏技法加以整理和规范化，培养了巴拉干、桑都仍等一批杰出弟子。其后齐·宝力高（1944— ）成为国家级代表性传承人，将马头琴推向世界舞台。2006年，蒙古族马头琴音乐被列入首批国家级非物质文化遗产名录。</p>
+                        <p class="en">The lineage of Morin Khuur art can be traced back to modern times. Serashi (1887–1968) is recognized as the founder of modern Morin Khuur art. He organized and standardized folk playing techniques, training outstanding disciples such as Balagan and Sanduren. Subsequently, Qi Baoligao (1944– ) became a national-level representative inheritor, bringing the Morin Khuur to the world stage. In 2006, Mongolian Morin Khuur music was inscribed on the first National List of Intangible Cultural Heritage.</p>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="heritage-tree">
+                        <div class="heritage-gen">
+                            <span class="gen-label">第一代 · 奠基</span>
+                            <div class="heritage-person founder">
+                                <div class="person-avatar" style="background: linear-gradient(135deg, #C48E3C, #1E3A5F);">色</div>
+                                <div class="person-info">
+                                    <h4>色拉西</h4>
+                                    <p>1887 — 1968</p>
+                                    <span class="person-title">近代马头琴艺术奠基人</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heritage-connector">
+                            <svg width="120" height="40" viewBox="0 0 120 40"><path d="M60 0 L60 20 Q60 40 30 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/><path d="M60 0 L60 20 Q60 40 90 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/></svg>
+                        </div>
+                        <div class="heritage-gen">
+                            <span class="gen-label">第二代 · 传承</span>
+                            <div class="heritage-branch">
+                                <div class="heritage-person">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #1E3A5F, #465E47);">巴</div>
+                                    <div class="person-info">
+                                        <h4>巴拉干</h4>
+                                        <p>1916 — 1998</p>
+                                        <span class="person-title">内蒙古流派代表</span>
+                                    </div>
+                                </div>
+                                <div class="heritage-person">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #465E47, #1E3A5F);">桑</div>
+                                    <div class="person-info">
+                                        <h4>桑都仍</h4>
+                                        <p>1924 — 2001</p>
+                                        <span class="person-title">蒙古国流派代表</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heritage-connector">
+                            <svg width="180" height="40" viewBox="0 0 180 40"><path d="M90 0 L90 20 Q90 40 45 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/><path d="M90 0 L90 20 Q90 40 90 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/><path d="M90 0 L90 20 Q90 40 135 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/></svg>
+                        </div>
+                        <div class="heritage-gen">
+                            <span class="gen-label">第三代 · 发扬</span>
+                            <div class="heritage-branch">
+                                <div class="heritage-person highlight">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #C48E3C, #9E4527);">齐</div>
+                                    <div class="person-info">
+                                        <h4>齐·宝力高</h4>
+                                        <p>1944 — </p>
+                                        <span class="person-title">国家级代表性传承人</span>
+                                    </div>
+                                </div>
+                                <div class="heritage-person">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #1E3A5F, #C48E3C);">达</div>
+                                    <div class="person-info">
+                                        <h4>达日玛</h4>
+                                        <p>1945 — </p>
+                                        <span class="person-title">演奏家、教育家</span>
+                                    </div>
+                                </div>
+                                <div class="heritage-person">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #9E4527, #C48E3C);">布</div>
+                                    <div class="person-info">
+                                        <h4>布林</h4>
+                                        <p>1940 — </p>
+                                        <span class="person-title">西部流派大师</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heritage-connector">
+                            <svg width="240" height="40" viewBox="0 0 240 40"><path d="M120 0 L120 20 Q120 40 60 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/><path d="M120 0 L120 20 Q120 40 120 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/><path d="M120 0 L120 20 Q120 40 180 40" stroke="#C48E3C" stroke-width="1.5" fill="none"/></svg>
+                        </div>
+                        <div class="heritage-gen">
+                            <span class="gen-label">第四代 · 新生</span>
+                            <div class="heritage-branch">
+                                <div class="heritage-person young">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #465E47, #C48E3C);">全</div>
+                                    <div class="person-info">
+                                        <h4>全胜</h4>
+                                        <p>1970 — </p>
+                                        <span class="person-title">青年演奏家</span>
+                                    </div>
+                                </div>
+                                <div class="heritage-person young">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #C48E3C, #465E47);">陈</div>
+                                    <div class="person-info">
+                                        <h4>陈巴雅尔</h4>
+                                        <p>1975 — </p>
+                                        <span class="person-title">教育传承人</span>
+                                    </div>
+                                </div>
+                                <div class="heritage-person young">
+                                    <div class="person-avatar" style="background: linear-gradient(135deg, #1E3A5F, #465E47);">其</div>
+                                    <div class="person-info">
+                                        <h4>其日麦拉图</h4>
+                                        <p>1982 — </p>
+                                        <span class="person-title">新生代代表</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Section -->
+        <section id="performance" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">演奏</h2>
+                    <h3 class="section-title-en">Performance</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">勾勒琴身的脉络，探寻马头琴的构造密码。从琴箱的蒙皮共鸣，到琴杆的笔直传声。</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴是一种演奏技巧颇为复杂的乐器必须注意各部位的互相协调，用弓时右手持弓法虽与二胡相似但却有差别。由于马头琴弦是多股尼龙弦，右手要使马头琴发出纯正的乐音所需的力气要比二胡大得多，同时需要无名指和小指施加不同的压力。</p>
+                        <p class="en">The morin khuur is an instrument with rather complex playing techniques, requiring careful coordination of its various parts. While the right-hand bowing technique is similar to that of the erhu, there are differences.</p>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="performance-grid">
+                        <div class="performance-posture">
+                            <span class="perf-label">Performance Posture</span>
+                            <span class="perf-desc">Technical drawing of player holding the instrument.</span>
+                        </div>
+                        <div class="performance-detail">
+                            <p class="zh small">演奏马头琴时，演奏者通常采取坐姿，将琴箱夹于两腿中间，琴杆偏向左侧，左手虎口稍张开，拇指微扶琴杆。在低把位上，用食指、中指的指甲顶弦，无名指按弦、小指指尖顶弦。</p>
+                            <div class="hand-detail"><span>Hand Fingering Detail</span></div>
+                        </div>
+                        <div class="fingering-section">
+                            <div class="fingering-chart">
+                                <h4 class="fingering-title">马头琴音位、把位及指法示意图</h4>
+                                <div class="fingering-placeholder"><span>Fingering Chart</span></div>
+                            </div>
+                            <div class="fingering-text">
+                                <div><strong>第一把位 (A调)：</strong>基础把位，最常用于低音区。<br>左弦 (A弦)：A (空弦) → B (1) → C# (2) → D (3) → E (4)<br>右弦 (D弦)：D (空弦) → E (1) → F# (2) → G (3) → A (4)</div>
+                                <div><strong>第二把位 (G调)：</strong>中音区的常用把位。<br>左弦 (A弦)：G (1) → A (2) → B (3) → C (4) → D (空弦)</div>
+                                <div><strong>第三把位 (D调)：</strong>高音区的转换把位。<br>左弦 (A弦)：D (1) → E (2) → F# (3) → G (4) → A (空弦)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">Gene Atlas.</div>
+                <p class="footer-desc">马头琴文化基因图谱 — 一个数字化档案项目，通过现代技术手段记录和传承马头琴这一珍贵的非物质文化遗产。</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="#hero">首页</a>
+                    <a href="#history">历史脉络</a>
+                    <a href="#culture">文化与故事</a>
+                    <a href="#craftsmanship">制作工艺</a>
+                </div>
+                <p class="footer-copy">&copy; 2026 Gene Atlas: Morin Khuur. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="返回顶部">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

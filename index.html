@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Gene Atlas: Morin Khuur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.appfix.css">
+    <link rel="stylesheet" href="css/patterns-section.css">
+    <link rel="stylesheet" href="css/music-classification.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+    <!-- Grid Background Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Side Navigation -->
+    <aside class="side-nav">
+        <div class="side-nav-inner">
+            <a href="#hero" class="side-link active" data-section="hero">
+                <span class="side-dot"></span>
+                <span class="side-label">首页</span>
+            </a>
+            <a href="#anatomy" class="side-link" data-section="anatomy">
+                <span class="side-dot"></span>
+                <span class="side-label">结构与器型</span>
+            </a>
+            <a href="#history" class="side-link" data-section="history">
+                <span class="side-dot"></span>
+                <span class="side-label">历史脉络</span>
+            </a>
+            <a href="#craftsmanship" class="side-link" data-section="craftsmanship">
+                <span class="side-dot"></span>
+                <span class="side-label">制作工艺</span>
+            </a>
+            <a href="#instrument-types" class="side-link" data-section="instrument-types">
+                <span class="side-dot"></span>
+                <span class="side-label">马头琴样本展示</span>
+            </a>
+            <a href="#patterns" class="side-link" data-section="patterns">
+                <span class="side-dot"></span>
+                <span class="side-label">马头琴纹样</span>
+            </a>
+            <a href="#culture" class="side-link" data-section="culture">
+                <span class="side-dot"></span>
+                <span class="side-label">文化与故事</span>
+            </a>
+            <a href="#music-classification" class="side-link" data-section="music-classification">
+                <span class="side-dot"></span>
+                <span class="side-label">音乐分类</span>
+            </a>
+            <a href="#performance" class="side-link" data-section="performance">
+                <span class="side-dot"></span>
+                <span class="side-label">演奏</span>
+            </a>
+            <a href="#heritage" class="side-link" data-section="heritage">
+                <span class="side-dot"></span>
+                <span class="side-label">传承与发展</span>
+            </a>
+            <a href="#application" class="side-link" data-section="application">
+                <span class="side-dot"></span>
+                <span class="side-label">应用场景</span>
+            </a>
+            <a href="#epilogue" class="side-link" data-section="epilogue">
+                <span class="side-dot"></span>
+                <span class="side-label">终章</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">Gene Atlas.</div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-direct-link">首页</a>
+
+            <div class="nav-group">
+                <button class="nav-group-trigger" type="button">形制</button>
+                <div class="nav-dropdown">
+                    <a href="#anatomy">马头琴结构与器型</a>
+                    <a href="#instrument-types">马头琴样本展示</a>
+                    <a href="#patterns">马头琴纹样</a>
+                </div>
+            </div>
+
+            <div class="nav-group">
+                <button class="nav-group-trigger" type="button">溯源</button>
+                <div class="nav-dropdown">
+                    <a href="#history">历史脉络</a>
+                    <a href="#culture">文化与故事</a>
+                    <a href="#music-classification">音乐分类</a>
+                </div>
+            </div>
+
+            <div class="nav-group">
+                <button class="nav-group-trigger" type="button">工艺与演奏</button>
+                <div class="nav-dropdown">
+                    <a href="#craftsmanship">制作工艺</a>
+                    <a href="#performance">演奏</a>
+                </div>
+            </div>
+
+            <div class="nav-group">
+                <button class="nav-group-trigger" type="button">传承</button>
+                <div class="nav-dropdown">
+                    <a href="#heritage">传承与发展</a>
+                    <a href="#application">应用场景</a>
+                </div>
+            </div>
+
+            <a href="#epilogue" class="nav-direct-link">终章</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section (from v1) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg">
+                <div class="hero-image"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-main">
+                    <div class="hero-text">
+                        <h1 class="hero-title">MORIN<br><span>KHUUR</span></h1>
+                        <div class="hero-subtitle">
+                            <p>A digital archive mapping the cultural DNA, acoustic heritage, and traditional craftsmanship of the Mongolian horsehead fiddle through flowing parametric structures.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer class="hero-footer">
+                    <div class="hero-meta">
+                        <span>Vol. I — <strong>内蒙古非物质文化遗产</strong></span>
+                        <span>Coordinates: 40.8420° N, 111.7500° E (Hohhot)</span>
+                    </div>
+                    <div class="scroll-indicator">
+                        <span class="scroll-text">Discover</span>
+                        <div class="scroll-line"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <span class="dash-number">2000+</span>
+                    <span class="dash-unit">年</span>
+                    <span class="dash-label">历史传承</span>
+                    <p class="dash-desc">起源于唐宋时期的拉弦乐器奚琴</p>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dash-number">100</span>
+                    <span class="dash-unit">+</span>
+                    <span class="dash-label">道制作工序</span>
+                    <p class="dash-desc">琴头、琴杆、琴箱三大核心环节</p>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dash-number">2006</span>
+                    <span class="dash-unit">年</span>
+                    <span class="dash-label">国家级非遗</span>
+                    <p class="dash-desc">首批列入国家级非物质文化遗产名录</p>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dash-number">2009</span>
+                    <span class="dash-unit">年</span>
+                    <span class="dash-label">世界级非遗</span>
+                    <p class="dash-desc">入选联合国教科文组织人类非物质文化遗产代表作名录</p>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dash-number">4</span>
+                    <span class="dash-unit">大</span>
+                    <span class="dash-label">演奏流派</span>
+                    <p class="dash-desc">科尔沁、锡林郭勒、鄂尔多斯、呼伦贝尔</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Icon Component -->
+        <!-- History Section -->
+        <section id="history" class="content-section history-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="8" cy="6" r="2" fill="#F5F4EF"/><circle cx="16" cy="12" r="2" fill="#F5F4EF"/><circle cx="8" cy="18" r="2" fill="#F5F4EF"/>
+                </svg>
+            </div>
+            <div class="section-body history-section-body history-section-body--split">
+                <div class="history-module history-module--split">
+                    <div class="main-layout history-main-layout">
+                        <div class="narrative-col history-narrative-col">
+                                <div class="history-copy-head">
+                                    <div class="history-header-label">Historical Lineage</div>
+                                    <h2 class="section-title-zh">历史脉络</h2>
+                                    <h3 class="section-title-en">The Evolution of Morin Khuur</h3>
+                                    <div class="divider"></div>
+                                    <div class="bilingual-block">
+                                        <p class="zh">马头琴的起源可追溯至唐宋时期的拉弦乐器奚琴，最初以龙首为饰，后逐渐演化为马头形象。从宫廷雅乐到草原牧歌，从区域流派到国家级非遗，这把琴承载了蒙古族两千年的文化记忆。以下分三个阶段，追溯它的前世今生。</p>
+                                        <p class="en">The story of the Morin Khuur begins with earlier bowed instruments of the Tang and Song periods, evolves through court and grassland exchange, and reaches its modern cultural form through technical refinement and heritage transmission.</p>
+                                    </div>
+                                    <p class="history-reading-note">按左侧幕次切换，右侧同步显示该阶段的核心演化路径。</p>
+                                </div>
+
+                                <div class="progress-bar history-progress-bar">
+                                    <div class="progress-line"><div class="progress-line-fill" id="historyProgressFill"></div></div>
+                                    <button class="progress-step active" type="button" data-history-step="0">
+                                        <div class="dot"></div>
+                                        <div class="step-label">起源</div>
+                                        <div class="step-era">唐宋以前</div>
+                                    </button>
+                                    <button class="progress-step" type="button" data-history-step="1">
+                                        <div class="dot"></div>
+                                        <div class="step-label">演变</div>
+                                        <div class="step-era">元 → 清</div>
+                                    </button>
+                                    <button class="progress-step" type="button" data-history-step="2">
+                                        <div class="dot"></div>
+                                        <div class="step-label">定型</div>
+                                        <div class="step-era">清末至今</div>
+                                    </button>
+                                </div>
+
+                                <div class="act-container">
+                                    <div class="act visible" data-history-act="0">
+                                        <div class="act-kicker">第一幕 · 起源</div>
+                                        <div class="act-number">01</div>
+                                        <div class="act-title">起源</div>
+                                        <div class="act-title-en">Origins — Tang & Song Dynasties</div>
+                                        <div class="act-body">马头琴的前身可追溯至唐宋时期的拉弦乐器奚琴。奚琴最早见于唐代文献，以竹片轧弦发声，是北方游牧民族与中原文化交流的产物。据《元史》记载，早期的马头琴类乐器琴首装饰为龙首，这与中原宫廷乐器的传统一脉相承。</div>
+                                        <div class="act-body-en">The predecessor of the Morin Khuur can be traced to the xiqin, a bowed string instrument of the Tang and Song dynasties. Early versions featured a dragon-head decoration, reflecting Central Plains court traditions.</div>
+                                        <div class="key-moment">
+                                            <div class="km-label">关键转折</div>
+                                            <div class="km-text">奚琴从弹拨向拉弦的转变，奠定了马头琴"以弓擦弦"的基本发声原理。这一变化使音色从短促清脆变为绵长深沉，更适合表现草原的辽阔意境。</div>
+                                        </div>
+                                        <div class="branches">
+                                            <button class="branch-toggle" type="button" data-branch-toggle>
+                                                <span class="arrow">▶</span> 同时期其他乐器
+                                            </button>
+                                            <div class="branch-list">
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">托布秀尔</span>
+                                                        <span class="bi-era">弹拨乐器</span>
+                                                    </div>
+                                                    <div class="bi-desc">蒙古族传统弹拨乐器，两弦，音箱呈方形，常用于伴奏说唱艺术。</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="act" data-history-act="1">
+                                        <div class="act-kicker">第二幕 · 演变</div>
+                                        <div class="act-number">02</div>
+                                        <div class="act-title">演变</div>
+                                        <div class="act-title-en">Transformation — Yuan to Qing</div>
+                                        <div class="act-body">元代时，马头琴的前身"火不思"已经出现，这是一种四弦弹拨乐器，流行于蒙古宫廷。至明清时期，拉弦乐器"潮尔"在蒙古草原广泛流传，琴首装饰逐渐从龙首演变为马头，这一变化反映了蒙古族对马的深厚感情从宫廷符号转向草原信仰。</div>
+                                        <div class="act-body-en">By the Yuan dynasty, the "huobusi" had emerged. During the Ming-Qing period, the bowed "chaor" spread across the grasslands, and the dragon-head decoration gradually transformed into a horse head.</div>
+                                        <div class="key-moment">
+                                            <div class="km-label">关键转折</div>
+                                            <div class="km-text">龙首变马头，这不是简单的装饰替换，而是文化认同的转变。龙是中原皇权的象征，马是蒙古族生命的一部分。琴首的更迭，标志着这件乐器从"宫廷礼器"走向"草原之魂"。</div>
+                                        </div>
+                                        <div class="branches">
+                                            <button class="branch-toggle" type="button" data-branch-toggle>
+                                                <span class="arrow">▶</span> 元明清时期相关乐器
+                                            </button>
+                                            <div class="branch-list">
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">火不思</span>
+                                                        <span class="bi-era">元代 · 弹拨</span>
+                                                    </div>
+                                                    <div class="bi-desc">四弦弹拨乐器，梨形音箱，流行于元代蒙古宫廷。后传入中原，清代被收入宫廷乐器编制。</div>
+                                                </div>
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">潮尔</span>
+                                                        <span class="bi-era">明清 · 拉弦</span>
+                                                    </div>
+                                                    <div class="bi-desc">双弦拉弦乐器，是马头琴最直接的前身。"潮尔"也是马头琴在清代的名称。</div>
+                                                </div>
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">胡琴</span>
+                                                        <span class="bi-era">唐宋 · 拉弦</span>
+                                                    </div>
+                                                    <div class="bi-desc">北方游牧民族的拉弦乐器泛称，与奚琴并行发展。</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="act" data-history-act="2">
+                                        <div class="act-kicker">第三幕 · 定型</div>
+                                        <div class="act-number">03</div>
+                                        <div class="act-title">定型</div>
+                                        <div class="act-title-en">Standardization — Late Qing to Present</div>
+                                        <div class="act-body">清末至民国时期，马头琴的形制逐渐固定。色拉西（1887—1968）将民间散落的演奏技法加以整理，培养了巴拉干、桑都仍等弟子，奠定了现代马头琴艺术的基础。1949年后，马头琴经历了从两弦到四弦的技术革新。</div>
+                                        <div class="act-body-en">From the late Qing to the Republic, the form gradually stabilized. Serashi organized scattered folk techniques. In 2006, it was inscribed on China's first National Intangible Cultural Heritage list.</div>
+                                        <div class="key-moment">
+                                            <div class="km-label">里程碑</div>
+                                            <div class="km-text">2006年列入首批国家级非遗名录。2008年北京奥运会开幕式演奏。2009年入选联合国教科文组织"人类非物质文化遗产代表作名录"。</div>
+                                        </div>
+                                        <div class="history-subpanel">
+                                            <div class="history-subpanel-label">当代表达 / Contemporary Lineages</div>
+                                            <p class="history-subpanel-text">在完成现代定型之后，马头琴逐步形成更加清晰的区域演奏传统，并在舞台化、学院化与国际传播中持续扩展其表现边界。</p>
+                                        </div>
+                                        <div class="branches">
+                                            <button class="branch-toggle" type="button" data-branch-toggle>
+                                                <span class="arrow">▶</span> 四大演奏流派
+                                            </button>
+                                            <div class="branch-list">
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">科尔沁流派</span>
+                                                        <span class="bi-era">东部</span>
+                                                    </div>
+                                                    <div class="bi-desc">音色深沉、技法古朴，以叙事性见长，代表人物色拉西。</div>
+                                                </div>
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">锡林郭勒流派</span>
+                                                        <span class="bi-era">中部</span>
+                                                    </div>
+                                                    <div class="bi-desc">音色宽广、旋律舒展，擅长表现草原的辽阔意境。</div>
+                                                </div>
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">鄂尔多斯流派</span>
+                                                        <span class="bi-era">西部</span>
+                                                    </div>
+                                                    <div class="bi-desc">节奏明快、技巧华丽，代表人物齐·宝力高。</div>
+                                                </div>
+                                                <div class="branch-item">
+                                                    <div class="branch-item-head">
+                                                        <span class="bi-name">呼伦贝尔流派</span>
+                                                        <span class="bi-era">北部</span>
+                                                    </div>
+                                                    <div class="bi-desc">音色柔美、抒情细腻，受到布里亚特蒙古音乐影响。</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="act-nav">
+                                    <button class="act-nav-btn" id="historyPrevBtn" type="button" disabled>
+                                        <span class="btn-arrow">←</span> 上一幕
+                                    </button>
+                                    <span class="act-nav-center" id="historyActCounter">1 / 3</span>
+                                    <button class="act-nav-btn" id="historyNextBtn" type="button">
+                                        下一幕 <span class="btn-arrow">→</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        <div class="chart-col history-chart-col">
+                            <div class="chart-wrapper history-chart-wrapper">
+                                    <div class="history-chart-header">
+                                        <div class="history-chart-topline">
+                                            <span class="history-chart-kicker">Lineage Diagram / 谱系图谱</span>
+                                            <span class="history-chart-mode">Stage-synced View</span>
+                                        </div>
+                                        <div class="chart-act-indicator"><span id="historyChartActLabel">第一幕 · 起源</span></div>
+                                        <div class="history-chart-note">按左侧幕次同步阅读图谱</div>
+                                    </div>
+                                    <div class="region-labels">
+                                        <span class="region-label rl-court">清朝京师<br>宫廷区</span>
+                                        <span class="region-label rl-mixed">中原<br>融合区</span>
+                                        <span class="region-label rl-core">蒙古高原<br>核心区</span>
+                                    </div>
+                                    <div class="chart-legend">
+                                        <span><i class="legend-line legend-line-solid"></i>主线演化</span>
+                                        <span><i class="legend-line legend-line-dashed"></i>旁支关联</span>
+                                        <span><i class="legend-chip"></i>当前阶段核心</span>
+                                    </div>
+                                    <svg class="evolution-chart" viewBox="0 0 800 480" id="historyEvolutionChart">
+                                        <line x1="0" y1="160" x2="800" y2="160" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4" class="grid-line"/>
+                                        <line x1="0" y1="320" x2="800" y2="320" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4" class="grid-line"/>
+                                        <path class="curve main-line" data-act="0" d="M 80 280 Q 150 260 200 240" fill="none" stroke="#EC4899" stroke-width="2"/>
+                                        <path class="curve" data-act="0" d="M 80 280 Q 120 300 160 320" fill="none" stroke="#EC4899" stroke-width="1.5" stroke-dasharray="5,5"/>
+                                        <path class="curve main-line" data-act="1" d="M 200 240 Q 280 220 350 260" fill="none" stroke="#EC4899" stroke-width="2"/>
+                                        <path class="curve" data-act="1" d="M 200 240 Q 250 280 310 308" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+                                        <path class="curve" data-act="1" d="M 160 320 Q 250 320 310 308" fill="none" stroke="#EC4899" stroke-width="1.5" stroke-dasharray="5,5"/>
+                                        <path class="curve main-line" data-act="1" d="M 350 260 Q 400 280 450 280" fill="none" stroke="#EC4899" stroke-width="2"/>
+                                        <path class="curve" data-act="1" d="M 310 320 Q 380 300 450 280" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+                                        <path class="curve main-line" data-act="2" d="M 450 280 Q 520 270 580 260" fill="none" stroke="#EC4899" stroke-width="3"/>
+                                        <path class="curve" data-act="2" d="M 580 260 Q 620 240 660 200" fill="none" stroke="#EC4899" stroke-width="2"/>
+                                        <path class="curve" data-act="2" d="M 580 260 Q 620 280 660 300" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+                                        <path class="curve" data-act="2" d="M 580 260 Q 620 260 660 260" fill="none" stroke="#EC4899" stroke-width="2"/>
+                                        <path class="curve" data-act="2" d="M 580 260 Q 620 320 660 360" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+                                        <g class="inst-tag tier-core" data-act="0" data-name="xiqin" data-note="起点：唐宋时期的拉弦乐器奚琴，被视为马头琴的远源。"><rect x="30" y="268" width="60" height="24" rx="3" class="tag-bg tag-main"/><text x="60" y="284" text-anchor="middle" class="tag-text tag-main-text">奚琴</text></g>
+                                        <g class="inst-tag tier-core" data-act="1" data-name="huobusi" data-note="元代四弦弹拨乐器，流行于蒙古宫廷。"><rect x="168" y="226" width="64" height="24" rx="3" class="tag-bg tag-main"/><text x="200" y="242" text-anchor="middle" class="tag-text tag-main-text">火不思</text></g>
+                                        <g class="inst-tag tier-related" data-act="1" data-name="hule" data-note="北方游牧民族拉弦乐器的泛称，与奚琴并行发展。"><rect x="128" y="308" width="64" height="24" rx="3" class="tag-bg"/><text x="160" y="324" text-anchor="middle" class="tag-text">胡琴</text></g>
+                                        <g class="inst-tag tier-related" data-act="1" data-name="maweihu" data-note="体现马尾弦传统与草原演奏系统的连接。"><rect x="288" y="200" width="80" height="24" rx="3" class="tag-bg"/><text x="328" y="216" text-anchor="middle" class="tag-text">马尾胡琴</text></g>
+                                        <g class="inst-tag tier-core" data-act="1" data-name="choor" data-note="草原地区广泛流传的拉弦乐器，是马头琴的重要前身。"><rect x="310" y="308" width="80" height="24" rx="3" class="tag-bg tag-main"/><text x="350" y="324" text-anchor="middle" class="tag-text tag-main-text">潮尔</text></g>
+                                        <g class="inst-tag tier-core" data-act="1" data-name="chaoer" data-note="清代对马头琴前身的常见称谓。"><rect x="418" y="268" width="64" height="24" rx="3" class="tag-bg tag-main"/><text x="450" y="284" text-anchor="middle" class="tag-text tag-main-text">潮尔</text></g>
+                                        <g class="inst-tag tier-core" data-act="2" data-name="chaor" data-note="现代马头琴成形前的关键承接节点。"><rect x="540" y="248" width="80" height="24" rx="3" class="tag-bg tag-main"/><text x="580" y="264" text-anchor="middle" class="tag-text tag-main-text">潮尔</text></g>
+                                        <g class="inst-tag tier-final" data-act="2" data-name="modern" data-note="两弦到四弦的技术革新后，形成当代舞台与教学体系中的现代马头琴。"><rect x="620" y="244" width="100" height="32" rx="3" class="tag-bg tag-final"/><text x="670" y="258" text-anchor="middle" class="tag-text tag-final-text">现代</text><text x="670" y="272" text-anchor="middle" class="tag-text tag-final-text">马头琴</text></g>
+                                        <g class="inst-tag tier-branch" data-act="2" data-name="korqin" data-note="东部流派，音色深沉，叙事性强。"><rect x="628" y="188" width="80" height="24" rx="3" class="tag-bg tag-branch"/><text x="668" y="204" text-anchor="middle" class="tag-text">科尔沁流派</text></g>
+                                        <g class="inst-tag tier-branch" data-act="2" data-name="xilingol" data-note="中部流派，旋律舒展，擅长表现草原辽阔感。"><rect x="628" y="288" width="80" height="24" rx="3" class="tag-bg tag-branch"/><text x="668" y="304" text-anchor="middle" class="tag-text">锡林郭勒</text></g>
+                                        <g class="inst-tag tier-branch" data-act="2" data-name="ordos" data-note="西部流派，节奏明快，技巧华丽。"><rect x="628" y="348" width="80" height="24" rx="3" class="tag-bg tag-branch"/><text x="668" y="364" text-anchor="middle" class="tag-text">鄂尔多斯</text></g>
+                                        <g class="inst-tag tier-branch" data-act="2" data-name="hulunbuir" data-note="北部流派，音色柔美，抒情细腻。"><rect x="628" y="148" width="80" height="24" rx="3" class="tag-bg tag-branch"/><text x="668" y="164" text-anchor="middle" class="tag-text">呼伦贝尔</text></g>
+                                        <g class="turn-marker" data-act="1"><circle cx="380" cy="170" r="24" fill="rgba(196, 142, 60, 0.08)" stroke="#C48E3C" stroke-width="2"/><text x="380" y="164" text-anchor="middle" fill="#9E4527" font-size="9" font-family="'Noto Sans SC', sans-serif">龙首 → 马头</text><text x="380" y="178" text-anchor="middle" fill="#C48E3C" font-size="6.5" font-family="'Inter', sans-serif">identity turn</text></g>
+                                        <text x="54" y="258" class="chart-origin-label">Origin</text>
+                                    </svg>
+                                    <div class="chart-timeline">
+                                        <div class="chart-timeline-band" id="historyTimelineBand"></div>
+                                        <span>唐</span><span>宋</span><span>元</span><span>明</span><span>清</span><span>民国</span><span>现代</span>
+                                    </div>
+                                    <div class="chart-tooltip" id="historyChartTooltip"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="culture" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">文化与故事</h2>
+                    <h3 class="section-title-en">Culture & Stories</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">拨动岁月的琴弦，解码马头琴的文化基因。从草原神话的悠远回响，到跨界融合的焕新吟唱。</p>
+                        <p class="en">Plucking the strings of time, decoding the cultural genes of the Morin Khuur. From the distant echoes of grassland myths to the renewed singing of cross-boundary integration.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴音乐是蒙古族草原游牧文化发展到一定历史阶段彰显其最高精神文化成就的标志性产物，它那独具特色的音色，悠扬、深沉、宽广、抒情的旋律，蕴含了独特的草原游牧审美文化、人文思想和民族精神。</p>
+                        <p class="en">The music of the Morin Khuur is a hallmark of the Mongolian grassland nomadic culture reaching a certain stage of historical development and reflecting its highest achievements in spiritual and cultural expression.</p>
+                    </div>
+                    <div class="bar-chart-section">
+                        <h4 class="subsection-title">音乐分类</h4>
+                        <p class="subsection-desc">记录了18首经典马头琴曲目名称及对应的重要性评分</p>
+                        <div class="bar-chart">
+                            <div class="bar" style="height:100%"><span>万马奔腾</span></div>
+                            <div class="bar" style="height:90%"><span>鸿雁</span></div>
+                            <div class="bar" style="height:85%"><span>苏和的白马</span></div>
+                            <div class="bar" style="height:80%"><span>诺恩吉雅</span></div>
+                            <div class="bar" style="height:95%"><span>达古拉</span></div>
+                            <div class="bar" style="height:70%"><span>梦中的额吉</span></div>
+                            <div class="bar" style="height:75%"><span>黑骏马</span></div>
+                            <div class="bar" style="height:80%"><span>嘎达梅林</span></div>
+                            <div class="bar" style="height:60%"><span>美丽草原我的家</span></div>
+                            <div class="bar" style="height:85%"><span>回想曲</span></div>
+                            <div class="bar" style="height:65%"><span>鄂尔多斯</span></div>
+                            <div class="bar" style="height:75%"><span>百鸟归巢</span></div>
+                            <div class="bar" style="height:50%"><span>乌兰巴托的夜</span></div>
+                            <div class="bar" style="height:40%"><span>十二生肖</span></div>
+                            <div class="bar" style="height:60%"><span>安代舞曲</span></div>
+                            <div class="bar" style="height:70%"><span>初升的太阳</span></div>
+                            <div class="bar" style="height:45%"><span>成吉思汗的两匹骏马</span></div>
+                            <div class="bar" style="height:30%"><span>白音特拉</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div id="culture-chord-container" class="chord-container">
+                        <div class="chord-title">文化基因关联图谱</div>
+                        <div id="culture-chord-chart"></div>
+                        <div class="chord-tooltip" id="chord-tooltip"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 音乐类别 Section -->
+        <section id="music-classification" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="music-class-layout">
+                    <div class="music-class-left">
+                        <div class="music-class-intro">
+                            <h2 class="section-title-zh">音乐类别</h2>
+                            <h3 class="section-title-en">Music Classification</h3>
+                        </div>
+
+                        <div class="bilingual-block music-class-copy">
+                            <p class="zh">从马头琴音乐古往今来的风格内容来分析，有关马头琴音乐的产生、演变、形成与发展的过程，经历了近千年的历史。马头琴音乐在漫长的历史发展过程中，由最初的简单的娱乐形式，逐渐发展成为具有独特风格和完整体系的民族音乐形式。</p>
+                            <p class="en">Analyzing the styles and content of morin khuur music throughout history, the process of its emergence, evolution, formation, and development spans nearly a thousand years. Throughout this lengthy historical development, morin khuur music gradually evolved from simple forms of entertainment into a national musical form with unique characteristics and a complete system.</p>
+                        </div>
+
+                        <div class="music-class-basis">
+                            <div class="music-class-basis-label">分类依据</div>
+                            <p class="music-class-basis-text">依据演出场域、叙事方式与情感表达，马头琴音乐可大致归纳为宫廷音乐、乌力格尔说唱演奏、叙事音乐与抒情民谣音乐四类，形成从礼仪展演到民间抒怀的完整谱系。</p>
+                        </div>
+                    </div>
+
+                    <div class="music-class-right">
+                        <div class="music-class-group-label">
+                            <span class="group-label-text">独奏类</span>
+                        </div>
+                        <article class="music-card music-card--solo" data-category="solo">
+                            <div class="music-card-topline"></div>
+                            <div class="music-card-head">
+                                <div class="music-card-catalog">
+                                    <span class="music-card-catalog-label">Archive No.</span>
+                                    <span class="music-card-index">01</span>
+                                </div>
+                                <div class="music-card-heading-group">
+                                    <div class="music-card-header-tag">Archive Class · 乐种档案</div>
+                                    <div class="music-card-record">
+                                        <span class="music-card-record-label">Collection</span>
+                                        <span class="music-card-record-code">MK-GEN / SOLO</span>
+                                    </div>
+                                    <h4 class="music-card-title">塔特勒格</h4>
+                                    <p class="music-card-en">Tatleger</p>
+                                </div>
+                            </div>
+                            <div class="music-card-illust">
+                                <img src="assets/music-classification/tatleger.png" alt="塔特勒格插画">
+                            </div>
+                            <div class="music-card-body">
+                                <p class="music-card-position">定位 / 马头琴最具代表性的独奏曲目类型</p>
+                                <div class="music-card-meta">
+                                    <span>技巧性强</span>
+                                    <span>旋律华丽</span>
+                                    <span>节奏鲜明</span>
+                                </div>
+                                <p class="music-card-desc">马头琴最具代表性的独奏曲目类型，技巧性强，旋律华丽，节奏鲜明，类似汉族音乐中的"牌子曲"或"独奏曲"。代表作品：《塔特勒格》《黑骏马》等。</p>
+                            </div>
+                        </article>
+
+                        <article class="music-card music-card--rap" data-category="rap">
+                            <div class="music-card-topline"></div>
+                            <div class="music-card-head">
+                                <div class="music-card-catalog">
+                                    <span class="music-card-catalog-label">Archive No.</span>
+                                    <span class="music-card-index">02</span>
+                                </div>
+                                <div class="music-card-heading-group">
+                                    <div class="music-card-header-tag">Archive Class · 乐种档案</div>
+                                    <div class="music-card-record">
+                                        <span class="music-card-record-label">Collection</span>
+                                        <span class="music-card-record-code">MK-GEN / ASAR</span>
+                                    </div>
+                                    <h4 class="music-card-title">阿斯尔</h4>
+                                    <p class="music-card-en">Asar</p>
+                                </div>
+                            </div>
+                            <div class="music-card-illust">
+                                <img src="assets/music-classification/asar.png" alt="阿斯尔插画">
+                            </div>
+                            <div class="music-card-body">
+                                <p class="music-card-position">定位 / 蒙古族宫廷与宴乐风格的器乐套曲</p>
+                                <div class="music-card-meta">
+                                    <span>节奏规整</span>
+                                    <span>典雅庄重</span>
+                                    <span>宫廷宴乐</span>
+                                </div>
+                                <p class="music-card-desc">蒙古族宫廷与宴乐风格的器乐套曲，节奏规整，典雅庄重，在婚礼、那达慕等隆重庆典中广为演奏。</p>
+                            </div>
+                        </article>
+
+                        <div class="music-class-group-label">
+                            <span class="group-label-text">伴奏类</span>
+                        </div>
+
+                        <article class="music-card music-card--long" data-category="long">
+                            <div class="music-card-topline"></div>
+                            <div class="music-card-head">
+                                <div class="music-card-catalog">
+                                    <span class="music-card-catalog-label">Archive No.</span>
+                                    <span class="music-card-index">03</span>
+                                </div>
+                                <div class="music-card-heading-group">
+                                    <div class="music-card-header-tag">Archive Class · 乐种档案</div>
+                                    <div class="music-card-record">
+                                        <span class="music-card-record-label">Collection</span>
+                                        <span class="music-card-record-code">MK-GEN / LONG</span>
+                                    </div>
+                                    <h4 class="music-card-title">长调伴奏</h4>
+                                    <p class="music-card-en">Urtiin Duu Accompaniment</p>
+                                </div>
+                            </div>
+                            <div class="music-card-illust">
+                                <img src="assets/music-classification/longsong.png" alt="长调伴奏插画">
+                            </div>
+                            <div class="music-card-body">
+                                <p class="music-card-position">定位 / 为蒙古族长调民歌伴奏的演奏形式</p>
+                                <div class="music-card-meta">
+                                    <span>节奏自由</span>
+                                    <span>旋律悠长</span>
+                                    <span>气息宽广</span>
+                                </div>
+                                <p class="music-card-desc">为蒙古族长调民歌伴奏。长调：节奏自由、旋律悠长、气息宽广。马头琴与长调歌手的配合是天作之合，伴奏时注重托腔保调，跟随歌手的自由节奏。</p>
+                            </div>
+                        </article>
+
+                        <article class="music-card music-card--folk" data-category="folk">
+                            <div class="music-card-topline"></div>
+                            <div class="music-card-head">
+                                <div class="music-card-catalog">
+                                    <span class="music-card-catalog-label">Archive No.</span>
+                                    <span class="music-card-index">04</span>
+                                </div>
+                                <div class="music-card-heading-group">
+                                    <div class="music-card-header-tag">Archive Class · 乐种档案</div>
+                                    <div class="music-card-record">
+                                        <span class="music-card-record-label">Collection</span>
+                                        <span class="music-card-record-code">MK-GEN / SHORT</span>
+                                    </div>
+                                    <h4 class="music-card-title">短调伴奏</h4>
+                                    <p class="music-card-en">Bogino Duu Accompaniment</p>
+                                </div>
+                            </div>
+                            <div class="music-card-illust">
+                                <img src="assets/music-classification/shortsong.png" alt="短调伴奏插画">
+                            </div>
+                            <div class="music-card-body">
+                                <p class="music-card-position">定位 / 为蒙古族短调民歌伴奏的演奏形式</p>
+                                <div class="music-card-meta">
+                                    <span>节奏鲜明</span>
+                                    <span>结构规整</span>
+                                    <span>舞蹈性</span>
+                                </div>
+                                <p class="music-card-desc">为蒙古族短调民歌伴奏。短调：节奏鲜明、结构规整、旋律活泼。伴奏时节奏感更强，常有舞蹈性特征。</p>
+                            </div>
+                        </article>
+
+                        <article class="music-card music-card--ceremony" data-category="ceremony">
+                            <div class="music-card-topline"></div>
+                            <div class="music-card-head">
+                                <div class="music-card-catalog">
+                                    <span class="music-card-catalog-label">Archive No.</span>
+                                    <span class="music-card-index">05</span>
+                                </div>
+                                <div class="music-card-heading-group">
+                                    <div class="music-card-header-tag">Archive Class · 乐种档案</div>
+                                    <div class="music-card-record">
+                                        <span class="music-card-record-label">Collection</span>
+                                        <span class="music-card-record-code">MK-GEN / EPIC</span>
+                                    </div>
+                                    <h4 class="music-card-title">史诗与赞词伴奏</h4>
+                                    <p class="music-card-en">Epic & Eulogy Accompaniment</p>
+                                </div>
+                            </div>
+                            <div class="music-card-illust">
+                                <img src="assets/music-classification/epic.png" alt="史诗与赞词伴奏插画">
+                            </div>
+                            <div class="music-card-body">
+                                <p class="music-card-position">定位 / 为英雄史诗与祝赞词伴奏的演奏形式</p>
+                                <div class="music-card-meta">
+                                    <span>叙事性</span>
+                                    <span>庄重</span>
+                                    <span>吟诵特征</span>
+                                </div>
+                                <p class="music-card-desc">为英雄史诗（如《江格尔》）伴奏，为祝赞词（如婚礼赞、赛马赞）伴奏。音乐风格庄重、叙事性强，带有吟诵特征。</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="anatomy" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">马头琴结构与器型</h2>
+                    <h3 class="section-title-en">Structure & Types</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">勾勒琴身的脉络，探寻马头琴的构造密码。从琴箱的蒙皮共鸣，到琴杆的笔直传声。</p>
+                        <p class="en">Outlining the veins of the instrument's body, exploring the structural code of the Morin Khuur.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴作为蒙古族最有代表性的乐器之一，由琴体和琴弓两部分组成，并且琴体与琴弓是可以分开的。琴体是由琴头、琴杆、琴箱、琴轴、琴弦、琴码与低音梁等部分组成。</p>
+                        <p class="en">The Morin Khuur, as one of the most representative instruments of the Mongolian ethnic group, is composed of two parts: the instrument body and the bow, and the body and bow can be separated.</p>
+                    </div>
+                    <div class="types-list">
+                        <h4 class="subsection-title">马头琴的独有特征</h4>
+                        <div class="type-item">
+                            <div class="type-badge"></div>
+                            <div class="type-copy">
+                                <span class="type-name">动物琴头<br><em class="type-name-en">Unique Animal Scroll</em></span>
+                                <span class="type-desc">这是唯一以动物造型（马首）为琴头并以此命名的乐器。</span>
+                            </div>
+                            <div class="type-shape">
+                                <img src="img/动物琴头.png" alt="动物琴头" class="type-shape-img">
+                            </div>
+                        </div>
+                        <div class="type-item">
+                            <div class="type-badge"></div>
+                            <div class="type-copy">
+                                <span class="type-name">两弦构造<br><em class="type-name-en">Two-String Structure</em></span>
+                                <span class="type-desc">区别于其他胡琴，马头琴仅有两根琴弦。传统形制下的琴弦由纯马尾毛束成——粗弦（里弦）约含130-160根，细弦（外弦）约含105-120根，以此物理构造共振出极具深度的辽阔声场。</span>
+                            </div>
+                            <div class="type-shape">
+                                <img src="img/两弦构造.png" alt="两弦构造" class="type-shape-img">
+                            </div>
+                        </div>
+                        <div class="type-item">
+                            <div class="type-badge"></div>
+                            <div class="type-copy">
+                                <span class="type-name">梯形琴箱<br><em class="type-name-en">Trapezoidal Soundbox</em></span>
+                                <span class="type-desc">拥有专属的梯形共鸣箱，这是区别于其他民族拉弦乐器的核心形制。现今国内流传的马头琴尺寸，相较于蒙古国本土的传统形制在体积上要小很多。</span>
+                            </div>
+                            <div class="type-shape">
+                                <img src="img/梯形琴箱.png" alt="梯形琴箱" class="type-shape-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-right">
+                    <div class="anatomy-visual">
+                        <div class="anatomy-img-wrap">
+                            <img src="img/morin-khuur-watercolor.png" alt="马头琴结构图" class="anatomy-main-img">
+                            <!-- Right-side labels (main instrument) -->
+                            <div class="part-label right" style="top:5.5%;">
+                                <svg class="leader-line" viewBox="0 0 157 52" width="157" height="52" aria-hidden="true"><polyline points="0,38 38,16 157,16"></polyline><circle cx="0" cy="38" r="2"></circle></svg>
+                                <span class="label-text">琴头 / Headstock</span>
+                            </div>
+                            <div class="part-label right" style="top:12.5%;">
+                                <svg class="leader-line" viewBox="0 0 142 34" width="142" height="34" aria-hidden="true"><polyline points="0,22 34,12 142,12"></polyline><circle cx="0" cy="22" r="2"></circle></svg>
+                                <span class="label-text">马尾库 / Horsehair holder</span>
+                            </div>
+                            <div class="part-label right" style="top:20%;">
+                                <svg class="leader-line" viewBox="0 0 85 26" width="85" height="26" aria-hidden="true"><polyline points="0,14 24,13 85,13"></polyline><circle cx="0" cy="14" r="2"></circle></svg>
+                                <span class="label-text">琴轴 / Tuning peg</span>
+                            </div>
+                            <div class="part-label right" style="top:26%;">
+                                <svg class="leader-line" viewBox="0 0 186 36" width="186" height="36" aria-hidden="true"><polyline points="0,24 42,12 186,12"></polyline><circle cx="0" cy="24" r="2"></circle></svg>
+                                <span class="label-text">上码 / Nut</span>
+                            </div>
+                            <div class="part-label right" style="top:41%;">
+                                <svg class="leader-line" viewBox="0 0 182 22" width="182" height="22" aria-hidden="true"><polyline points="0,11 38,11 182,11"></polyline><circle cx="0" cy="11" r="2"></circle></svg>
+                                <span class="label-text">琴杆 / Neck</span>
+                            </div>
+                            <div class="part-label right" style="top:46.5%;">
+                                <svg class="leader-line" viewBox="0 0 203 28" width="203" height="28" aria-hidden="true"><polyline points="0,10 42,14 203,14"></polyline><circle cx="0" cy="10" r="2"></circle></svg>
+                                <span class="label-text">琴弦 / Strings</span>
+                            </div>
+                            <div class="part-label right" style="top:64%;">
+                                <svg class="leader-line" viewBox="0 0 224 24" width="224" height="24" aria-hidden="true"><polyline points="0,12 40,12 224,12"></polyline><circle cx="0" cy="12" r="2"></circle></svg>
+                                <span class="label-text">指板 / Fingerboard</span>
+                            </div>
+                            <div class="part-label right" style="top:75%;">
+                                <svg class="leader-line" viewBox="0 0 228 34" width="228" height="34" aria-hidden="true"><polyline points="0,24 38,12 228,12"></polyline><circle cx="0" cy="24" r="2"></circle></svg>
+                                <span class="label-text">侧板 / Side panel</span>
+                            </div>
+                            <div class="part-label right" style="top:78%;">
+                                <svg class="leader-line" viewBox="0 0 182 20" width="182" height="20" aria-hidden="true"><polyline points="0,10 34,10 182,10"></polyline><circle cx="0" cy="10" r="2"></circle></svg>
+                                <span class="label-text">下码 / Bridge</span>
+                            </div>
+                            <div class="part-label right" style="top:80.3%;">
+                                <svg class="leader-line" viewBox="0 0 127 28" width="127" height="28" aria-hidden="true"><polyline points="0,12 24,14 127,14"></polyline><circle cx="0" cy="12" r="2"></circle></svg>
+                                <span class="label-text">音孔 / Sound holes</span>
+                            </div>
+                            <div class="part-label right" style="top:83.0%;">
+                                <svg class="leader-line" viewBox="0 0 207 30" width="207" height="30" aria-hidden="true"><polyline points="0,12 34,15 207,15"></polyline><circle cx="0" cy="12" r="2"></circle></svg>
+                                <span class="label-text">面板 / Soundboard</span>
+                            </div>
+                            <div class="part-label right" style="top:97.1%;">
+                                <svg class="leader-line" viewBox="0 0 253 40" width="253" height="40" aria-hidden="true"><polyline points="0,12 32,20 253,20"></polyline><circle cx="0" cy="12" r="2"></circle></svg>
+                                <span class="label-text">尾枕 / Tailrest</span>
+                            </div>
+                            <!-- Left-side labels (bow) -->
+                            <div class="part-label left" style="top:12.3%;">
+                                <svg class="leader-line" viewBox="0 0 150 50" width="150" height="50" aria-hidden="true"><polyline points="0,18 34,18 146,38"></polyline><circle cx="146" cy="38" r="2"></circle></svg>
+                                <span class="label-text">Bowhead/弓头</span>
+                            </div>
+                            <div class="part-label left" style="top:47.8%;">
+                                <svg class="leader-line" viewBox="0 0 140 24" width="140" height="24" aria-hidden="true"><polyline points="0,12 34,12 136,12"></polyline><circle cx="136" cy="12" r="2"></circle></svg>
+                                <span class="label-text">Bowstick/弓杆</span>
+                            </div>
+                            <div class="part-label left" style="top:51.4%;">
+                                <svg class="leader-line" viewBox="0 0 122 34" width="122" height="34" aria-hidden="true"><polyline points="0,12 26,12 116,20"></polyline><circle cx="116" cy="20" r="2"></circle></svg>
+                                <span class="label-text">Bowhair/弓毛</span>
+                            </div>
+                            <div class="part-label left" style="top:83.6%;">
+                                <svg class="leader-line" viewBox="0 0 144 40" width="144" height="40" aria-hidden="true"><polyline points="0,14 34,14 140,30"></polyline><circle cx="140" cy="30" r="2"></circle></svg>
+                                <span class="label-text">Drwstring/拉弦绳</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="anatomy-notes-corner">
+                <div class="anatomy-note-item">
+                    <span class="anatomy-note-kicker">Structure Logic</span>
+                    <p>现代马头琴器型虽然在箱体轮廓上各有差异，但核心仍围绕共鸣效率、结构稳定与演奏手感展开，改良方向大多服务于更清晰的发声与更均衡的受力。</p>
+                </div>
+                <div class="anatomy-note-item">
+                    <span class="anatomy-note-kicker">Resonance Detail</span>
+                    <p>琴杆、琴码、面板与共鸣箱共同构成传振链条：上端负责稳定张力，下端承担放大与扩散，使结构名称与实际听感在同一套构造系统中对应起来。</p>
+                </div>
+            </div>
+        </section>
+        <section id="craftsmanship" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left narrow">
+                    <h2 class="section-title-zh">制作工艺</h2>
+                    <h3 class="section-title-en">Craftsmanship</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">描摹造琴的工序，探寻马头琴的音色密码。从琴头的图腾雕刻，到琴马的承振导音。</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">作为一种传统的蒙古族乐器，马头琴以其独特的造型受到人们的广泛关注与喜爱，在 2010 年的时候，马头琴制作技艺就成为内蒙古呼和浩特市非物质文化遗产。据了解，马头琴制作技艺发展至今，大约要经过一百多道工序。</p>
+                        <p class="en">As a traditional Mongolian musical instrument, the morin khuur has attracted wide attention and admiration due to its unique design. In 2010, the craft of making the morin khuur was recognized as intangible cultural heritage in Hohhot, Inner Mongolia.</p>
+                    </div>
+                    <div class="materials-section">
+                        <h4 class="subsection-title">材料 <span class="en-italic">Materials</span></h4>
+                        <p class="subsection-desc">马头琴的材料有五角枫、泡桐、云杉、松木和柳木。五角枫用于琴身制作，泡桐和云杉用于琴箱面板，松木和柳木用于辅助部件。</p>
+                        <div class="craft-tab-bar" data-group="materials">
+                            <button class="craft-tab active" data-tab="body">琴身材料</button>
+                            <button class="craft-tab" data-tab="panel">面板材料</button>
+                            <button class="craft-tab" data-tab="aux">辅助部件</button>
+                        </div>
+                        <div class="craft-tab-content active" data-group="materials" data-tab="body">
+                            <div class="craft-item-card" data-item="wujiaofeng">
+                                <div class="craft-item-img"><img src="assets/materials/五角桐.png" alt="五角枫"></div>
+                                <div class="craft-item-info">
+                                    <h5>五角枫</h5>
+                                    <p class="craft-item-use">用于琴身主体制作</p>
+                                    <p class="craft-item-detail">木质坚硬、纹理美观，經自然乾燥五年以上方可用於制琴。密度適中，共振性能優異。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-tab-content" data-group="materials" data-tab="panel">
+                            <div class="craft-item-card" data-item="paotong">
+                                <div class="craft-item-img"><img src="assets/materials/泡桐.png" alt="泡桐"></div>
+                                <div class="craft-item-info">
+                                    <h5>泡桐</h5>
+                                    <p class="craft-item-use">用于共鸣面板</p>
+                                    <p class="craft-item-detail">重量輕、強度高，紋理通直，是馬頭琴面板的首選材料。聲音傳導速度快，音色明亮通透。</p>
+                                </div>
+                            </div>
+                            <div class="craft-item-card" data-item="yunsan">
+                                <div class="craft-item-img"><img src="assets/materials/鱼鳞云杉.png" alt="鱼鳞云杉"></div>
+                                <div class="craft-item-info">
+                                    <h5>鱼鳞云杉</h5>
+                                    <p class="craft-item-use">用于高级共鸣面板</p>
+                                    <p class="craft-item-detail">年轮紋理如魚鱗狀，結構均勻細密。專為高端馬頭琴使用，音色層次更為豐富。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-tab-content" data-group="materials" data-tab="aux">
+                            <div class="craft-item-card" data-item="songmu">
+                                <div class="craft-item-img"><img src="assets/materials/松木.png" alt="松木"></div>
+                                <div class="craft-item-info">
+                                    <h5>松木</h5>
+                                    <p class="craft-item-use">用于辅助结构部件</p>
+                                    <p class="craft-item-detail">耐腐蝕、穩定性好，常用於琴頸內部支撐及配件製作。</p>
+                                </div>
+                            </div>
+                            <div class="craft-item-card" data-item="liumu">
+                                <div class="craft-item-img"><img src="assets/materials/柳木.png" alt="柳木"></div>
+                                <div class="craft-item-info">
+                                    <h5>柳木</h5>
+                                    <p class="craft-item-use">用于琴码与配件</p>
+                                    <p class="craft-item-detail">木質柔韌、易於加工，常用於製作琴碼及小型配件。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tools-section">
+                        <h4 class="subsection-title">工具 <span class="en-italic">Tools</span></h4>
+                        <p class="subsection-desc">马头琴制作过程离不开不同工具的相互配合，每道制作流程使用的工具也不同。</p>
+                        <div class="craft-tab-bar" data-group="tools">
+                            <button class="craft-tab active" data-tab="cut">切割类</button>
+                            <button class="craft-tab" data-tab="fix">组装类</button>
+                            <button class="craft-tab" data-tab="measure">测量涂抹</button>
+                            <button class="craft-tab" data-tab="all">通用工具</button>
+                        </div>
+                        <div class="craft-tab-content active" data-group="tools" data-tab="cut">
+                            <div class="craft-item-card" data-item="juzi" data-steps="1,3">
+                                <div class="craft-item-img"><img src="assets/tools/锯子.png" alt="锯子"></div>
+                                <div class="craft-item-info">
+                                    <h5>锯子</h5>
+                                    <p class="craft-item-use">板材切割</p>
+                                    <p class="craft-item-steps"><span class="step-tag" data-step="1">选取板材</span><span class="step-tag" data-step="3">切割板材</span></p>
+                                </div>
+                            </div>
+                            <div class="craft-item-card" data-item="meigongdao" data-steps="2,4,5">
+                                <div class="craft-item-img"><img src="assets/tools/美工刀.png" alt="美工刀" class="tool-img-vertical"></div>
+                                <div class="craft-item-info">
+                                    <h5>美工刀</h5>
+                                    <p class="craft-item-use">精密切割与雕刻</p>
+                                    <p class="craft-item-steps"><span class="step-tag" data-step="2">绘制形状</span><span class="step-tag" data-step="4">打磨边缘</span><span class="step-tag" data-step="5">固定装饰</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-tab-content" data-group="tools" data-tab="fix">
+                            <div class="craft-item-card" data-item="dianzuan" data-steps="7,8">
+                                <div class="craft-item-img"><img src="assets/tools/电钻.png" alt="电钻" class="tool-img-vertical"></div>
+                                <div class="craft-item-info">
+                                    <h5>电钻</h5>
+                                    <p class="craft-item-use">精准钻孔与固定</p>
+                                    <p class="craft-item-steps"><span class="step-tag" data-step="7">制作调音背板</span><span class="step-tag" data-step="8">固定背板</span></p>
+                                </div>
+                            </div>
+                            <div class="craft-item-card" data-item="qianzi" data-steps="11">
+                                <div class="craft-item-img"><img src="assets/tools/钳子.png" alt="钳子"></div>
+                                <div class="craft-item-info">
+                                    <h5>钳子</h5>
+                                    <p class="craft-item-use">琴弦安装与调整</p>
+                                    <p class="craft-item-steps"><span class="step-tag" data-step="11">琴身上弦</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-tab-content" data-group="tools" data-tab="measure">
+                            <div class="craft-item-card" data-item="junchi" data-steps="1,2">
+                                <div class="craft-item-img"><img src="assets/tools/卷尺.png" alt="卷尺" class="tool-img-vertical"></div>
+                                <div class="craft-item-info">
+                                    <h5>卷尺</h5>
+                                    <p class="craft-item-use">精确测量与划线</p>
+                                    <p class="craft-item-steps"><span class="step-tag" data-step="1">选取板材</span><span class="step-tag" data-step="2">绘制形状</span></p>
+                                </div>
+                            </div>
+                            <div class="craft-item-card" data-item="shuazi" data-steps="9">
+                                <div class="craft-item-img"><img src="assets/tools/刷子.png" alt="刷子" class="tool-img-vertical"></div>
+                                <div class="craft-item-info">
+                                    <h5>刷子</h5>
+                                    <p class="craft-item-use">打磨与上漆</p>
+                                    <p class="craft-item-steps"><span class="step-tag" data-step="9">背板上漆</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-tab-content" data-group="tools" data-tab="all">
+                            <div class="craft-item-card craft-item-card-wide" data-item="gelei" data-steps="1,2,3,4,5,6,7,8,9,10,11,12">
+                                <div class="craft-item-img craft-item-img-wide"><img src="assets/tools/各类工具.png" alt="各类工具" class="tool-img-horizontal"></div>
+                                <div class="craft-item-info craft-item-info-wide">
+                                    <h5>各类工具</h5>
+                                    <p class="craft-item-use">贯穿全流程</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-right wide">
+                    <div class="craft-grid">
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/1.png" alt="选取板材">
+                                    <span class="craft-label">1. 选取板材</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>选取板材</h4>
+                                    <p>选用优质的五角枫木作为琴身材料，木材需经过自然干燥处理，确保纹理均匀、无裂纹。</p>
+                                    <span class="craft-step">步骤 1/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/2.png" alt="绘制形状">
+                                    <span class="craft-label">2. 绘制形状</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>绘制形状</h4>
+                                    <p>根据传统马头琴的轮廓，在板材上精确绘制琴身形状，确保对称性和比例协调。</p>
+                                    <span class="craft-step">步骤 2/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/3.png" alt="切割板材">
+                                    <span class="craft-label">3. 切割板材</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>切割板材</h4>
+                                    <p>使用精细工具沿着绘制的轮廓线进行切割，保证边缘平整光滑。</p>
+                                    <span class="craft-step">步骤 3/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/4.png" alt="打磨边缘">
+                                    <span class="craft-label">4. 打磨边缘</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>打磨边缘</h4>
+                                    <p>用砂纸逐级打磨琴身边缘，从粗砂到细砂，使表面光滑细腻。</p>
+                                    <span class="craft-step">步骤 4/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/5.png" alt="固定装饰">
+                                    <span class="craft-label">5. 固定装饰</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>固定装饰</h4>
+                                    <p>在琴身上镶嵌传统蒙古纹样装饰，体现民族特色和文化内涵。</p>
+                                    <span class="craft-step">步骤 5/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/6.png" alt="深入雕刻马头">
+                                    <span class="craft-label">6. 深入雕刻马头</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>深入雕刻马头</h4>
+                                    <p>精心雕刻琴头的马头造型，这是马头琴最具特色的部分，需要高超的雕刻技艺。</p>
+                                    <span class="craft-step">步骤 6/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/7.png" alt="制作调音背板">
+                                    <span class="craft-label">7. 制作调音背板</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>制作调音背板</h4>
+                                    <p>制作琴箱的背板，需要精确控制厚度以确保最佳的共鸣效果。</p>
+                                    <span class="craft-step">步骤 7/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/8.png" alt="固定背板">
+                                    <span class="craft-label">8. 固定背板</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>固定背板</h4>
+                                    <p>将背板与琴身精准粘合，确保密封性和结构稳定性。</p>
+                                    <span class="craft-step">步骤 8/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/9.png" alt="背板上漆">
+                                    <span class="craft-label">9. 背板上漆</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>背板上漆</h4>
+                                    <p>涂刷环保清漆，保护木材并提升外观质感，需多层涂刷并打磨。</p>
+                                    <span class="craft-step">步骤 9/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/10.png" alt="琴杆找平">
+                                    <span class="craft-label">10. 琴杆找平</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>琴杆找平</h4>
+                                    <p>调整琴杆的平直度，确保琴弦的高度和间距符合演奏要求。</p>
+                                    <span class="craft-step">步骤 10/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/11.png" alt="琴身上弦">
+                                    <span class="craft-label">11. 琴身上弦</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>琴身上弦</h4>
+                                    <p>安装马尾弦，调整弦的张力和位置，为调音做准备。</p>
+                                    <span class="craft-step">步骤 11/12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craft-card">
+                            <div class="craft-card-inner">
+                                <div class="craft-card-front">
+                                    <img src="assets/craft/12.png" alt="马头琴调音">
+                                    <span class="craft-label">12. 马头琴调音</span>
+                                </div>
+                                <div class="craft-card-back">
+                                    <h4>马头琴调音</h4>
+                                    <p>最终调音测试，确保音准、音色达到最佳状态，完成整把马头琴的制作。</p>
+                                    <span class="craft-step">步骤 12/12</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 器型与纹样 Section -->
+        <section id="patterns" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left narrow">
+                    <h2 class="section-title-zh">马头琴纹样</h2>
+                    <h3 class="section-title-en">Patterns</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴是蒙古族最具代表性的乐器。它是第一批列入我国的非物质文化遗产之一，历史悠久，具有浓厚的草原游牧文化特征，是艺术文化价值很高的民族乐器。不管是它的外观装饰还是独特的音质，都体现出蒙古族群众别具一格的艺术审美。</p>
+                        <p class="en">The morin khuur is the most representative musical instrument of the Mongolian people. It is one of the first to be included in China's intangible cultural heritage, with a long history and strong characteristics of the pastoral nomadic culture, making it a national instrument with high artistic and cultural value. Whether in its appearance and decorations or its unique sound quality, it reflects the distinctive artistic aesthetic of the Mongolian people.</p>
+                    </div>
+                    <div class="patterns-guide-card">
+                        <div class="patterns-guide-kicker">纹样导读 · Pattern Guide</div>
+                        <div class="patterns-guide-intro">纹样不仅承担装饰功能，也在反复出现的线条与结构中传递吉祥寓意、秩序观念与草原审美。</div>
+                        <div class="patterns-guide-list">
+                            <div class="patterns-guide-item active" data-guide-types="shouwen">
+                                <div class="patterns-guide-item-title">寿字纹</div>
+                                <div class="patterns-guide-item-text">多位于中心装饰区域，强调福寿绵长与礼仪祝愿。</div>
+                            </div>
+                            <div class="patterns-guide-item" data-guide-types="yunwen">
+                                <div class="patterns-guide-item-title">云纹</div>
+                                <div class="patterns-guide-item-text">常见于边饰和彩绘区域，呈现升腾、流动与祥瑞之意。</div>
+                            </div>
+                            <div class="patterns-guide-item" data-guide-types="jiwen">
+                                <div class="patterns-guide-item-title">犄纹</div>
+                                <div class="patterns-guide-item-text">多用于角隅或边框转折处，以角状曲线强化力量感、守护感与生机延展。</div>
+                            </div>
+                            <div class="patterns-guide-item" data-guide-types="panchangwen">
+                                <div class="patterns-guide-item-title">盘长纹</div>
+                                <div class="patterns-guide-item-text">以连续回环的结式结构表达连绵不断、福寿相续与吉庆延展的寓意。</div>
+                            </div>
+                            <div class="patterns-guide-item" data-guide-types="huiwen">
+                                <div class="patterns-guide-item-title">回纹</div>
+                                <div class="patterns-guide-item-text">通过反复折回的几何秩序形成稳定边饰，传达绵延不息与秩序循环之感。</div>
+                            </div>
+                        </div>
+                        <div class="patterns-guide-tip">拖动或滚轮切换右侧轮播，查看不同纹样与寓意对应关系。</div>
+                    </div>
+                </div>
+                <div class="section-right wide">
+                    <!-- 上排：器型图片画廊 -->
+                    <div class="patterns-gallery-row">
+                        <div class="patterns-gallery-item active" data-type="shouwen">
+                            <img src="assets/patterns/寿字纹.png" alt="寿字纹">
+                        </div>
+                        <div class="patterns-gallery-item" data-type="yunwen">
+                            <img src="assets/patterns/云纹.png" alt="云纹">
+                        </div>
+                        <div class="patterns-gallery-item" data-type="jiwen">
+                            <img src="assets/patterns/犄纹.png" alt="犄纹">
+                        </div>
+                        <div class="patterns-gallery-item" data-type="panchangwen">
+                            <img src="assets/patterns/盘肠纹.png" alt="盘肠纹">
+                        </div>
+                        <div class="patterns-gallery-item" data-type="huiwen">
+                            <img src="assets/patterns/回纹.png" alt="回纹">
+                        </div>
+                    </div>
+
+                    <!-- 下排：种类列表 + 预览 + 详情 -->
+                    <div class="patterns-lower">
+                        <!-- 左列：马头琴种类 -->
+                        <div class="patterns-types">
+                            <h4 class="patterns-types-title">纹样类型</h4>
+
+                            <div class="patterns-type-item active" data-type="shouwen">
+                                <div class="patterns-type-svg">
+                                    <img src="assets/patterns/寿字纹.png" alt="寿字纹" style="width: 100%; height: auto;">
+                                </div>
+                                <div class="patterns-type-info">
+                                    <div class="patterns-type-name">寿字纹</div>
+                                    <div class="patterns-type-desc">常见于琴箱蒙皮中央，寓意福寿绵长、寿与天齐。</div>
+                                </div>
+                            </div>
+
+                            <div class="patterns-type-item" data-type="yunwen">
+                                <div class="patterns-type-svg">
+                                    <img src="assets/patterns/云纹.png" alt="云纹" style="width: 100%; height: auto;">
+                                </div>
+                                <div class="patterns-type-info">
+                                    <div class="patterns-type-name">云纹</div>
+                                    <div class="patterns-type-desc">多见于琴箱侧面与彩绘区域，寓意吉祥高升、天地和谐。</div>
+                                </div>
+                            </div>
+
+                            <div class="patterns-type-item" data-type="jiwen">
+                                <div class="patterns-type-svg">
+                                    <img src="assets/patterns/犄纹.png" alt="犄纹" style="width: 100%; height: auto;">
+                                </div>
+                                <div class="patterns-type-info">
+                                    <div class="patterns-type-name">犄纹</div>
+                                    <div class="patterns-type-desc">常用于边框与角隅装饰，寓意力量、圆满与生生不息。</div>
+                                </div>
+                            </div>
+
+                            <div class="patterns-type-item" data-type="panchangwen">
+                                <div class="patterns-type-svg">
+                                    <img src="assets/patterns/盘肠纹.png" alt="盘肠纹" style="width: 100%; height: auto;">
+                                </div>
+                                <div class="patterns-type-info">
+                                    <div class="patterns-type-name">盘长纹（盘肠纹）</div>
+                                    <div class="patterns-type-desc">常见于琴箱侧面主纹样，寓意永恒长寿、福寿绵长。</div>
+                                </div>
+                            </div>
+
+                            <div class="patterns-type-item" data-type="huiwen">
+                                <div class="patterns-type-svg">
+                                    <img src="assets/patterns/回纹.png" alt="回纹" style="width: 100%; height: auto;">
+                                </div>
+                                <div class="patterns-type-info">
+                                    <div class="patterns-type-name">回纹</div>
+                                    <div class="patterns-type-desc">常作边框装饰，寓意源远流长、生生不息与富贵不断。</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- 中列：大图预览 -->
+                        <div class="patterns-preview">
+                            <div class="patterns-preview-box">
+                                <img id="patternsPreviewImg" src="assets/patterns/寿字纹.png" alt="寿字纹预览">
+                            </div>
+                        </div>
+
+                        <!-- 右列：详情面板 -->
+                        <div class="patterns-details">
+                            <div class="patterns-detail-name" id="patternsDetailName">寿字纹</div>
+                            <div class="patterns-detail-row">
+                                <div class="patterns-detail-label">流派地域</div>
+                                <div class="patterns-detail-value" id="patternsDetailRegion">多见于与汉文化交融密切的科尔沁等部</div>
+                            </div>
+                            <div class="patterns-detail-row">
+                                <div class="patterns-detail-label">年代</div>
+                                <div class="patterns-detail-value" id="patternsDetailEra">明清时期随汉文化广泛融入蒙古族工艺</div>
+                            </div>
+                            <div class="patterns-detail-row">
+                                <div class="patterns-detail-label">材质构成</div>
+                                <div class="patterns-detail-value" id="patternsDetailMaterial">多为彩绘于琴箱正中或镶嵌骨雕</div>
+                            </div>
+                            <div class="patterns-detail-row">
+                                <div class="patterns-detail-label">琴头样子</div>
+                                <div class="patterns-detail-value" id="patternsDetailHeadstock">主要位于琴箱与琴杆装饰部位，不直接对应琴头造型</div>
+                            </div>
+                            <div class="patterns-detail-row">
+                                <div class="patterns-detail-label">主要花纹</div>
+                                <div class="patterns-detail-value" id="patternsDetailPattern">将汉字“寿”图案化、圆形化，周围常配四只蝙蝠</div>
+                            </div>
+                            <div class="patterns-detail-row">
+                                <div class="patterns-detail-label">花纹寓意</div>
+                                <div class="patterns-detail-value" id="patternsDetailMeaning">福寿绵长、寿与天齐，体现多民族文化交融</div>
+                            </div>
+                            <div class="patterns-detail-row">
+                                <div class="patterns-detail-label">主要颜色</div>
+                                <div class="patterns-detail-value" id="patternsDetailColor">多为金色、红色（朱漆底）或黑色墨线</div>
+                            </div>
+                            <div class="patterns-detail-extra">
+                                <div class="patterns-detail-extra-block">
+                                    <div class="patterns-detail-extra-label">常见位置</div>
+                                    <div class="patterns-detail-extra-text" id="patternsDetailLocation">琴箱蒙皮中央</div>
+                                </div>
+                                <div class="patterns-detail-extra-block">
+                                    <div class="patterns-detail-extra-label">补充说明 / 案例说明</div>
+                                    <div class="patterns-detail-extra-text" id="patternsDetailCase">在民族文化宫博物馆收藏的一把马头琴上，琴箱面四周雕刻四只蝙蝠，中心位置为寿字纹，构成经典的“四蝠（福）捧寿”吉祥图案，体现了多民族文化的交流与融合。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 马头琴器型 Section -->
+        <section id="instrument-types" class="content-section instrument-types-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="instrument-types-page">
+                <div class="instrument-types-intro">
+                    <h2>马头琴样本展示</h2>
+                    <h3>Instrument Types</h3>
+                    <p class="intro-zh">马头琴是蒙古族最具代表性的乐器。它是第一批列入我国的非物质文化遗产之一，历史悠久，具有浓厚的草原游牧文化特征，是艺术文化价值很高的民族乐器。不管是它的外观装饰还是独特的音质，都体现出蒙古族群众别具一格的艺术审美观念。</p>
+                    <p class="intro-en">The morin khuur is the most representative musical instrument of the Mongolian people. It is one of the first to be included in China's intangible cultural heritage, with a long history and strong characteristics of the pastoral nomadic culture, making it a national instrument with high artistic and cultural value. Whether in its appearance and decorations or its unique sound quality, it reflects the distinctive artistic aesthetic of the Mongolian people.</p>
+                </div>
+
+                <div class="instrument-strip-head">
+                    <span class="instrument-strip-kicker">TYPE WALL / 器型陈列</span>
+                    <p>从传统皮膜到现代定制，器型与装饰风格在同一展墙中并置呈现。</p>
+                </div>
+                <div class="instrument-shape-strip" aria-label="马头琴琴箱器型展示">
+                    <figure class="active" data-instrument="traditional-skin"><img src="assets/instrument-types/cover_001.png" alt="传统皮膜马头琴"><figcaption>传统皮膜马头琴</figcaption></figure>
+                    <figure data-instrument="modern-wood"><img src="assets/instrument-types/cover_002.png" alt="曲腰木面马头琴"><figcaption>曲腰木面马头琴</figcaption></figure>
+                    <figure data-instrument="plain-traditional"><img src="assets/instrument-types/cover_007.png" alt="传统素面马头琴"><figcaption>传统素面马头琴</figcaption></figure>
+                    <figure data-instrument="dragon-painted"><img src="assets/instrument-types/cover_005.png" alt="彩绘龙首马头琴" class="dragon-head-img"><figcaption>彩绘龙首马头琴</figcaption></figure>
+                    <figure data-instrument="rosewood-deluxe"><img src="assets/instrument-types/cover_012.png" alt="花梨木高端马头琴"><figcaption>花梨木高端马头琴</figcaption></figure>
+                </div>
+
+                <div class="instrument-kind-title"><span>EXHIBIT INDEX / 展陈索引</span></div>
+                <div class="instrument-kind-layout">
+                    <div class="instrument-kind-list">
+                        <article class="instrument-kind-item active" data-instrument="traditional-skin" data-title="传统皮膜马头琴" data-image="assets/instrument-types/cover_001.png" data-region="内蒙古" data-category="传统皮膜马头琴" data-material="木质琴身，皮膜面板" data-head="马头" data-pattern="侧板刻绘纹样" data-meaning="草原文化的象征" data-color="原木色 + 皮纹褐">
+                            <img src="assets/instrument-types/cover_001.png" alt="传统皮膜马头琴">
+                            <div><h3>传统皮膜马头琴</h3><p>共鸣箱正面采用皮膜蒙制，梯形琴箱、侧板刻绘纹样与马头琴首共同构成古朴的传统形制。</p></div>
+                        </article>
+                        <article class="instrument-kind-item" data-instrument="modern-wood" data-title="现代改良马头琴" data-image="assets/instrument-types/cover_002.png" data-region="内蒙古 / 现代工坊" data-category="曲腰木面马头琴" data-material="全木质（面板、背板、侧板）" data-head="方首机械轴" data-pattern="面板浮雕 / 刻绘图案" data-meaning="传统与现代的融合" data-color="红棕色（清漆）">
+                            <img src="assets/instrument-types/cover_002.png" alt="现代改良马头琴">
+                            <div><h3>现代改良马头琴</h3><p>采用曲腰木面结构与方形弦轴箱设计，面板绘有传统纹饰，体现现代工艺与传统审美的结合。</p></div>
+                        </article>
+                        <article class="instrument-kind-item" data-instrument="plain-traditional" data-title="传统素面马头琴" data-image="assets/instrument-types/cover_007.png" data-region="内蒙古" data-category="传统素面马头琴" data-material="桐木面板（或皮面 / 木面）、硬木琴杆" data-head="简化首部造型" data-pattern="无明显纹饰" data-meaning="早期草原乐器的朴素实用观" data-color="黑色 + 原木褐色">
+                            <img src="assets/instrument-types/cover_007.png" alt="传统素面马头琴">
+                            <div><h3>传统素面马头琴</h3><p>没有现代马头雕刻与复杂装饰，造型简洁朴素，保留早期草原乐器重实用、轻装饰的审美倾向。</p></div>
+                        </article>
+                        <article class="instrument-kind-item" data-instrument="dragon-painted" data-title="彩绘龙首马头琴" data-image="assets/instrument-types/cover_005.png" data-region="内蒙古 / 现代工艺" data-category="彩绘龙首马头琴" data-material="木质琴体，彩绘共鸣箱" data-head="彩绘龙首" data-pattern="高饱和龙纹与装饰彩绘" data-meaning="舞台视觉与吉祥守护的结合" data-color="黑色 + 金色 + 绿松石色点缀">
+                            <img src="assets/instrument-types/cover_005.png" alt="彩绘龙首马头琴" class="dragon-head-img-small">
+                            <div><h3>彩绘龙首马头琴</h3><p>木质共鸣箱配合蒙古族传统纹饰与写实龙首雕刻，兼具舞台辨识度和民族装饰意味。</p></div>
+                        </article>
+                        <article class="instrument-kind-item" data-instrument="rosewood-deluxe" data-title="花梨木高端马头琴" data-image="assets/instrument-types/cover_012.png" data-region="内蒙古 / 高端定制工坊" data-category="花梨木高端马头琴" data-material="花梨木琴体，f 孔共鸣结构" data-head="马头" data-pattern="天然木纹与细部镶饰" data-meaning="工艺、音色与收藏价值并重" data-color="深棕木色 + 金属色细节">
+                            <img src="assets/instrument-types/cover_012.png" alt="花梨木高端马头琴">
+                            <div><h3>花梨木高端马头琴</h3><p>以高等级花梨木打造，结合 f 孔声学结构和精细装饰，强调音色、工艺与收藏价值。</p></div>
+                        </article>
+                    </div>
+
+                    <div class="instrument-kind-stage" data-stage-label="MAIN VIEW / 主视图" data-stage-number="01">
+                        <img src="assets/instrument-types/cover_001.png" alt="传统皮膜马头琴主图">
+                        <button class="instrument-stage-zoom" type="button" aria-label="放大查看当前器型">放大查看</button>
+                    </div>
+
+                    <aside class="instrument-kind-detail">
+                        <h3>传统皮膜马头琴</h3>
+                        <dl>
+                            <dt>流派地域：</dt><dd>内蒙古</dd>
+                            <dt>形制分类：</dt><dd>传统皮膜马头琴</dd>
+                            <dt>材质构成：</dt><dd>木质琴身，皮膜面板</dd>
+                            <dt>琴头样子：</dt><dd>马头</dd>
+                            <dt>主要花纹：</dt><dd>侧板刻绘纹样</dd>
+                            <dt>花纹寓意：</dt><dd>草原文化的象征</dd>
+                            <dt>主要颜色：</dt><dd>原木色 + 皮纹褐</dd>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+        <section id="performance" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="performance-layout">
+                    <!-- 左侧文字 -->
+                    <div class="performance-text-left">
+                        <h2 class="section-title-zh">演奏</h2>
+                        <h3 class="section-title-en">Performance</h3>
+                        <div class="divider"></div>
+                        <p class="zh">马头琴演奏强调姿势稳定、把位转换与运弓控制三者协同。课堂教学中，最关键的是先建立低把位手型，再通过音位与发声对应关系理解不同调式中的把位变化。</p>
+                        <div class="performance-keypoints">
+                            <span>坐姿持琴</span>
+                            <span>把位转换</span>
+                            <span>运弓发声</span>
+                        </div>
+                        <p class="en">Performance study centers on posture, left-hand position shifts, and bow control. The teaching focus here is to connect each position with its sounding pitch through direct visual and audio response.</p>
+
+                        <div class="performance-posture-area">
+                            <div class="posture-image">
+                                <img src="assets/performance/演奏姿势.png" alt="演奏姿势">
+                            </div>
+                            <div class="posture-text">
+                                <h4>演奏姿势</h4>
+                                <p>采取坐姿，将琴箱夹于两腿之间，琴杆略向左倾。左手虎口自然张开，拇指轻扶琴杆，保持低把位手型稳定。</p>
+                                <p>右手执弓时，以虎口夹住弓柄，食指、中指置于弓杆上，无名指与小指控制弓毛张力，运弓时保持弓毛与琴弦近直角。</p>
+                            </div>
+                        </div>
+
+                        <div class="performance-technique-area">
+                            <h4>演奏手法</h4>
+                            <p class="technique-desc">低把位强调手型与音准，高把位强调指尖控制与句法连贯。右侧两图用于辅助观察持弓与按弦细节。</p>
+                            <div class="technique-images">
+                                <div class="technique-img">
+                                    <img src="assets/performance/手法.png" alt="持弓手法">
+                                    <span>持弓手法</span>
+                                </div>
+                                <div class="technique-img">
+                                    <img src="assets/performance/手法2.png" alt="按弦细节">
+                                    <span>按弦细节</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧内容区 -->
+                    <div class="performance-content">
+                        <div class="performance-fingering-area">
+                            <div class="fingering-panel" id="fingeringPanel">
+                                <div class="fingering-panel-head">
+                                    <div>
+                                        <h4>把位与指法</h4>
+                                        <p class="fingering-panel-intro">点击不同把位查看放大示意图，并可点按音位按钮播放对应音高示意。</p>
+                                    </div>
+                                    <div class="fingering-position-tabs" role="tablist" aria-label="马头琴把位切换">
+                                        <button class="fingering-tab active" type="button" data-position="1">第一把位</button>
+                                        <button class="fingering-tab" type="button" data-position="2">第二把位</button>
+                                        <button class="fingering-tab" type="button" data-position="3">第三把位</button>
+                                    </div>
+                                </div>
+                                <div class="fingering-stage" id="fingeringStage">
+                                    <div class="fingering-image">
+                                        <img id="fingeringChartImage" src="assets/performance/position-1.svg" alt="第一把位指法示意图">
+                                        <div class="fingering-hotspot-layer" id="fingeringHotspotLayer" aria-label="图上音位点击区域"></div>
+                                    </div>
+                                    <div class="fingering-text" id="fingeringText">
+                                        <div class="fingering-meta">
+                                            <span class="fingering-kicker">Position Study / 把位学习</span>
+                                            <h5 id="fingeringTitle">第一把位（A调）</h5>
+                                            <p id="fingeringDesc">基础把位，最常用于低音区与初学阶段，强调手型稳定与空弦音准控制。</p>
+                                        </div>
+                                        <div class="fingering-notation-block">
+                                            <p class="notation-title">音位排列</p>
+                                            <p class="notation" id="fingeringNotationA">A弦：A（空弦）→ B（1）→ C#（2）→ D（3）→ E（4）</p>
+                                            <p class="notation" id="fingeringNotationD">D弦：D（空弦）→ E（1）→ F#（2）→ G（3）→ A（4）</p>
+                                        </div>
+                                        <div class="fingering-audio-block">
+                                            <p class="notation-title">点击出声</p>
+                                            <div class="fingering-note-grid" id="fingeringNoteGrid"></div>
+                                            <p class="fingering-audio-tip">提示：当前为教学示意音，便于课堂演示把位关系。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                                                                <section id="heritage" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">传承与发展</h2>
+                    <h3 class="section-title-en">Heritage &amp; Development</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴的传统音乐和演奏技法一般是师父向弟子口授，代代相传。马头琴有着深厚的社会和民俗传统底蕴，发挥着传播文化、陶冶情操、移风易俗等社会功能。</p>
+                        <p class="en">The traditional music and playing techniques of the Morin Khuur are generally passed down orally from master to disciple, generation after generation.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">随着非物质文化遗产保护意识的提升，马头琴的传承逐渐从家庭走向了学校和专业机构。如今，内蒙古地区的中小学、职业院校乃至大学都开设了马头琴课程，培养了大量具备专业技能的演奏人才。</p>
+                        <p class="en">With the increased awareness of intangible cultural heritage protection, the inheritance of the Morin Khuur has gradually moved from families to schools and professional institutions.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">马头琴作为蒙古族文化的象征，已成为连接东西方文化的桥梁。它不仅在蒙古族传统节庆中扮演重要角色，也走向了国际舞台，成为全球观众了解草原文化的重要窗口。</p>
+                        <p class="en">As a symbol of Mongolian culture, the Morin Khuur has become a bridge connecting Eastern and Western cultures, becoming an important window for global audiences to understand prairie culture.</p>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="heritage-tree-wrap">
+                        <svg class="heritage-tree-svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <style>
+                                @keyframes flowDash {
+                                    from { stroke-dashoffset: 24; }
+                                    to { stroke-dashoffset: 0; }
+                                }
+                                line, path {
+                                    shape-rendering: geometricPrecision;
+                                }
+                                line:not(.flow-line), .connector-base {
+                                    stroke: #D2C8BA;
+                                    stroke-width: 1.2;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    opacity: 0.96;
+                                }
+                                .flow-line, .connector-flow {
+                                    stroke: #C48E3C;
+                                    stroke-width: 1.7;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-dasharray: 5 18;
+                                    opacity: 0.92;
+                                    animation: flowDash 1.35s linear infinite;
+                                }
+                            </style>
+                        </defs>
+            <line x1="300" y1="55" x2="300" y2="110" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="300" y1="55" x2="300" y2="110" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:0.0s"/>
+            <line x1="80" y1="110" x2="660" y2="110" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="80" y1="110" x2="660" y2="110" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:0.3s"/>
+            <line x1="80" y1="110" x2="80" y2="135" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="80" y1="110" x2="80" y2="135" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:0.6s"/>
+            <line x1="280" y1="110" x2="280" y2="135" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="280" y1="110" x2="280" y2="135" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:0.9s"/>
+            <line x1="460" y1="110" x2="460" y2="135" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="460" y1="110" x2="460" y2="135" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.2s"/>
+            <line x1="660" y1="110" x2="660" y2="135" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="660" y1="110" x2="660" y2="135" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.5s"/>
+            <line x1="80" y1="175" x2="80" y2="220" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="80" y1="175" x2="80" y2="220" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:0.8s"/>
+            <line x1="40" y1="220" x2="580" y2="220" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="40" y1="220" x2="580" y2="220" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.1s"/>
+            <line x1="40" y1="220" x2="40" y2="260" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="40" y1="220" x2="40" y2="260" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.3s"/>
+            <line x1="200" y1="220" x2="200" y2="260" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="200" y1="220" x2="200" y2="260" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.6s"/>
+            <line x1="400" y1="220" x2="400" y2="260" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="400" y1="220" x2="400" y2="260" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.8s"/>
+            <line x1="580" y1="220" x2="580" y2="260" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="580" y1="220" x2="580" y2="260" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.0s"/>
+            <line x1="40" y1="300" x2="40" y2="345" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="40" y1="300" x2="40" y2="345" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.6s"/>
+            <line x1="10" y1="345" x2="130" y2="345" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="10" y1="345" x2="130" y2="345" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:1.8s"/>
+            <line x1="10" y1="345" x2="10" y2="380" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="10" y1="345" x2="10" y2="380" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.0s"/>
+            <line x1="100" y1="345" x2="100" y2="380" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="100" y1="345" x2="100" y2="380" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.2s"/>
+            <line x1="200" y1="300" x2="200" y2="345" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="200" y1="300" x2="200" y2="345" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.4s"/>
+            <line x1="170" y1="345" x2="330" y2="345" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="170" y1="345" x2="330" y2="345" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.6s"/>
+            <line x1="190" y1="345" x2="190" y2="380" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="190" y1="345" x2="190" y2="380" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.8s"/>
+            <line x1="300" y1="345" x2="300" y2="380" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="300" y1="345" x2="300" y2="380" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.0s"/>
+            <line x1="400" y1="300" x2="400" y2="345" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="400" y1="300" x2="400" y2="345" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.2s"/>
+            <line x1="380" y1="345" x2="590" y2="345" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="380" y1="345" x2="590" y2="345" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.4s"/>
+            <line x1="420" y1="345" x2="420" y2="380" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="420" y1="345" x2="420" y2="380" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.6s"/>
+            <line x1="560" y1="345" x2="560" y2="380" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="560" y1="345" x2="560" y2="380" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.8s"/>
+            <line x1="10" y1="420" x2="10" y2="445" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="10" y1="420" x2="10" y2="445" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.6s"/>
+            <line x1="10" y1="445" x2="90" y2="445" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="10" y1="445" x2="90" y2="445" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.8s"/>
+            <line x1="10" y1="445" x2="10" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="10" y1="445" x2="10" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:2.9s"/>
+            <line x1="70" y1="445" x2="70" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="70" y1="445" x2="70" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.0s"/>
+            <line x1="100" y1="420" x2="100" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="100" y1="420" x2="100" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.2s"/>
+            <line x1="190" y1="420" x2="190" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="190" y1="420" x2="190" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.4s"/>
+            <line x1="300" y1="420" x2="300" y2="445" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="300" y1="420" x2="300" y2="445" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.5s"/>
+            <line x1="280" y1="445" x2="430" y2="445" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="280" y1="445" x2="430" y2="445" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.7s"/>
+            <line x1="340" y1="445" x2="340" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="340" y1="445" x2="340" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:3.8s"/>
+            <line x1="410" y1="445" x2="410" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="410" y1="445" x2="410" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:4.0s"/>
+            <line x1="420" y1="420" x2="420" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="420" y1="420" x2="420" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:4.1s"/>
+            <line x1="560" y1="420" x2="560" y2="445" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="560" y1="420" x2="560" y2="445" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:4.2s"/>
+            <line x1="540" y1="445" x2="720" y2="445" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="540" y1="445" x2="720" y2="445" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:4.4s"/>
+            <line x1="620" y1="445" x2="620" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="620" y1="445" x2="620" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:4.5s"/>
+            <line x1="700" y1="445" x2="700" y2="470" stroke="#D8D1C6" stroke-width="1"/>
+            <line class="flow-line" x1="700" y1="445" x2="700" y2="470" stroke="#C48E3C" stroke-width="1.5" style="animation-delay:4.7s"/>
+                        </svg>
+            <div class="tree-node" style="left:300px;top:35px;"><span class="node-name">色拉西</span><span class="node-label">（科尔沁潮尔大师，现代马头琴教育鼻祖）</span></div>
+            <div class="tree-node" style="left:80px;top:155px;"><span class="node-name">桑都仍</span><span class="node-label">（现代马头琴奠基人）</span></div>
+            <div class="tree-node" style="left:280px;top:155px;"><span class="node-name">敖特根巴雅尔</span></div>
+            <div class="tree-node" style="left:460px;top:155px;"><span class="node-name">包金山</span></div>
+            <div class="tree-node" style="left:660px;top:155px;"><span class="node-name">白·达瓦</span></div>
+            <div class="tree-node" style="left:40px;top:280px;"><span class="node-name">齐·宝力高</span><span class="node-label">（国家级非遗传承人）</span></div>
+            <div class="tree-node" style="left:200px;top:280px;"><span class="node-name">布林</span><span class="node-label">（国家级非遗传承人）</span></div>
+            <div class="tree-node" style="left:400px;top:280px;"><span class="node-name">巴·依尔</span><span class="node-label">（第三代大师）</span></div>
+            <div class="tree-node" style="left:580px;top:280px;"><span class="node-name">美利其格等</span></div>
+            <div class="tree-node" style="left:10px;top:400px;"><span class="node-name">什·白乙拉</span></div>
+            <div class="tree-node" style="left:100px;top:400px;"><span class="node-name">吉日穆图</span></div>
+            <div class="tree-node" style="left:190px;top:400px;"><span class="node-name">布和那生</span></div>
+            <div class="tree-node" style="left:300px;top:400px;"><span class="node-name">纳·呼和</span></div>
+            <div class="tree-node" style="left:420px;top:400px;"><span class="node-name">玉龙（哈斯鲁）</span></div>
+            <div class="tree-node" style="left:560px;top:400px;"><span class="node-name">郭雪松</span></div>
+            <div class="tree-node" style="left:10px;top:490px;"><span class="node-name">乌日根</span></div>
+            <div class="tree-node" style="left:70px;top:490px;"><span class="node-name">包迪</span></div>
+            <div class="tree-node" style="left:145px;top:490px;"><span class="node-name">阿拉腾都拉嘎</span></div>
+            <div class="tree-node" style="left:250px;top:490px;"><span class="node-name">孟和巴特尔</span></div>
+            <div class="tree-node" style="left:340px;top:490px;"><span class="node-name">王金福</span></div>
+            <div class="tree-node" style="left:410px;top:490px;"><span class="node-name">赛音吉雅</span></div>
+            <div class="tree-node" style="left:530px;top:490px;"><span class="node-name">伊敏（巴依尔之子）</span></div>
+            <div class="tree-node" style="left:620px;top:490px;"><span class="node-name">陈巴雅尔</span></div>
+            <div class="tree-node" style="left:700px;top:490px;"><span class="node-name">李波等</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Application Scenarios Section -->
+                        <section id="application" class="content-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+                    <circle cx="4" cy="6" r="1.5" fill="#6B7280"/><circle cx="4" cy="12" r="1.5" fill="#6B7280"/><circle cx="4" cy="18" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <h2 class="section-title-zh">应用场景</h2>
+                    <h3 class="section-title-en">Application Scenarios</h3>
+                    <div class="bilingual-block">
+                        <p class="zh">在蒙古人心目中，马头琴是一件神圣的乐器。在蒙古草原上，曾几何时每制作成一件新马头琴，牧民们都要举行隆重的仪式。人们把精心制成的马头琴恭敬地放在桌子中央，再用洁白的哈达覆盖其上，接着司仪代表、主人和来宾向马头琴鞠躬致敬，再举起斟满奶酒的金杯高声朗诵祝词。仪式后就开始新琴试奏会，人们边饮美酒边聆听着美妙的乐曲并和以歌声，共同庆贺又一把新马头琴的诞生。</p>
+                        <p class="en">In the minds of the Mongolian people, the morin khuur is a sacred musical instrument. On the Mongolian steppes, whenever a new morin khuur was made, the herders would hold a grand ceremony. The carefully crafted morin khuur would be respectfully placed in the center of the table, covered with a pure white khata. Then, the master of ceremonies, the owner, and the guests would bow to the morin khuur in respect, and raise golden cups filled with milk wine, reciting blessings aloud. After the ceremony, a performance to try out the new instrument would begin, where people would enjoy fine wine while listening to the beautiful music and singing together to celebrate the birth of another new morin khuur.</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="bilingual-block">
+                        <p class="zh">从传统民俗到现代音乐厅，从影视配乐到心理疗愈，马头琴的应用场景不断拓展。它不仅是一件乐器，更是连接过去与未来、东方与西方的文化桥梁。</p>
+                        <p class="en">From traditional folk customs to modern concert halls, from film scoring to psychological healing, the applications continue to expand.</p>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="application-overview">
+                        <div class="application-overview-text">
+                            <span class="overview-kicker">SCENARIO GUIDE / 应用导语</span>
+                            <h4 class="overview-title">从草原仪式到当代场域，马头琴始终在流动的文化现场中发声。</h4>
+                            <p>它既属于节庆礼仪与民间记忆，也进入教学系统、剧场舞台、影像叙事与疗愈空间，在不同媒介与语境中持续延展其声音边界。</p>
+                        </div>
+                        <div class="application-overview-tags">
+                            <span><em>01</em> 民俗仪式</span>
+                            <span><em>02</em> 教育传承</span>
+                            <span><em>03</em> 舞台融合</span>
+                            <span><em>04</em> 影像声音</span>
+                            <span><em>05</em> 身心疗愈</span>
+                        </div>
+                    </div>
+                    <div class="folding-section">
+                        <div class="folding-container">
+                            <div class="folding-panel">
+                                <img class="folding-image" src="assets/application/panel1.png" alt="教育与传承场景图">
+                                <div class="panel-meta">
+                                    <span class="panel-index">01</span>
+                                    <h4 class="panel-title">教育与传承</h4>
+                                    <p class="panel-subtitle">EDUCATION & HERITAGE</p>
+                                    <p class="panel-description">通过课堂、师承与社群学习，让技法与文化叙事继续被听见。</p>
+                                </div>
+                            </div>
+                            <div class="folding-panel">
+                                <img class="folding-image" src="assets/application/panel2.png" alt="现代音乐会与跨界融合场景图">
+                                <div class="panel-meta">
+                                    <span class="panel-index">02</span>
+                                    <h4 class="panel-title">现代音乐会与跨界融合</h4>
+                                    <p class="panel-subtitle">CONCERTS & CROSSOVER</p>
+                                    <p class="panel-description">在剧场、乐团与跨界合作中，拓展传统音色的当代表现边界。</p>
+                                </div>
+                            </div>
+                            <div class="folding-panel">
+                                <img class="folding-image" src="assets/application/panel3.png" alt="影视配乐与声音设计场景图">
+                                <div class="panel-meta">
+                                    <span class="panel-index">03</span>
+                                    <h4 class="panel-title">影视配乐与声音设计</h4>
+                                    <p class="panel-subtitle">SCORING & SOUND DESIGN</p>
+                                    <p class="panel-description">以独特的擦弦质感参与叙事氛围塑造，强化影像的地域与情绪表达。</p>
+                                </div>
+                            </div>
+                            <div class="folding-panel">
+                                <img class="folding-image" src="assets/application/panel4.png" alt="心理疗愈与冥想场景图">
+                                <div class="panel-meta">
+                                    <span class="panel-index">04</span>
+                                    <h4 class="panel-title">心理疗愈与冥想</h4>
+                                    <p class="panel-subtitle">THERAPY & MEDITATION</p>
+                                    <p class="panel-description">借由悠长音色与呼吸节奏，营造沉静、放松与内在感知的空间。</p>
+                                </div>
+                            </div>
+                            <div class="folding-panel">
+                                <img class="folding-image" src="assets/application/panel5.png" alt="传统民俗与文化庆典场景图">
+                                <div class="panel-meta">
+                                    <span class="panel-index">05</span>
+                                    <h4 class="panel-title">传统民俗与文化庆典</h4>
+                                    <p class="panel-subtitle">FOLK CUSTOMS & CELEBRATIONS</p>
+                                    <p class="panel-description">在节庆、婚礼与民间仪式中，延续草原共同体的声音记忆。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Epilogue Section -->
+        <section id="epilogue" class="content-section epilogue-section">
+            <div class="section-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.5" stroke-linecap="square">
+                    <path d="M6 7.5H18"/>
+                    <path d="M6 12H18"/>
+                    <path d="M6 16.5H13.5"/>
+                    <circle cx="17.5" cy="16.5" r="1.5" fill="#6B7280"/>
+                </svg>
+            </div>
+            <div class="section-body">
+                <div class="section-left">
+                    <div class="epilogue-sidebar-intro">
+                        <h2 class="section-title-zh">终章</h2>
+                        <h3 class="section-title-en">Epilogue</h3>
+                        <div class="bilingual-block">
+                            <p class="zh">马头琴不仅是一件乐器，更是一种被声音、技艺与记忆共同塑造的文化存在。它从草原深处出发，穿过仪式、工坊、舞台与课堂，持续在当代语境中被理解、被演奏、被传承。</p>
+                            <p class="en">More than an instrument, the morin khuur is a living cultural form shaped by sound, craft, and memory. From the grassland to workshops, stages, and classrooms, it continues to be understood, performed, and inherited in contemporary life.</p>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="epilogue-archive-status">
+                        <span class="epilogue-status-label">Archive Status</span>
+                        <strong class="epilogue-status-value">Documentation Continues / 持续归档中</strong>
+                        <p class="epilogue-status-note">这一章节不是终止，而是将历史、工艺、演奏与传承重新折回现实，继续被记录、被观看、被演奏。</p>
+                    </div>
+                    <div class="epilogue-side-meta">
+                        <div class="epilogue-side-meta-item">
+                            <span>Archive Scope</span>
+                            <strong>History · Craft · Performance · Heritage</strong>
+                        </div>
+                        <div class="epilogue-side-meta-item">
+                            <span>Edition</span>
+                            <strong>Vol. I / Gene Atlas Archive Edition</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <div class="epilogue-stage">
+                        <div class="epilogue-hero-card">
+                            <div class="epilogue-hero-media">
+                                <div class="epilogue-image-wrap">
+                                    <img src="assets/application/epilogue-user-image.png" alt="马头琴终章主视觉档案图">
+                                    <div class="epilogue-stamp">ARCHIVE CONTINUES / VOL. I</div>
+                                </div>
+                            </div>
+                            <div class="epilogue-hero-content">
+                                <div class="epilogue-quote-block">
+                                    <p class="epilogue-kicker">Closing Archive / 终章归档</p>
+                                    <h4 class="epilogue-quote">当琴声停止，文化并未沉默。</h4>
+                                    <p class="epilogue-lead">它仍在草原的风中、课堂的练习里、工坊的木屑之间与新的舞台现场中继续发声。</p>
+                                    <p class="epilogue-note">这份图谱所记录的，不是被封存后的静态标本，而是一种仍在现实中延展的文化生命：它被演奏、被讲述、被制造，也被一代代人继续理解与更新。</p>
+                                </div>
+                                <div class="epilogue-highlight-grid">
+                                    <div class="epilogue-highlight-item">
+                                        <span>历史入卷</span>
+                                        <strong>从奚琴源流到国家级非遗，时间被重新梳理。</strong>
+                                    </div>
+                                    <div class="epilogue-highlight-item">
+                                        <span>技艺延续</span>
+                                        <strong>制作工艺、器型结构与演奏经验仍在当下不断发生。</strong>
+                                    </div>
+                                    <div class="epilogue-highlight-item">
+                                        <span>未来展开</span>
+                                        <strong>传承不止于保存，更在新的观看方式与当代表达中继续生长。</strong>
+                                    </div>
+                                </div>
+                                <div class="epilogue-actions">
+                                    <a href="#hero" class="epilogue-btn primary">回到图谱起点</a>
+                                    <a href="#heritage" class="epilogue-btn">重访传承谱系</a>
+                                    <a href="#dashboard" class="epilogue-btn ghost">浏览核心索引</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="epilogue-closing-band">
+                            <div class="epilogue-band-item">
+                                <span>Project</span>
+                                <strong>Gene Atlas: Morin Khuur</strong>
+                            </div>
+                            <div class="epilogue-band-item">
+                                <span>Method</span>
+                                <strong>Research · Narrative · Visual Archive</strong>
+                            </div>
+                            <div class="epilogue-band-item">
+                                <span>Status</span>
+                                <strong>Open for Continued Documentation</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section></main>
+
+    <!-- Footer -->
+    <footer class="site-footer epilogue-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">Gene Atlas.</div>
+                <p class="footer-desc">马头琴文化基因图谱 — 一份仍在展开的数字档案，以研究、展陈与视觉叙事的方式记录这件草原弓弦乐器的历史温度、工艺细节与当代表达。</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="#hero">首页</a>
+                    <a href="#anatomy">结构与器型</a>
+                    <a href="#history">历史脉络</a>
+                    <a href="#craftsmanship">制作工艺</a>
+                    <a href="#instrument-types">马头琴样本展示</a>
+                    <a href="#patterns">马头琴纹样</a>
+                    <a href="#music-classification">音乐分类</a>
+                    <a href="#heritage">传承与发展</a>
+                    <a href="#epilogue">终章</a>
+                </div>
+                <p class="footer-copy">&copy; 2026 Gene Atlas: Morin Khuur. Archive Edition / Living Documentation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="返回顶部">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+
+    
+    <!-- Scripts -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/lenis.min.js"></script>
+    <script src="js/main.appfix.js"></script>
+    
+    <!-- 图片预览模态框 -->
+    <div class="image-modal" id="imageModal">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="预览图片" id="modalImage">
+    </div>
+    
+    <!-- 传承人物详情模态框 -->
+    <div class="heritage-modal" id="heritageModal">
+        <div class="heritage-modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-avatar" id="modalAvatar"></div>
+            <h5 id="modalName"></h5>
+            <p class="person-years" id="modalYears"></p>
+            <p class="person-role" id="modalRole"></p>
+            <div class="divider"></div>
+            <div class="person-bio" id="modalBio"></div>
+        </div>
+    </div>
+    
+    <!-- Tab Switching Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ==================== 图片预览功能 ====================
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.image-modal .close-btn');
+        
+        // 获取所有可点击的图片
+        const clickableImages = document.querySelectorAll(
+            '.posture-image img, .fingering-image img, .technique-img img, .patterns-gallery-item img, .patterns-preview-box img, .instrument-kind-stage img'
+        );
+        
+        clickableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+            });
+        });
+        
+        // 关闭模态框
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        // ESC键关闭
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        // ==================== 滚动动画 ====================
+        const animateElements = document.querySelectorAll(
+            '.performance-posture-area, .performance-fingering-area, .performance-technique-area'
+        );
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        animateElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // ==================== 传承人物滚动动画 ====================
+        const heritageItems = document.querySelectorAll('.animate-item');
+        
+        const heritageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.delay || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-in');
+                    }, parseInt(delay));
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        });
+        
+        heritageItems.forEach(item => {
+            heritageObserver.observe(item);
+        });
+        
+        // ==================== 器型与纹样种类切换 ====================
+        const patternsData = {
+            shouwen: {
+                name: '寿字纹',
+                region: '多见于与汉文化交融密切的科尔沁等部',
+                era: '明清时期随汉文化广泛融入蒙古族工艺',
+                material: '多为彩绘于琴箱正中或镶嵌骨雕',
+                headstock: '主要位于琴箱与琴杆装饰部位，不直接对应琴头造型',
+                pattern: '将汉字“寿”图案化、圆形化，周围常配四只蝙蝠',
+                meaning: '福寿绵长、寿与天齐（汉文化融合）',
+                color: '多为金色、红色（朱漆底）或黑色墨线',
+                location: '琴箱蒙皮的中央',
+                case: '在一把现藏于民族文化宫博物馆的马头琴上，琴箱面四周雕刻四只蝙蝠，中心位置是一个寿字纹，构成汉文化中经典的“四蝠（福）捧寿”吉祥图案，生动展示了多民族文化的交流与融合。',
+                img: 'assets/patterns/寿字纹.png'
+            },
+            yunwen: {
+                name: '云纹',
+                region: '广泛分布于各蒙古部族',
+                era: '远古图腾崇拜时期延续至今',
+                material: '通常彩绘于琴箱或雕刻于木胎',
+                headstock: '多分布于琴箱与琴杆表面装饰区域',
+                pattern: '流畅的涡形曲线，似漂浮云朵，常与蝙蝠组合',
+                meaning: '吉祥高升，对自然天空的崇拜',
+                color: '随木器底色（红木棕/原木黄），或彩绘为白、蓝、金',
+                location: '琴箱侧面、正面彩绘、琴杆装饰部位',
+                case: '在一件蒙古族木质蒙皮雕花马头琴上，其梯形琴箱侧面雕刻有蝙蝠与云纹组合的“宏福齐天”图案，体现了传统福文化与自然崇拜观念的结合。',
+                img: 'assets/patterns/云纹.png'
+            },
+            jiwen: {
+                name: '犄纹',
+                region: '普遍存在于蒙古族工艺中，尤以察哈尔等部常见',
+                era: '源自对盘羊的原始崇拜，游牧时代早期',
+                material: '多为雕刻或彩绘纹饰',
+                headstock: '主要用于琴箱边框与角隅装饰，不直接塑造琴头',
+                pattern: '盘羊弯曲的卷角，呈圆润的螺旋或弧形',
+                meaning: '力量、圆满、生生不息',
+                color: '随木器底色，或彩绘为金、棕、蓝',
+                location: '常与卷草纹组合出现，多用于边框或角隅装饰',
+                case: '在蒙古语中，“图案”一词为“贺乌嘎拉吉”。因盘羊卷曲的犄角极具美感，人们将类似犄角形的卷曲纹样称为“乌嘎拉吉”，体现了蒙古族对圆形与圆满形式的崇尚。',
+                img: 'assets/patterns/犄纹.png'
+            },
+            panchangwen: {
+                name: '盘长纹（盘肠纹）',
+                region: '蒙古族通用纹样，融合藏传佛教元素',
+                era: '随藏传佛教于元代后盛行，延续至今',
+                material: '多为雕刻镂空或彩绘纹饰',
+                headstock: '主要体现于琴箱纹饰结构，不直接对应琴头样式',
+                pattern: '线条首尾相连、无头无尾的迷宫式交叉结构',
+                meaning: '永恒长寿、福寿绵长、佛法无边',
+                color: '随木器底色，或彩绘为红、金、黄',
+                location: '琴箱侧面，并常与其他纹样组合为主图案',
+                case: '盘长纹（盘肠纹）有直角边型与圆角边型两类：前者棱角分明，体现蒙古族正直阳刚、坚定踏实的民族性格；后者圆润典雅，衬托出内敛含蓄、安逸雅致的审美气质。',
+                img: 'assets/patterns/盘肠纹.png'
+            },
+            huiwen: {
+                name: '回纹',
+                region: '源于中原，广泛见于蒙古族工艺',
+                era: '源于中原新石器时代陶器，明清在蒙古工艺中定型',
+                material: '多用于镶嵌银边或彩绘边框',
+                headstock: '主要服务于边框装饰系统，不直接对应琴头造型',
+                pattern: '横竖短线折绕回环，呈“回”字形方框连续',
+                meaning: '源远流长、富贵不断头、坚固永久',
+                color: '随木器底色，镶嵌银边呈银白色',
+                location: '常作为边框装饰，用于界定和美化主图案区域',
+                case: '回纹常见于蒙古族家具箱体四角的金属包角，既能加固、防磕碰，又凭借镂空造型减轻重量并达到美化效果，其装饰逻辑也常被吸收到马头琴边框纹样中。',
+                img: 'assets/patterns/回纹.png'
+            }
+        };
+
+        const typeItems = document.querySelectorAll('.patterns-type-item');
+        const guideItems = document.querySelectorAll('.patterns-guide-item');
+        const galleryRow = document.querySelector('.patterns-gallery-row');
+        const galleryItems = document.querySelectorAll('.patterns-gallery-item');
+        const previewImg = document.getElementById('patternsPreviewImg');
+        const patternsSection = document.getElementById('patterns');
+        const PATTERN_AUTOPLAY_DELAY = 3200;
+        const PATTERN_INTERACTION_RESUME_DELAY = 2400;
+        const PATTERN_DRAG_THRESHOLD = 48;
+        const PATTERN_WHEEL_COOLDOWN = 260;
+        const PREVIEW_FADE_DURATION = 200;
+        let currentPatternIndex = 0;
+        let patternAutoplayTimer = null;
+        let patternPreviewFadeTimer = null;
+        let patternObserver = null;
+        let patternResumeTimer = null;
+        let patternWheelCooldownTimer = null;
+        let isPatternDragging = false;
+        let patternDragStartX = 0;
+        let suppressPatternClick = false;
+
+        function getPatternCircularOffset(index) {
+            const total = galleryItems.length;
+            if (!total) return 0;
+
+            let offset = index - currentPatternIndex;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
+            return offset;
+        }
+
+        function updateGallery3DPositions() {
+            galleryItems.forEach((item, index) => {
+                const offset = getPatternCircularOffset(index);
+                const absOffset = Math.abs(offset);
+                item.style.setProperty('--offset', offset);
+                item.style.setProperty('--abs-offset', absOffset);
+                item.style.setProperty('--direction', offset === 0 ? 0 : Math.sign(offset));
+                item.classList.toggle('is-center', offset === 0);
+            });
+        }
+
+        function syncPatternList(type) {
+            typeItems.forEach(item => {
+                item.classList.toggle('active', item.dataset.type === type);
+            });
+        }
+
+        function syncPatternGuide(type) {
+            guideItems.forEach(item => {
+                const guideTypes = (item.dataset.guideTypes || '')
+                    .split(',')
+                    .map(value => value.trim())
+                    .filter(Boolean);
+                item.classList.toggle('active', guideTypes.includes(type));
+            });
+        }
+
+        function updatePreviewImage(data) {
+            if (patternPreviewFadeTimer) {
+                clearTimeout(patternPreviewFadeTimer);
+            }
+
+            previewImg.style.opacity = '0';
+            patternPreviewFadeTimer = setTimeout(() => {
+                previewImg.src = data.img;
+                previewImg.alt = data.name;
+                previewImg.style.opacity = '1';
+                patternPreviewFadeTimer = null;
+            }, PREVIEW_FADE_DURATION);
+        }
+
+        function setActivePatternByIndex(index) {
+            const item = galleryItems[index];
+            if (!item) return;
+
+            const type = item.dataset.type;
+            const data = patternsData[type];
+            if (!data) return;
+
+            currentPatternIndex = index;
+
+            galleryItems.forEach(g => g.classList.remove('active'));
+            item.classList.add('active');
+            updateGallery3DPositions();
+
+            syncPatternList(type);
+            syncPatternGuide(type);
+            updatePreviewImage(data);
+            updatePatternDetails(data);
+        }
+
+        function nextPattern() {
+            const nextIndex = (currentPatternIndex + 1) % galleryItems.length;
+            setActivePatternByIndex(nextIndex);
+        }
+
+        function prevPattern() {
+            const prevIndex = (currentPatternIndex - 1 + galleryItems.length) % galleryItems.length;
+            setActivePatternByIndex(prevIndex);
+        }
+
+        function clearPatternResumeTimer() {
+            if (patternResumeTimer) {
+                clearTimeout(patternResumeTimer);
+                patternResumeTimer = null;
+            }
+        }
+
+        function schedulePatternAutoplayResume() {
+            clearPatternResumeTimer();
+            patternResumeTimer = setTimeout(() => {
+                startPatternAutoplay();
+                patternResumeTimer = null;
+            }, PATTERN_INTERACTION_RESUME_DELAY);
+        }
+
+        function setPatternWheelCooldown() {
+            if (patternWheelCooldownTimer) {
+                clearTimeout(patternWheelCooldownTimer);
+            }
+
+            patternWheelCooldownTimer = setTimeout(() => {
+                patternWheelCooldownTimer = null;
+            }, PATTERN_WHEEL_COOLDOWN);
+        }
+
+        function stopPatternAutoplay() {
+            clearPatternResumeTimer();
+            if (patternAutoplayTimer) {
+                clearInterval(patternAutoplayTimer);
+                patternAutoplayTimer = null;
+            }
+        }
+
+        function startPatternAutoplay() {
+            if (!galleryItems.length || isPatternDragging) return;
+            clearPatternResumeTimer();
+            stopPatternAutoplay();
+            patternAutoplayTimer = setInterval(nextPattern, PATTERN_AUTOPLAY_DELAY);
+        }
+
+        function updatePatternDetails(data) {
+            document.getElementById('patternsDetailName').textContent = data.name;
+            document.getElementById('patternsDetailRegion').textContent = data.region;
+            document.getElementById('patternsDetailEra').textContent = data.era;
+            document.getElementById('patternsDetailMaterial').textContent = data.material;
+            document.getElementById('patternsDetailHeadstock').textContent = data.headstock;
+            document.getElementById('patternsDetailPattern').textContent = data.pattern;
+            document.getElementById('patternsDetailMeaning').textContent = data.meaning;
+            document.getElementById('patternsDetailColor').textContent = data.color;
+            document.getElementById('patternsDetailLocation').textContent = data.location;
+            document.getElementById('patternsDetailCase').textContent = data.case;
+        }
+
+        typeItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // 下方卡片只保留自身选中态，不再驱动中间大图和右侧详情
+                typeItems.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        function handlePatternPointerDown(event) {
+            if (event.button !== 0) return;
+            isPatternDragging = true;
+            suppressPatternClick = false;
+            patternDragStartX = event.clientX;
+            stopPatternAutoplay();
+            galleryRow.classList.add('is-dragging');
+        }
+
+        function handlePatternPointerMove(event) {
+            if (!isPatternDragging) return;
+
+            const deltaX = event.clientX - patternDragStartX;
+            if (Math.abs(deltaX) < PATTERN_DRAG_THRESHOLD) return;
+
+            suppressPatternClick = true;
+
+            if (deltaX < 0) {
+                nextPattern();
+            } else {
+                prevPattern();
+            }
+
+            patternDragStartX = event.clientX;
+        }
+
+        function handlePatternPointerEnd() {
+            if (!isPatternDragging) return;
+            isPatternDragging = false;
+            galleryRow.classList.remove('is-dragging');
+            schedulePatternAutoplayResume();
+
+            window.setTimeout(() => {
+                suppressPatternClick = false;
+            }, 0);
+        }
+
+        function handlePatternWheel(event) {
+            if (patternWheelCooldownTimer) return;
+
+            const primaryDelta = Math.abs(event.deltaY) >= Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+            if (primaryDelta === 0) return;
+
+            event.preventDefault();
+            stopPatternAutoplay();
+
+            if (primaryDelta > 0) {
+                nextPattern();
+            } else {
+                prevPattern();
+            }
+
+            setPatternWheelCooldown();
+            schedulePatternAutoplayResume();
+        }
+
+        // 上方画廊卡片独立控制大图与详情
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', function(event) {
+                if (suppressPatternClick) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return;
+                }
+
+                setActivePatternByIndex(index);
+                schedulePatternAutoplayResume();
+            });
+        });
+
+        if (galleryRow) {
+            galleryRow.addEventListener('mouseenter', stopPatternAutoplay);
+            galleryRow.addEventListener('mouseleave', () => {
+                if (!isPatternDragging) {
+                    schedulePatternAutoplayResume();
+                }
+            });
+            galleryRow.addEventListener('mousedown', handlePatternPointerDown);
+            window.addEventListener('mousemove', handlePatternPointerMove);
+            window.addEventListener('mouseup', handlePatternPointerEnd);
+            galleryRow.addEventListener('mouseleave', handlePatternPointerEnd);
+            galleryRow.addEventListener('wheel', handlePatternWheel, { passive: false });
+            galleryRow.addEventListener('dragstart', event => event.preventDefault());
+        }
+
+        if (patternsSection && 'IntersectionObserver' in window) {
+            patternObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.target !== patternsSection) return;
+                    if (entry.isIntersecting) {
+                        startPatternAutoplay();
+                    } else {
+                        stopPatternAutoplay();
+                    }
+                });
+            }, {
+                threshold: 0.35
+            });
+
+            patternObserver.observe(patternsSection);
+        } else {
+            startPatternAutoplay();
+        }
+
+        updateGallery3DPositions();
+
+        setActivePatternByIndex(0);
+
+        // ==================== 传承人物点击弹窗 ====================
+        const heritageModal = document.getElementById('heritageModal');
+        const modalAvatar = document.getElementById('modalAvatar');
+        const modalName = document.getElementById('modalName');
+        const modalYears = document.getElementById('modalYears');
+        const modalRole = document.getElementById('modalRole');
+        const modalBio = document.getElementById('modalBio');
+        const heritageCloseBtn = heritageModal.querySelector('.close-btn');
+        
+        const heritagePersons = document.querySelectorAll('.heritage-person');
+        
+        heritagePersons.forEach(person => {
+            person.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // 获取人物信息
+                const avatar = this.querySelector('.person-avatar');
+                const name = this.querySelector('.person-info h4').textContent;
+                const years = this.querySelector('.person-info p').textContent;
+                const role = this.querySelector('.person-title').textContent;
+                const detail = this.querySelector('.person-detail');
+                
+                // 设置模态框内容
+                modalAvatar.textContent = avatar.textContent;
+                modalAvatar.style.background = avatar.style.background;
+                modalName.textContent = name;
+                modalYears.textContent = years;
+                modalRole.textContent = role;
+                
+                if (detail) {
+                    modalBio.innerHTML = detail.querySelector('.person-bio').innerHTML;
+                } else {
+                    modalBio.innerHTML = '<p>暂无详细介绍</p>';
+                }
+                
+                // 显示模态框
+                heritageModal.classList.add('active');
+            });
+        });
+        
+        // 关闭传承模态框
+        heritageCloseBtn.addEventListener('click', function() {
+            heritageModal.classList.remove('active');
+        });
+        
+        heritageModal.addEventListener('click', function(e) {
+            if (e.target === heritageModal) {
+                heritageModal.classList.remove('active');
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && heritageModal.classList.contains('active')) {
+                heritageModal.classList.remove('active');
+            }
+        });
+    });
+
+    // ===== 文化基因弦图 =====
+    (function() {
+        var container = document.getElementById('culture-chord-chart');
+        if (!container) return;
+
+        var genes = [
+            '马头琴', '草原', '游牧', '宫廷音乐', '乌力格尔',
+            '叙事音乐', '抒情民谣', '非遗', '科尔沁', '锡林郭勒',
+            '鄂尔多斯', '呼伦贝尔', '火不思', '潮尔', '传承',
+            '制作技艺', '蒙古族', '元代', '清代', '唐宋'
+        ];
+
+        var colors = [
+            '#8D98AC', '#919BAD', '#B9BEC6',
+            '#B7ADA1', '#B7AF9F', '#C9AF9A', '#D7AAA4',
+            '#D8B680', '#DDBE8B',
+            '#DECEB7', '#D7C6B0', '#DBD5C9',
+            '#D9B5AE', '#C9AF9A',
+            '#BEBDA8', '#B4B3B3', '#B7AF9F',
+            '#919BAD', '#D8C0A3', '#DDBE8B'
+        ];
+
+        var relations = [
+            [0,8,9,7,3,4,5,6,4,4,4,4,5,5,7,6,9,5,5,4],
+            [8,0,10,4,3,4,5,5,3,3,3,4,4,3,5,3,8,3,3,3],
+            [9,10,0,4,3,4,5,5,3,3,3,4,4,3,5,3,8,3,3,3],
+            [7,4,4,0,6,5,4,5,3,3,3,3,4,6,3,3,5,7,5,6],
+            [3,3,3,6,0,7,5,4,5,4,4,4,3,4,3,3,4,3,3,3],
+            [4,4,4,5,7,0,6,4,4,4,5,4,3,4,4,3,4,3,3,3],
+            [5,5,5,4,5,6,0,4,4,4,5,5,3,3,5,3,4,3,3,3],
+            [6,5,5,5,4,4,4,0,4,3,3,3,4,4,6,5,5,4,4,3],
+            [4,3,3,3,5,4,4,4,0,6,5,5,3,3,4,3,3,3,3,3],
+            [4,3,3,3,4,4,4,3,6,0,5,5,3,3,4,3,3,3,3,3],
+            [4,3,3,3,4,5,5,3,5,5,0,5,3,3,5,4,3,3,3,3],
+            [4,4,4,3,4,4,5,3,5,5,5,0,3,3,4,3,3,3,3,3],
+            [5,4,4,4,3,3,3,4,3,3,3,3,0,6,3,5,4,4,7,4],
+            [5,3,3,6,4,4,3,4,3,3,3,3,6,0,3,4,4,5,6,5],
+            [7,5,5,3,3,4,5,6,4,4,5,4,3,3,0,5,5,4,4,3],
+            [6,3,3,3,3,3,3,5,3,3,4,3,5,4,5,0,4,3,4,3],
+            [9,8,8,5,4,4,4,5,3,3,3,3,4,4,5,4,0,4,4,4],
+            [5,3,3,7,3,3,3,4,3,3,3,3,4,5,4,3,4,0,5,6],
+            [5,3,3,5,3,3,3,4,3,3,3,3,7,6,4,4,4,5,0,5],
+            [4,3,3,6,3,3,3,3,3,3,3,3,4,5,3,3,4,6,5,0]
+        ];
+
+        var width = 680, height = 680;
+        var outerRadius = Math.min(width, height) / 2 - 60;
+        var innerRadius = outerRadius - 30;
+
+        var svg = d3.select('#culture-chord-chart')
+            .append('svg')
+            .attr('viewBox', '0 0 ' + width + ' ' + height)
+            .attr('preserveAspectRatio', 'xMidYMid meet');
+
+        var defs = svg.append('defs');
+
+        var filter = defs.append('filter')
+            .attr('id', 'chord-glow')
+            .attr('x', '-50%').attr('y', '-50%')
+            .attr('width', '200%').attr('height', '200%');
+        filter.append('feGaussianBlur').attr('stdDeviation', '2').attr('result', 'coloredBlur');
+        var feMerge = filter.append('feMerge');
+        feMerge.append('feMergeNode').attr('in', 'coloredBlur');
+        feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+        var chord = d3.chord().padAngle(0.04).sortSubgroups(d3.descending).sortChords(d3.descending);
+        var chords = chord(relations);
+
+        var group = svg.append('g')
+            .attr('transform', 'translate(' + width/2 + ',' + height/2 + ')')
+            .selectAll('g').data(chords.groups).join('g').attr('class', 'chord-group');
+
+        function highlightLabels(indices) {
+            group.selectAll('.chord-label')
+                .transition().duration(180)
+                .attr('opacity', function(d) { return indices.indexOf(d.index) !== -1 ? 1 : 0.26; })
+                .attr('fill', function(d) { return indices.indexOf(d.index) !== -1 ? '#8D98AC' : '#A09586'; })
+                .attr('font-size', function(d) {
+                    var base = genes[d.index].length > 4 ? 9 : 10;
+                    return (indices.indexOf(d.index) !== -1 ? base + 1 : base) + 'px';
+                })
+                .attr('font-weight', function(d) { return indices.indexOf(d.index) !== -1 ? 600 : 400; });
+        }
+
+        function resetLabels() {
+            group.selectAll('.chord-label')
+                .transition().duration(180)
+                .attr('opacity', 1)
+                .attr('fill', '#A09586')
+                .attr('font-size', function(d) { return genes[d.index].length > 4 ? '9px' : '10px'; })
+                .attr('font-weight', 400);
+        }
+
+        group.append('path')
+            .attr('class', 'chord-arc')
+            .attr('fill', function(d) { return colors[d.index]; })
+            .attr('stroke', '#BDB3A7').attr('stroke-opacity', 0.65).attr('stroke-width', 1)
+            .attr('d', d3.arc().innerRadius(innerRadius).outerRadius(outerRadius))
+            .on('mouseover', function(event, d) {
+                d3.select(this).transition().duration(200).attr('opacity', 1).attr('filter', 'url(#chord-glow)');
+                chordsGroup.selectAll('.chord-ribbon').transition().duration(200)
+                    .attr('opacity', function(m) { return m.source.index === d.index || m.target.index === d.index ? 0.96 : 0.05; });
+                highlightLabels([d.index]);
+                showTooltip(event, genes[d.index], getRelations(d.index));
+            })
+            .on('mouseout', function() {
+                d3.select(this).transition().duration(200).attr('opacity', 1).attr('filter', null);
+                chordsGroup.selectAll('.chord-ribbon').transition().duration(200).attr('opacity', 0.6);
+                resetLabels();
+                hideTooltip();
+            });
+
+        group.append('text')
+            .attr('class', 'chord-label')
+            .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+            .attr('dy', '0.35em')
+            .attr('transform', function(d) {
+                var angle = d.angle * 180 / Math.PI - 90;
+                var flip = d.angle > Math.PI;
+                return 'rotate(' + angle + ') translate(' + (outerRadius + 18) + ',0)' + (flip ? ' rotate(180)' : '');
+            })
+            .attr('text-anchor', function(d) { return d.angle > Math.PI ? 'end' : 'start'; })
+            .attr('fill', '#A09586').attr('font-family', 'Noto Serif SC, serif')
+            .attr('font-size', function(d) { return genes[d.index].length > 4 ? '9px' : '10px'; })
+            .attr('pointer-events', 'none')
+            .text(function(d) { return genes[d.index]; });
+
+        var chordsGroup = svg.append('g')
+            .attr('transform', 'translate(' + width/2 + ',' + height/2 + ')')
+            .selectAll('path').data(chords).join('path')
+            .attr('class', 'chord-ribbon')
+            .attr('fill', function(d) { return colors[d.source.index]; })
+            .attr('fill-opacity', 0.62).attr('stroke', '#BDB3A7').attr('stroke-opacity', 0.4).attr('stroke-width', 0.6)
+            .attr('d', d3.ribbon().radius(innerRadius - 5))
+            .on('mouseover', function(event, d) {
+                d3.select(this).transition().duration(200)
+                    .attr('fill-opacity', 1)
+                    .attr('fill', '#D8B680')
+                    .attr('stroke', '#DDBE8B')
+                    .attr('stroke-width', 4.5)
+                    .attr('filter', 'url(#chord-glow)');
+                group.selectAll('.chord-arc').transition().duration(200)
+                    .attr('opacity', function(m) { return m.index === d.source.index || m.index === d.target.index ? 1 : 0.24; })
+                    .attr('transform', function(m) { return m.index === d.source.index || m.index === d.target.index ? 'scale(1.02)' : 'scale(1)'; });
+                highlightLabels([d.source.index, d.target.index]);
+                showTooltip(event, genes[d.source.index] + ' ↔ ' + genes[d.target.index],
+                    getRelationText(d.source.index, d.target.index));
+            })
+            .on('mouseout', function(event, d) {
+                d3.select(this).transition().duration(200)
+                    .attr('fill', colors[d.source.index])
+                    .attr('fill-opacity', 0.6)
+                    .attr('stroke', '#BDB3A7')
+                    .attr('stroke-opacity', 0.4)
+                    .attr('stroke-width', 0.5)
+                    .attr('filter', null);
+                group.selectAll('.chord-arc').transition().duration(200)
+                    .attr('opacity', 1)
+                    .attr('transform', 'scale(1)');
+                resetLabels();
+                hideTooltip();
+            });
+
+        function getRelations(idx) {
+            var rels = [];
+            for (var i = 0; i < relations[idx].length; i++) {
+                if (relations[idx][i] > 0 && i !== idx) {
+                    rels.push({ name: genes[i], strength: relations[idx][i] });
+                }
+            }
+            return rels.sort(function(a, b) { return b.strength - a.strength; });
+        }
+
+        function getRelationText(s, t) {
+            var strength = relations[s][t];
+            if (strength >= 8) return '强关联';
+            if (strength >= 5) return '中关联';
+            return '弱关联';
+        }
+
+        function getRelationClass(strength) {
+            if (strength >= 8) return 'is-strong';
+            if (strength >= 5) return 'is-medium';
+            return 'is-weak';
+        }
+
+        var tooltip = document.getElementById('chord-tooltip');
+
+        function showTooltip(event, title, content) {
+            var html = '<div class="chord-tooltip-title">' + title + '</div>';
+            if (Array.isArray(content)) {
+                content.slice(0, 5).forEach(function(item) {
+                    html += '<div class="chord-tooltip-relation ' + getRelationClass(item.strength) + '">' + item.name + ' (' + item.strength + ')</div>';
+                });
+            } else {
+                var strengthClass = 'is-medium';
+                if (content === '强关联') strengthClass = 'is-strong';
+                if (content === '弱关联') strengthClass = 'is-weak';
+                html += '<div class="chord-tooltip-relation ' + strengthClass + '">' + content + '</div>';
+            }
+            tooltip.innerHTML = html;
+            tooltip.classList.add('visible');
+            var rect = container.getBoundingClientRect();
+            tooltip.style.left = (event.clientX - rect.left + 15) + 'px';
+            tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
+        }
+
+        function hideTooltip() {
+            tooltip.classList.remove('visible');
+        }
+
+        svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
+            .attr('fill', '#D8B680').attr('font-family', 'Noto Serif SC, serif')
+            .attr('font-size', '14px').attr('font-weight', '600').text('');
+
+        svg.append('text').attr('text-anchor', 'middle').attr('dy', '1em')
+            .attr('fill', '#A09586').attr('font-family', 'Noto Serif SC, serif')
+            .attr('font-size', '11px').text('');
+
+    })();
+    </script>
+    
+
+
+
+</body>
+</html>
