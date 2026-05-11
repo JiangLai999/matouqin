@@ -23,7 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
     initHistoryModule();
     initInstrumentTypes();
     initPerformanceFingering();
+    initHashNavigation();
 });
+
+function initHashNavigation() {
+    let lastHandledHash = '';
+
+    function scrollToHashTarget(force) {
+        const hash = window.location.hash;
+        if (!hash) return;
+        if (!force && hash === lastHandledHash) return;
+
+        const target = document.querySelector(hash);
+        if (!target) return;
+
+        lastHandledHash = hash;
+        const options = { offset: -100, duration: 1.1 };
+
+        if (typeof lenis !== 'undefined' && lenis && typeof lenis.scrollTo === 'function') {
+            lenis.scrollTo(target, options);
+        } else {
+            target.scrollIntoView({ behavior: 'auto', block: 'start' });
+            window.scrollBy(0, -100);
+        }
+    }
+
+    window.addEventListener('load', () => setTimeout(() => scrollToHashTarget(true), 350));
+    window.addEventListener('pageshow', () => setTimeout(() => scrollToHashTarget(true), 350));
+    window.addEventListener('hashchange', () => setTimeout(() => scrollToHashTarget(true), 50));
+    setTimeout(() => scrollToHashTarget(true), 250);
+}
 
 function optimizeMobileExperience() {
     const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;

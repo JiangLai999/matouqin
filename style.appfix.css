@@ -417,7 +417,11 @@ a { text-decoration: none; color: inherit; }
     padding: 6rem;
     border-top: 1px solid #D1D5DB;
     position: relative;
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 100px;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
 }
 
 .section-icon {
@@ -3482,15 +3486,16 @@ a { text-decoration: none; color: inherit; }
     .culture-circle { width: 280px; height: 280px; }
     .bar { width: 0.5rem; }
     .bar-chart { overflow-x: auto; min-width: 100%; }
-    .dashboard-section { scroll-margin-top: 4rem; }
-    .content-section { scroll-margin-top: 4rem; }
+    .dashboard-section { scroll-margin-top: 80px; }
+    .content-section { scroll-margin-top: 80px; }
+    section[id] { scroll-margin-top: 80px; }
 }
 
 /* ==================== Dashboard Section ==================== */
 .dashboard-section {
     padding: 5rem 3rem;
     border-bottom: 1px solid #D1D5DB;
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 100px;
 }
 
 .dashboard-grid {
