@@ -284,7 +284,7 @@ function initSectionAnimations() {
 
 // ==================== Bar Chart Growing Animation ====================
 function initBarChartAnimation() {
-    const bars = document.querySelectorAll('.bar');
+    const bars = document.querySelectorAll('.bar-chart .bar:not(.music-bar)');
     if (!bars.length) return;
 
     bars.forEach(bar => {
@@ -307,157 +307,216 @@ function initBarChartAnimation() {
 
 // ==================== History Module ====================
 function initHistoryModule() {
-    const historySection = document.querySelector('#history .history-module');
+    const historySection = document.querySelector('#history');
     if (!historySection) return;
 
-    const totalActs = 3;
-    let currentAct = 0;
-    const actLabels = ['第一幕 · 起源', '第二幕 · 演变', '第三幕 · 定型'];
-    const acts = historySection.querySelectorAll('[data-history-act]');
-    const steps = historySection.querySelectorAll('[data-history-step]');
-    const fill = historySection.querySelector('#historyProgressFill');
-    const prevBtn = historySection.querySelector('#historyPrevBtn');
-    const nextBtn = historySection.querySelector('#historyNextBtn');
-    const counter = historySection.querySelector('#historyActCounter');
-    const chartLabel = historySection.querySelector('#historyChartActLabel');
-    const timelineBand = historySection.querySelector('#historyTimelineBand');
-    const tooltip = historySection.querySelector('#historyChartTooltip');
-    const chartTags = historySection.querySelectorAll('.inst-tag:not(.dim-only)');
-    const curves = historySection.querySelectorAll('.curve');
-    const markers = historySection.querySelectorAll('.turn-marker');
-    const timelineRanges = [
-        { left: '0%', width: '29%' },
-        { left: '28%', width: '31%' },
-        { left: '57%', width: '43%' }
+    var totalActs = 5;
+    var currentAct = 0;
+    var actContainer = historySection.querySelector('.act-container');
+    var acts = actContainer ? actContainer.querySelectorAll('.act') : [];
+    var steps = historySection.querySelectorAll('.progress-step');
+    var fill = document.getElementById('progressFill');
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+    var counter = document.getElementById('actCounter');
+    var slideImg = document.getElementById('historySlideImg');
+    var lightbox = document.getElementById('historyLightbox');
+    var lightboxImg = document.getElementById('historyLightboxImg');
+    var chartTitleZh = document.getElementById('chartTitleZh');
+    var chartTitleEn = document.getElementById('chartTitleEn');
+    var chartStageBadge = document.getElementById('chartStageBadge');
+    var chartFooterNote = document.getElementById('chartFooterNote');
+    var zoomBtn = document.getElementById('historyZoomBtn');
+    var overviewBtn = document.getElementById('historyOverviewBtn');
+
+    var slideImages = [
+        'assets/history/history-xiqin.jpeg',
+        'assets/history/history-huobusi.jpeg',
+        'assets/history/history-mawei.jpeg',
+        'assets/history/history-chaoer.jpeg',
+        'assets/history/history-modern.jpeg'
     ];
 
-    function updateTimelineBand(actIndex) {
-        if (!timelineBand) return;
-        const range = timelineRanges[actIndex];
-        if (!range) return;
-        timelineBand.style.left = range.left;
-        timelineBand.style.width = range.width;
-    }
+    var slideTitles = [
+        { zh: '唐代 · 奚琴', en: 'Xiqin — Tang Dynasty' },
+        { zh: '元蒙时期 · 火不思', en: 'Huobusi — Yuan & Mongol Period' },
+        { zh: '宋代 · 马尾胡琴', en: 'Mawei Huqin — Song Dynasty' },
+        { zh: '元代 · 潮尔', en: 'Chaor — Yuan Dynasty' },
+        { zh: '20世纪50年代 · 现代马头琴', en: 'Modern Morin Khuur — 1950s to Present' }
+    ];
 
-    function showTooltip(event, tag) {
-        if (!tooltip) return;
-
-        const note = tag.getAttribute('data-note');
-        if (!note) return;
-
-        const wrapperRect = historySection.querySelector('.history-chart-wrapper').getBoundingClientRect();
-        const x = event.clientX - wrapperRect.left + 12;
-        const y = event.clientY - wrapperRect.top + 12;
-
-        tooltip.textContent = note;
-        tooltip.style.left = `${x}px`;
-        tooltip.style.top = `${y}px`;
-        tooltip.classList.add('visible');
-        tag.classList.add('hovered');
-    }
-
-    function hideTooltip(tag) {
-        if (tooltip) tooltip.classList.remove('visible');
-        if (tag) tag.classList.remove('hovered');
-    }
-
-    function updateChart(actIndex) {
-        if (chartLabel) chartLabel.textContent = actLabels[actIndex];
-        updateTimelineBand(actIndex);
-
-        chartTags.forEach((tag) => {
-            tag.classList.remove('active');
-            tag.classList.remove('hovered');
-            tag.style.opacity = '';
-        });
-
-        curves.forEach((curve) => {
-            curve.classList.remove('active');
-            curve.style.opacity = '';
-        });
-
-        markers.forEach((marker) => {
-            marker.classList.remove('active');
-        });
-
-        historySection.querySelectorAll(`.inst-tag[data-act="${actIndex}"]:not(.dim-only)`).forEach((tag) => {
-            tag.classList.add('active');
-        });
-
-        historySection.querySelectorAll(`.curve[data-act="${actIndex}"]`).forEach((curve) => {
-            curve.classList.add('active');
-        });
-
-        historySection.querySelectorAll(`.turn-marker[data-act="${actIndex}"]`).forEach((marker) => {
-            marker.classList.add('active');
-        });
-
-        for (let i = 0; i < actIndex; i += 1) {
-            historySection.querySelectorAll(`.inst-tag[data-act="${i}"]:not(.dim-only)`).forEach((tag) => {
-                tag.style.opacity = '0.35';
-            });
-
-            historySection.querySelectorAll(`.curve[data-act="${i}"]`).forEach((curve) => {
-                curve.style.opacity = '0.2';
-            });
-        }
-    }
+    var slideSources = [
+        '宋代陈《乐书》',
+        '元代宫廷乐器图谱',
+        '宋代乐器图谱',
+        '清代《皇朝礼器图式》',
+        '中国非物质文化遗产网'
+    ];
 
     function goToAct(index) {
         if (index < 0 || index >= totalActs) return;
 
-        acts.forEach((act) => {
+        acts.forEach(function(act) {
             act.classList.remove('visible');
-            act.classList.remove('is-current');
         });
 
-        const target = historySection.querySelector(`[data-history-act="${index}"]`);
+        var target = actContainer.querySelector('[data-act="' + index + '"]');
         if (target) {
             target.style.animation = 'none';
             target.offsetHeight;
             target.style.animation = '';
             target.classList.add('visible');
-            target.classList.add('is-current');
         }
 
-        steps.forEach((step, stepIndex) => {
+        steps.forEach(function(step, i) {
             step.classList.remove('active', 'completed');
-            if (stepIndex < index) step.classList.add('completed');
-            if (stepIndex === index) step.classList.add('active');
+            if (i < index) step.classList.add('completed');
+            if (i === index) step.classList.add('active');
         });
 
         if (fill) {
-            fill.style.width = `${(index / (totalActs - 1)) * 100}%`;
+            fill.style.width = ((index / (totalActs - 1)) * 100) + '%';
         }
 
         if (prevBtn) prevBtn.disabled = index === 0;
         if (nextBtn) nextBtn.disabled = index === totalActs - 1;
-        if (counter) counter.textContent = `${index + 1} / ${totalActs}`;
+        if (counter) counter.textContent = (index + 1) + ' / ' + totalActs;
+        if (chartTitleZh && slideTitles[index]) chartTitleZh.textContent = slideTitles[index].zh;
+        if (chartTitleEn && slideTitles[index]) chartTitleEn.textContent = slideTitles[index].en;
+        if (chartStageBadge) chartStageBadge.textContent = ('0' + (index + 1)).slice(-2) + ' / 05';
 
-        updateChart(index);
+        if (slideImg && slideImages[index]) {
+            var placeholder = document.getElementById('imgPlaceholder');
+
+            slideImg.classList.add('loading');
+            slideImg.style.opacity = '0';
+            slideImg.style.transform = 'scale(0.98)';
+
+            if (placeholder) placeholder.classList.remove('hidden');
+
+            setTimeout(function() {
+                slideImg.src = slideImages[index];
+                slideImg.alt = slideTitles[index] ? slideTitles[index].zh : '历史阶段图像';
+                slideImg.onload = function() {
+                    slideImg.classList.remove('loading');
+                    slideImg.style.opacity = '1';
+                    slideImg.style.transform = 'scale(1)';
+                    if (placeholder) placeholder.classList.add('hidden');
+                };
+                slideImg.onerror = function() {
+                    slideImg.classList.remove('loading');
+                    slideImg.style.opacity = '1';
+                    slideImg.style.transform = 'scale(1)';
+                    if (placeholder) placeholder.classList.add('hidden');
+                };
+            }, 150);
+
+            if (chartFooterNote && slideSources[index]) {
+                chartFooterNote.textContent = slideSources[index];
+            }
+        }
+
         currentAct = index;
     }
 
-    steps.forEach((step, index) => {
-        step.addEventListener('click', () => goToAct(index));
+    steps.forEach(function(step, i) {
+        step.addEventListener('click', function() { goToAct(i); });
     });
 
-    chartTags.forEach((tag) => {
-        tag.addEventListener('mouseenter', (event) => showTooltip(event, tag));
-        tag.addEventListener('mousemove', (event) => showTooltip(event, tag));
-        tag.addEventListener('mouseleave', () => hideTooltip(tag));
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() { goToAct(currentAct - 1); });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() { goToAct(currentAct + 1); });
+    }
 
-    historySection.querySelectorAll('[data-branch-toggle]').forEach((button) => {
-        button.addEventListener('click', () => {
-            button.classList.toggle('open');
-            const list = button.nextElementSibling;
+    historySection.querySelectorAll('.branch-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            btn.classList.toggle('open');
+            var list = btn.nextElementSibling;
             if (list) list.classList.toggle('open');
         });
     });
 
-    if (prevBtn) prevBtn.addEventListener('click', () => goToAct(currentAct - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goToAct(currentAct + 1));
+    if (slideImg) {
+        slideImg.style.transition = 'opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s ease';
+        slideImg.style.cursor = 'pointer';
+        slideImg.addEventListener('click', function() {
+            if (lightbox && lightboxImg) {
+                lightboxImg.src = slideImg.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    if (zoomBtn) {
+        zoomBtn.addEventListener('click', function() {
+            if (lightbox && lightboxImg && slideImg) {
+                lightboxImg.src = slideImg.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    if (overviewBtn) {
+        overviewBtn.addEventListener('click', function() {
+            if (lightbox && lightboxImg) {
+                lightboxImg.src = 'assets/history/history-slide1.png';
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target.classList.contains('close-btn')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Touch swipe support for mobile
+    var touchStartX = 0;
+    var touchEndX = 0;
+    var actContainerEl = actContainer;
+
+    if (actContainerEl) {
+        actContainerEl.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        actContainerEl.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            var diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    goToAct(currentAct + 1);
+                } else {
+                    goToAct(currentAct - 1);
+                }
+            }
+        }, { passive: true });
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') goToAct(currentAct + 1);
+        if (e.key === 'ArrowLeft') goToAct(currentAct - 1);
+        if (e.key === '1') goToAct(0);
+        if (e.key === '2') goToAct(1);
+        if (e.key === '3') goToAct(2);
+        if (e.key === '4') goToAct(3);
+        if (e.key === '5') goToAct(4);
+        if (e.key === 'Escape') {
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    });
 
     goToAct(0);
 }
@@ -1036,6 +1095,16 @@ function initFoldingAnimation() {
     var panels = document.querySelectorAll('.folding-panel');
     if (!section || panels.length === 0) return;
 
+    // Skip 3D animation on small screens — show panels immediately
+    if (window.innerWidth <= 1200) {
+        panels.forEach(function(panel) {
+            panel.style.transform = 'none';
+            panel.style.opacity = '1';
+            panel.style.filter = 'grayscale(20%)';
+        });
+        return;
+    }
+
     // ---- 初始：90° 折叠态 ----
     panels.forEach(function(panel, i) {
         var isEven = i % 2 === 0;
@@ -1284,7 +1353,7 @@ function initPerformanceFingering() {
     const positions = {
         '1': {
             title: '第一把位（A调）',
-            image: 'assets/performance/position-1.svg',
+            image: 'assets/performance/fingering-main.jpg',
             desc: '基础把位，最常用于低音区与初学阶段，强调手型稳定、空弦控制与左右手配合。',
             notationA: 'A弦：A（空弦）→ B（1）→ C#（2）→ D（3）→ E（4）',
             notationD: 'D弦：D（空弦）→ E（1）→ F#（2）→ G（3）→ A（4）',
@@ -1303,7 +1372,7 @@ function initPerformanceFingering() {
         },
         '2': {
             title: '第二把位（G调）',
-            image: 'assets/performance/position-2.svg',
+            image: 'assets/performance/fingering-main.jpg',
             desc: '中音区常用把位，音位整体上移，更适合旋律展开与句法连接。',
             notationA: 'A弦：G（1）→ A（2）→ B（3）→ C（4）→ D（空弦）',
             notationD: 'D弦：C（1）→ D（2）→ E（3）→ F#（4）→ G（空弦）',
@@ -1322,7 +1391,7 @@ function initPerformanceFingering() {
         },
         '3': {
             title: '第三把位（D调）',
-            image: 'assets/performance/position-3.svg',
+            image: 'assets/performance/fingering-main.jpg',
             desc: '高音区转换把位，适合抒情旋律和高音延展，需要更稳定的指尖控制。',
             notationA: 'A弦：D（1）→ E（2）→ F#（3）→ G（4）→ A（空弦对照）',
             notationD: 'D弦：G（1）→ A（2）→ B（3）→ C#（4）→ D（空弦对照）',

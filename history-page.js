@@ -47,8 +47,10 @@ function goToAct(index) {
 }
 
 function updateChart(actIndex) {
-    // Update chart indicator label
-    chartIndicator.textContent = actLabels[actIndex];
+    // Update chart indicator label (if exists)
+    if (chartIndicator) {
+        chartIndicator.textContent = actLabels[actIndex];
+    }
 
     // Reset all elements
     document.querySelectorAll('.inst-tag:not(.dim-only)').forEach(tag => {
@@ -109,3 +111,26 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize
 goToAct(0);
+
+// Lightbox for PPT image
+function openHistoryLightbox(src) {
+    const lightbox = document.getElementById('historyLightbox');
+    const img = document.getElementById('historyLightboxImg');
+    img.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeHistoryLightbox() {
+    const lightbox = document.getElementById('historyLightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.getElementById('historyLightbox')?.addEventListener('click', function(e) {
+    if (e.target === this) closeHistoryLightbox();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeHistoryLightbox();
+});

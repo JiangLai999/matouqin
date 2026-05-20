@@ -71,18 +71,18 @@ a { text-decoration: none; color: inherit; }
 }
 .page-header h1 {
     font-family: 'Noto Sans SC', sans-serif;
-    font-size: 2rem; font-weight: 500;
+    font-size: 1.5rem; font-weight: 500;
     color: #111827; margin-bottom: 0.25rem;
 }
 .page-header .subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-style: italic;
+    font-size: 1.125rem; font-style: italic;
     color: #6B7280; margin-bottom: 1.5rem;
 }
 .page-header .intro {
     font-family: 'Noto Sans SC', sans-serif;
-    font-size: 0.875rem; line-height: 1.8;
-    color: #374151; max-width: 700px;
+    font-size: 0.75rem; line-height: 1.6;
+    color: #6B7280; max-width: 700px;
     text-align: justify;
 }
 
@@ -303,6 +303,56 @@ a { text-decoration: none; color: inherit; }
     background-image: radial-gradient(#D1D5DB 1px, transparent 1px);
     background-size: 20px 20px;
     background-color: #FDFCF9;
+}
+
+.history-ppt-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-ppt-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8B6A34;
+}
+
+.history-ppt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.history-ppt-card {
+    margin: 0;
+    border: 1px solid #E5E7EB;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.history-ppt-card img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.history-ppt-card figcaption {
+    padding: 0.7rem 0.8rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.72rem;
+    color: #4B5563;
+    border-top: 1px solid #E5E7EB;
+}
+
+.history-ppt-note {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: #6B7280;
 }
 
 /* Region Labels */
