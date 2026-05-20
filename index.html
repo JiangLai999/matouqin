@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var viewport = document.querySelector('meta[name="viewport"]');
+            if (!viewport) return;
+
+            var shortestSide = Math.min(window.screen.width || 0, window.screen.height || 0);
+            if (shortestSide && shortestSide <= 768) {
+                viewport.setAttribute('content', 'width=1440');
+            }
+        })();
+    </script>
     <title>Gene Atlas: Morin Khuur</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
