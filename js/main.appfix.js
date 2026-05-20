@@ -118,6 +118,8 @@ function reorderPageSections() {
         'performance',
         'heritage',
         'application',
+        'blank-page-1',
+        'blank-page-2',
         'epilogue'
     ];
 
