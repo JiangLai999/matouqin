@@ -118,25 +118,15 @@ function reorderPageSections() {
         'performance',
         'heritage',
         'application',
+        'epilogue',
         'blank-page-1',
-        'blank-page-2',
-        'epilogue'
+        'blank-page-2'
     ];
 
     order.forEach((id) => {
         const section = document.getElementById(id);
         if (section) main.appendChild(section);
     });
-
-    const application = document.getElementById('application');
-    const epilogue = document.getElementById('epilogue');
-    const blankPage1 = document.getElementById('blank-page-1');
-    const blankPage2 = document.getElementById('blank-page-2');
-
-    if (application && epilogue && blankPage1 && blankPage2) {
-        main.insertBefore(blankPage1, epilogue);
-        main.insertBefore(blankPage2, epilogue);
-    }
 }
 
 // ==================== Lenis Smooth Scroll ====================
