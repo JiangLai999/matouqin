@@ -160,6 +160,15 @@ a { text-decoration: none; color: inherit; }
     pointer-events: auto;
 }
 
+.nav-dropdown-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.75;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
 .nav-dropdown a {
     font-size: 0.76rem;
     letter-spacing: 0.08em;
