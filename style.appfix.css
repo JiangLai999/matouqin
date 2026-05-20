@@ -6881,3 +6881,18 @@ section[id] {
         font-size: 0.68rem;
     }
 }
+
+/* ==================== Blank Pages ==================== */
+.blank-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blank-page-hint {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    color: #D1D5DB;
+    letter-spacing: 0.15em;
+}
